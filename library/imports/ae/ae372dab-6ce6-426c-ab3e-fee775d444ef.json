@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hotel_produce",
+    "texture": "c0f91895-dd73-40fc-9dd1-9f4d7fed201b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      99,
+      50
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      99,
+      50
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

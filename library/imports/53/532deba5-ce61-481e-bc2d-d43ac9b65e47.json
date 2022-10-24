@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "tips_unHave",
+    "texture": "3e6cd9dd-ee85-42da-8171-945b72997961",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      73,
+      101
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      73,
+      101
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

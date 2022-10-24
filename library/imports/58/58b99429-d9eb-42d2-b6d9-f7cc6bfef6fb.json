@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "empoly_button",
+    "texture": "8bd761ac-5b87-420d-9cfb-cb00cf1e7eb6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      114,
+      76
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      114,
+      76
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

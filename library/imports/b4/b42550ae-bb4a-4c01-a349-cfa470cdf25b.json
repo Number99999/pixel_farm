@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "offline_time",
+    "texture": "11c7af20-5aa2-4c33-ade3-b80b916b2fbe",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      443,
+      30
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      443,
+      30
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

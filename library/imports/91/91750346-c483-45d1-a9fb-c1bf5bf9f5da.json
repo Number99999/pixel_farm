@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "pupple",
+    "texture": "bcf7f84f-cc42-4fc3-9968-649489803196",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      44,
+      36
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      44,
+      36
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

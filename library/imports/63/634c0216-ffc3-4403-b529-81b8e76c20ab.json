@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sell_button",
+    "texture": "22d3addf-390b-417c-8491-f0362e88f735",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      111,
+      76
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      111,
+      76
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

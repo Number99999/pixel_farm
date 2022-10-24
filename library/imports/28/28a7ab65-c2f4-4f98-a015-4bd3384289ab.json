@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "watering_icon",
+    "texture": "4e7cca96-3773-48eb-8613-bc11a476aa0e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      66,
+      75
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      66,
+      75
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

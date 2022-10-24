@@ -1,0 +1,100 @@
+[
+  1,
+  0,
+  0,
+  [
+    [
+      "cc.AnimationClip",
+      [
+        "_name",
+        "_duration",
+        "wrapMode",
+        "curveData"
+      ],
+      -1
+    ]
+  ],
+  [
+    [
+      0,
+      0,
+      1,
+      2,
+      3,
+      5
+    ]
+  ],
+  [
+    [
+      0,
+      "light",
+      1,
+      2,
+      {
+        "paths": {
+          "light_group/light1-a": {
+            "props": {
+              "angle": [
+                {
+                  "frame": 0,
+                  "value": 0
+                },
+                {
+                  "frame": 1,
+                  "value": 360
+                }
+              ],
+              "opacity": [
+                {
+                  "frame": 0,
+                  "value": 255
+                },
+                {
+                  "frame": 0.5,
+                  "value": 129.285
+                },
+                {
+                  "frame": 1,
+                  "value": 255
+                }
+              ]
+            }
+          },
+          "light_group/light1-b": {
+            "props": {
+              "angle": [
+                {
+                  "frame": 0,
+                  "value": 0
+                },
+                {
+                  "frame": 1,
+                  "value": -360
+                }
+              ],
+              "opacity": [
+                {
+                  "frame": 0,
+                  "value": 160
+                },
+                {
+                  "frame": 0.5,
+                  "value": 0
+                },
+                {
+                  "frame": 1,
+                  "value": 160
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  ],
+  0,
+  0,
+  [],
+  [],
+  []
+]

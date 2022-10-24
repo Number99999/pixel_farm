@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "turn_up_the_soil",
+    "texture": "b1585d44-aa79-4a7c-ba0c-6e6a7131892c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      97,
+      105
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      97,
+      105
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

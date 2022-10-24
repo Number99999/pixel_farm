@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "orchard",
+    "texture": "1189543d-c1e7-45c7-acbd-8ce59d565ab3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      87,
+      65
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      87,
+      65
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

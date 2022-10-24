@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "novice",
+    "texture": "e6eaa716-e3bf-4550-b9c5-e4f62df9203d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      43,
+      37
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      43,
+      37
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ini_skill_point",
+    "texture": "49862f43-379c-4b39-9d7a-42b676a3e909",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      128,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      128,
+      46
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

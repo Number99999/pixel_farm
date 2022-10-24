@@ -1,0 +1,35 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "button_tips",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.8333333333333334,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "paths": {
+      "icon": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": 95.896,
+              "curve": "cubicIn"
+            },
+            {
+              "frame": 0.5,
+              "value": 105.712,
+              "curve": "linear"
+            },
+            {
+              "frame": 0.8333333333333334,
+              "value": 95.896
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

@@ -1,0 +1,66 @@
+[
+  1,
+  0,
+  0,
+  [
+    [
+      "cc.AnimationClip",
+      [
+        "_name",
+        "_duration",
+        "wrapMode",
+        "curveData"
+      ],
+      -1
+    ]
+  ],
+  [
+    [
+      0,
+      0,
+      1,
+      2,
+      3,
+      5
+    ]
+  ],
+  [
+    [
+      0,
+      "videotape_button",
+      0.75,
+      2,
+      {
+        "paths": {
+          "start_video": {
+            "props": {
+              "angle": [
+                {
+                  "frame": 0,
+                  "value": 0
+                },
+                {
+                  "frame": 0.25,
+                  "value": 6
+                },
+                {
+                  "frame": 0.5,
+                  "value": -6
+                },
+                {
+                  "frame": 0.75,
+                  "value": 0
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  ],
+  0,
+  0,
+  [],
+  [],
+  []
+]

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "share_button",
+    "texture": "283e2ab9-f919-4d8a-b457-bb9789315569",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      193,
+      75
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      193,
+      75
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

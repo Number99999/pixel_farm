@@ -1,0 +1,33 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "plant",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.4833333333333334,
+  "sample": 60,
+  "speed": 0.5,
+  "wrapMode": 2,
+  "curveData": {
+    "props": {
+      "angle": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.48333333333333334,
+          "value": -5
+        },
+        {
+          "frame": 0.9833333333333333,
+          "value": 5
+        },
+        {
+          "frame": 1.4833333333333334,
+          "value": 0
+        }
+      ]
+    }
+  },
+  "events": []
+}

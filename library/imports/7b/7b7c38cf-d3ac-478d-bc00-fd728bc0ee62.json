@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cost_icon",
+    "texture": "d938b3bc-82b1-47eb-8e77-5a1627ece004",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      35,
+      39
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      35,
+      39
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

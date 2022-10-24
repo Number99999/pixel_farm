@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "grandPa0",
+    "texture": "624f2426-42c0-4bc6-95b7-360fb2ff2192",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      116,
+      128
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      116,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

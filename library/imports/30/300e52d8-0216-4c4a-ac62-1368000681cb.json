@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hotel_get_icon",
+    "texture": "755d1a75-587b-40a7-b508-45940a7f9410",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      67,
+      63
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      67,
+      63
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

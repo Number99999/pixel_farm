@@ -1,0 +1,292 @@
+[
+  1,
+  [
+    "112bff64f",
+    "7dbXzm+35JW66JqMWG/ZFB",
+    "bfT27bXXRBur98JK4kYf5r",
+    "0cGHnSYHZCHbS2rfPLwu8I",
+    "11rdM8gsdNCoXCrhYVDolf"
+  ],
+  [
+    "_textureSetter",
+    "value"
+  ],
+  [
+    "cc.SpriteFrame",
+    [
+      "cc.AnimationClip",
+      [
+        "_name",
+        "_duration",
+        "sample",
+        "wrapMode",
+        "curveData"
+      ],
+      -1,
+      11
+    ]
+  ],
+  [
+    [
+      1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  ],
+  [
+    [
+      [
+        {
+          "name": "z_run2",
+          "rect": [
+            284,
+            47,
+            65,
+            90
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            65,
+            90
+          ],
+          "rotated": 1,
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        {
+          "name": "z_run3",
+          "rect": [
+            110,
+            116,
+            65,
+            90
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            65,
+            90
+          ],
+          "rotated": 1,
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        [
+          0,
+          "z_run",
+          1,
+          4,
+          2,
+          [
+            {},
+            "comps",
+            11,
+            [
+              {},
+              "cc.Sprite",
+              11,
+              [
+                {},
+                "spriteFrame",
+                12,
+                [
+                  [
+                    [
+                      {
+                        "frame": 0
+                      },
+                      "value",
+                      6,
+                      0
+                    ],
+                    [
+                      {
+                        "frame": 0.25
+                      },
+                      "value",
+                      6,
+                      1
+                    ],
+                    [
+                      {
+                        "frame": 0.5
+                      },
+                      "value",
+                      6,
+                      2
+                    ],
+                    [
+                      {
+                        "frame": 0.75
+                      },
+                      "value",
+                      6,
+                      3
+                    ]
+                  ],
+                  11,
+                  11,
+                  11,
+                  11
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      0,
+      0,
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        {
+          "name": "z_run4",
+          "rect": [
+            896,
+            144,
+            65,
+            90
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            65,
+            90
+          ],
+          "rotated": 1,
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        {
+          "name": "z_run1",
+          "rect": [
+            110,
+            187,
+            65,
+            90
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            65,
+            90
+          ],
+          "rotated": 1,
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  ]
+]

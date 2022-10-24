@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "water_progress_bar",
+    "texture": "3330eaa0-b8b0-475e-832e-3e525f007e51",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      11,
+      9
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      11,
+      9
+    ],
+    "capInsets": [
+      3,
+      0,
+      2,
+      0
+    ]
+  }
+}

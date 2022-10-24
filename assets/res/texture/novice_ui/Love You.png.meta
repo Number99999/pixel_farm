@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "1725a502-4d61-4c47-9df1-e7d1a29a7d89",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 257,
+  "height": 70,
+  "platformSettings": {},
+  "subMetas": {
+    "Love You": {
+      "ver": "1.0.6",
+      "uuid": "75e4cafe-fdf0-41e8-be2d-7b669294f1f8",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "1725a502-4d61-4c47-9df1-e7d1a29a7d89",
+      "trimType": "custom",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 257,
+      "height": 70,
+      "rawWidth": 257,
+      "rawHeight": 70,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

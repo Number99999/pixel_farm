@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "plant_progress_floor",
+    "texture": "e17c9939-863d-4df1-bee3-f4eee1fd8af5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      34,
+      28
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      34,
+      28
+    ],
+    "capInsets": [
+      10,
+      0,
+      9,
+      0
+    ]
+  }
+}

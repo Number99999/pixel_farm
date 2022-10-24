@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "z_run2",
+    "texture": "98d71d2b-4e0e-4277-833c-4d52504469fa",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      65,
+      101
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      65,
+      102
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "keep_rest_button",
+    "texture": "7746976e-cdb3-4c4b-bc77-ed549f2bfffe",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      164,
+      75
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      164,
+      75
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

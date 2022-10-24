@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "z_idle1",
+    "texture": "75236aaa-30e8-4032-928c-4f773d1cb145",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      72,
+      101
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      72,
+      101
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

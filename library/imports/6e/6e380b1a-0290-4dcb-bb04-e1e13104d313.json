@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "i_wanner_watch",
+    "texture": "f90d9e91-b86f-40b9-b43d-67294427be82",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      216,
+      68
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      216,
+      68
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cocos.service.tradplusad"
+          xmlns:tools="http://schemas.android.com/tools">
+    
+
+    
+
+    
+
+    
+
+    <!-- 以下权限都是可选权限，不添加不会影响SDK的使用，但会影响广告匹配的精确度 -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <application
+        android:networkSecurityConfig="@xml/cs_tradplusad_network_security_config"
+        tools:replace="android:networkSecurityConfig">
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        
+        <!-- Admob -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="2FAAB2CCF0657DD3128F00FA025C4FDF"/>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </application>
+</manifest>

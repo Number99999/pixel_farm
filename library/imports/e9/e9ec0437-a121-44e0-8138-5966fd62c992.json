@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "study_video_button",
+    "texture": "ede4c7fb-e2d1-4244-ae4f-0fd1e6aa3d7d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      114,
+      76
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      114,
+      76
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

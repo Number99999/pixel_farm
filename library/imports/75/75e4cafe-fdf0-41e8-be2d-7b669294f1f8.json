@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Love You",
+    "texture": "1725a502-4d61-4c47-9df1-e7d1a29a7d89",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      257,
+      70
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      257,
+      70
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

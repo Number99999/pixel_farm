@@ -1,0 +1,64 @@
+[
+  1,
+  0,
+  0,
+  [
+    [
+      "cc.AnimationClip",
+      [
+        "_name",
+        "_duration",
+        "wrapMode",
+        "curveData"
+      ],
+      -1
+    ]
+  ],
+  [
+    [
+      0,
+      0,
+      1,
+      2,
+      3,
+      5
+    ]
+  ],
+  [
+    [
+      0,
+      "button_tips",
+      0.8333333333333334,
+      2,
+      {
+        "paths": {
+          "icon": {
+            "props": {
+              "y": [
+                {
+                  "frame": 0,
+                  "value": 95.896,
+                  "curve": "cubicIn"
+                },
+                {
+                  "frame": 0.5,
+                  "value": 105.712,
+                  "curve": "linear"
+                },
+                {
+                  "frame": 0.8333333333333334,
+                  "value": 95.896
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  ],
+  0,
+  0,
+  [],
+  [],
+  []
+]

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hotel_eject_floor",
+    "texture": "dd7c25b5-81ad-4024-80e9-6d9f9e4b33ad",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      72,
+      72
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      72,
+      72
+    ],
+    "capInsets": [
+      26,
+      18,
+      23,
+      21
+    ]
+  }
+}

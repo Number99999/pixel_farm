@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "talk5",
+    "texture": "00fa1d5c-e66a-480f-a0dd-19afb2d261d4",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      550,
+      51
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      550,
+      51
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

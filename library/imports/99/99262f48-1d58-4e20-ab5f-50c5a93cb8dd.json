@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_tips_icon",
+    "texture": "39b56fb0-da02-4fcc-b0bd-ae5b825f1120",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      37,
+      43
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      37,
+      43
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "tips_floor",
+    "texture": "cb507815-0f70-4e5a-9638-56abbac5291b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      106,
+      60
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      106,
+      60
+    ],
+    "capInsets": [
+      24,
+      15,
+      19,
+      15
+    ]
+  }
+}

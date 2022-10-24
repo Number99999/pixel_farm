@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "video_sell_button",
+    "texture": "cdb8a28d-f3a5-400e-9330-7a4019098d94",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      171,
+      76
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      171,
+      76
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

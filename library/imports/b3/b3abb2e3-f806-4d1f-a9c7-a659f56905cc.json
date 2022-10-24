@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "plant_button2",
+    "texture": "ddc22e84-aedb-4b2f-bab6-fd6c70ff6061",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      108,
+      45
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      108,
+      45
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "hotel_produce",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 60,
+  "speed": 0.5,
+  "wrapMode": 2,
+  "curveData": {
+    "props": {
+      "x": [
+        {
+          "frame": 0,
+          "value": -91.023
+        },
+        {
+          "frame": 0.6666666666666666,
+          "value": -96.371
+        },
+        {
+          "frame": 1,
+          "value": -91.023
+        }
+      ]
+    }
+  },
+  "events": []
+}

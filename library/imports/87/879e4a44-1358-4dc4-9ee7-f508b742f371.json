@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "z_run2 - Copy",
+    "texture": "a943a976-0297-4f6c-9d0c-4ae922afeead",
+    "atlas": "",
+    "rect": [
+      2,
+      2,
+      62,
+      99
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      65,
+      102
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "ad_car",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.5,
+  "sample": 60,
+  "speed": 2,
+  "wrapMode": 2,
+  "curveData": {
+    "props": {
+      "scaleY": [
+        {
+          "frame": 0,
+          "value": 1
+        },
+        {
+          "frame": 0.25,
+          "value": 1.1
+        },
+        {
+          "frame": 0.5,
+          "value": 1
+        }
+      ]
+    },
+    "paths": {
+      "ad_car_smoke": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                220.595,
+                51.449,
+                0
+              ]
+            },
+            {
+              "frame": 0.5,
+              "value": [
+                293.892,
+                75.796,
+                0
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.25,
+              "value": 255
+            },
+            {
+              "frame": 0.5,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

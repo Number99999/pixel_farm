@@ -1,0 +1,31 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "b_idle",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 2,
+  "speed": 2,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "79b4e3fe-2048-45e3-9da9-38a538f53797"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "f506b121-ea69-4b78-b996-882d8308d273"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

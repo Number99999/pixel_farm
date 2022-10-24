@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "till_icon",
+    "texture": "c1d5d462-afa4-4a73-84d7-98d42d42a4c7",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      66,
+      75
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      66,
+      75
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

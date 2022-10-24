@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "video_tape_off",
+    "texture": "ff45acd2-1674-4db3-af20-138c244a3ac0",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      70,
+      56
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      70,
+      56
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

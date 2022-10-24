@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "water_progress_floor",
+    "texture": "c0894ee5-d5ff-4b51-bdd9-017d7363acdd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      17,
+      11
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      17,
+      11
+    ],
+    "capInsets": [
+      4,
+      0,
+      3,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cultrue_button",
+    "texture": "cf533ee5-b0f5-4a71-9a8a-b4400eed251f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      131,
+      59
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      131,
+      59
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

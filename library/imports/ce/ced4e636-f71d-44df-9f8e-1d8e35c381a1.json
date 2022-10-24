@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hotel_index3",
+    "texture": "9b842544-320a-47b8-99ca-417f76dd2625",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      82,
+      26
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      82,
+      26
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

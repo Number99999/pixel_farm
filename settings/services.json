@@ -1,0 +1,39 @@
+{
+	"game": {
+		"name": "pixel farm",
+		"appid": "647816448",
+		"cid": "0"
+	},
+	"configs": [
+		{
+			"appid": "647816448",
+			"services": [
+				{
+					"service_id": "314",
+					"enable": false,
+					"params": {
+						"appIds": {
+							"android": "04F2B78335B2E7750E54922C8653FE46",
+							"ios": "C8D3D9D1ECB6FD517298477F1FFDF511"
+						},
+						"adEnabledMap": {
+							"Admob": true
+						},
+						"isPublishInMainlandChina": false,
+						"paramMap": {
+							"admobAndroidAppId": "2FAAB2CCF0657DD3128F00FA025C4FDF",
+							"admobIosAppId": "9328B5533AF9AA70F85BBEA1EBA13B2A"
+						},
+						"enableIos14Adaptation": false,
+						"userTrackingUsageDesc": "",
+						"httpProxyServer": "",
+						"cocosUid": "2084358",
+						"cocosAppId": "647816448",
+						"plugin_version": "0.5.7_7.3.0.1_6.6.31"
+					}
+				}
+			]
+		}
+	],
+	"needExecNative": true
+}

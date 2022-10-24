@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "left_grass",
+    "texture": "12e9d89a-3fb2-4b78-9559-3a420a6e5e37",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      366,
+      234
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      366,
+      234
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

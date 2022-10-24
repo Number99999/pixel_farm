@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wareHouse_full",
+    "texture": "050e805c-3ba1-414f-aa42-52590eaa0c07",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      54,
+      61
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      54,
+      61
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

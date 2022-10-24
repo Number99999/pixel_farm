@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coorner_maker",
+    "texture": "f550d2a3-dc9a-455a-b1a5-319e22607aac",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      47,
+      18
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      47,
+      18
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

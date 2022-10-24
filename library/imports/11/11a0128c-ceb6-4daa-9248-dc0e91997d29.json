@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "staff_icon4",
+    "texture": "114e8899-4c41-4d06-95f7-83b97a7534f4",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      95,
+      104
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      95,
+      104
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "i_wanna_button",
+    "texture": "bad5031e-1b40-4853-a0ed-01a037d04801",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      164,
+      75
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      164,
+      75
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

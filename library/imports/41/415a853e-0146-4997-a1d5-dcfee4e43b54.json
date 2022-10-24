@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "pet_center_floor",
+    "texture": "a48a3fc1-324c-4ac0-9ff6-aaf3e2629c31",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      58,
+      67
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      58,
+      67
+    ],
+    "capInsets": [
+      16,
+      17,
+      14,
+      19
+    ]
+  }
+}

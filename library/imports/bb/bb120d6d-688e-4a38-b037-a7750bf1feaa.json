@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "land_button2",
+    "texture": "1f14814c-5575-4b2e-9c97-761e306e3b34",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      108,
+      45
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      108,
+      45
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

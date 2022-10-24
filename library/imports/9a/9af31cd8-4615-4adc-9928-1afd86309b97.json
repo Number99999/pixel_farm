@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "study_progress_floor",
+    "texture": "2efc854c-a26b-45c2-bf70-7841d42dcc1b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      20,
+      13
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      20,
+      13
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
