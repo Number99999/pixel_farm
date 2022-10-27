@@ -139,6 +139,14 @@ cc.Class({
                 this.label.string = "Reached today's limit~";
                 this.icon_frame.spriteFrame = this.icon_frame_arr[1];
                 break;
+            case "unlocked_repo":
+                this.label.string = "Unlocked this repository";
+                this.icon_frame.spriteFrame = this.icon_frame_arr[1];
+                break;
+            case "no_video_today":
+                this.label.string = "Out of video view";
+                this.icon_frame.spriteFrame = this.icon_frame_arr[1];
+                break;
         };
         this.end_anim();
     },

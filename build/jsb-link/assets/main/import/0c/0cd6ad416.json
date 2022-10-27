@@ -1,7 +1,7 @@
 [
   1,
   [
-    "112bff64f",
+    "18ca8feef",
     "3bJQiC6W5Hi6koFshU/bTn",
     "34yTiv1D9B2K2vYkbZMlBb"
   ],
@@ -43,8 +43,8 @@
         {
           "name": "z_idle1",
           "rect": [
-            405,
-            128,
+            195,
+            110,
             65,
             90
           ],
@@ -84,8 +84,8 @@
         {
           "name": "z_idle2",
           "rect": [
-            501,
-            129,
+            610,
+            124,
             65,
             90
           ],

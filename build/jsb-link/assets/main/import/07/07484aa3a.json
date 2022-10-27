@@ -1,7 +1,7 @@
 [
   1,
   [
-    "112bff64f",
+    "1df2dede2",
     "ecpdLyjvZBwrvm+cedCcQy",
     "0e4vz54pZND4NnxNgqytul"
   ],
@@ -100,8 +100,8 @@
         {
           "name": "level_icon",
           "rect": [
-            473,
-            3,
+            351,
+            722,
             43,
             45
           ],

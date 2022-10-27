@@ -1,10 +1,10 @@
 [
   1,
   [
-    "1e53fbc2a",
+    "11d22d987",
     "97jyFqsFpA+Zx2tK4pHuAZ",
     "7exoGaCXJHAb8EhRKJLaCD",
-    "112bff64f"
+    "18ca8feef"
   ],
   [
     "_textureSetter",
@@ -44,7 +44,7 @@
         {
           "name": "c_idle1",
           "rect": [
-            815,
+            3,
             914,
             79,
             107
@@ -147,8 +147,8 @@
         {
           "name": "c_idle2",
           "rect": [
-            327,
-            509,
+            3,
+            563,
             79,
             104
           ],

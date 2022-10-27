@@ -10,8 +10,8 @@
     "4fnp8waNZJxZlck+H4om9E",
     "4c0P3YjI5KW7JspHoYptNT",
     "88ADDYnTdGhoAaDrHrQGYu",
-    "112bff64f",
-    "1ab505897"
+    "18ca8feef",
+    "1df2dede2"
   ],
   [
     "node",
@@ -385,8 +385,8 @@
         {
           "name": "z_idle1",
           "rect": [
-            339,
-            270,
+            701,
+            276,
             66,
             81
           ],
@@ -426,8 +426,8 @@
         {
           "name": "shadow",
           "rect": [
-            195,
-            987,
+            938,
+            817,
             58,
             28
           ],
@@ -439,6 +439,7 @@
             58,
             28
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,

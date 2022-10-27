@@ -9,6 +9,9 @@ cc.Class({
         label_group_node: cc.Node,
         // estimate_label: cc.Label,
         lock_group_node: cc.Node,
+        confirm_button_node: cc.Node,
+        sum_gold: 0,
+        index: 0,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -21,34 +24,67 @@ cc.Class({
         this.set_sell();
         // this.set_estimate_label();
     },
-    button_unlock_click(e, custom) {        // button mở kho
-        var sum_gold = 0;
-        var sum_diamond = 0;
+    button_unlock_click(e, custom) {        // button unlock repo
+        this.node.children[2].active = false;   // show POP-UP open new repo
+        this.node.children[3].active = true;    // hidden repo
+        this.show_comfirm_buy(custom);
+    },
+    show_comfirm_buy: function (custom) {       // hiển thị số tiền để mua rương, thêm nút xác nhận
+        this.sum_gold = Number(0);
+        // var sum_diamond = 0;
         for (var i = 0; i <= custom; i++) {
-
             if (user_data.user_data.wareHouse[i].have == 0) {
-                if (user_data.user_data.wareHouse[i].type_buy == "gold")
-                    sum_gold += user_data.user_data.wareHouse[i].cost;
-                else sum_diamond += user_data.user_data.wareHouse[i].cost;
+                this.sum_gold += user_data.user_data.wareHouse[i].cost;
             }
         }
-        if (user_data.user_data.gold >= sum_gold && user_data.user_data.diamond >= sum_diamond) {
-            user_data.user_data.gold -= sum_gold;
-            user_data.user_data.diamond -= sum_diamond;
+        this.node.children[3].children[0].getComponent(cc.Label).string = "Do you want use " + this.sum_gold + " gold to buy new repository?";
+        // sum_gold = 500 * count;
+        // console.log("sum_gold " + sum_gold);
+        // if (user_data.user_data.gold >= sum_gold) {
+        //     // console.log("sum_godl " + sum_gold);
+        //     // user_data.user_data.diamond -= this.sum_diamond;
+        //     for (var i = 0; i <= custom; i++) {
+        //         user_data.user_data.wareHouse[i].have = 1;
+        //         this.lock_group_node.children[i].active = false;
+        //         this.label_group_node.children[i].getComponent(cc.Label).string = "0/30";
+        //         this.game_scene_js.create_tips_ui(this.game_scene_js.node, "unlocked_repo");
+        //     }
+        //     this.game_rules_js.add_gold(-sum_gold);
+        // }
+        // // cô
+        // else {
+        //     this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_gold");
+        // }
+        this.index = custom;
+    },
+    buy_repo: function () {
+        if (user_data.user_data.gold >= this.sum_gold) {
+            // console.log("sum_godl " + sum_gold);
+            // user_data.user_data.diamond -= this.sum_diamond;
+            for (var i = 0; i <= this.index; i++) {
+                user_data.user_data.wareHouse[i].have = 1;
+                this.lock_group_node.children[i].active = false;
+                this.label_group_node.children[i].getComponent(cc.Label).string = "0/30";
+                this.game_scene_js.create_tips_ui(this.game_scene_js.node, "unlocked_repo");
+            }
+            this.game_rules_js.add_gold(-this.sum_gold);
+            this.touch_exit();
         }
-        else 
-        {
+        // cô
+        else {
+            console.log(this.sum_gold + " sum_gold");
             this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_gold");
         }
     },
-    auto_sell: function () {    // tự động bán hàng trong kho
-        var time_auto = 60 * 60;
+    // auto_sell: function () {    // tự động bán hàng trong kho
+    //     var time_auto = 60 * 60;
 
-        var auto = function () {
-            time_auto -=0.1;
-        };
-        this.schedule(this.auto, 0.1);
-    },
+    //     var auto = function () {
+    //         time_auto -=0.1;
+    //     };
+    //     this.schedule(this.auto, 0.1);
+    // },
+
     set_sell: function () {
         var all_capacity = 30;
         for (var i = 0; i < this.icon_group_node.children.length; i++) {
@@ -74,9 +110,16 @@ cc.Class({
         }
     },
     touch_exit: function () {
-        this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
-        this.game_scene_js.on_node_kill(this.node);
+        if (this.node.children[2].active == false) {
+            this.node.children[2].active = true;
+            this.node.children[3].active = false;
+        }
+        else {
+            this.sound_control.play_sound_effect("button_exit");
+            this.ad_control.hide_bannerAd();
+            this.game_scene_js.on_node_kill(this.node);
+        }
+
     },
     //设置预计卖出文字
     set_estimate_label: function () {

@@ -1,7 +1,7 @@
 [
   1,
   [
-    "112bff64f",
+    "18ca8feef",
     "79tOP+IEhF452pOKU49TeX",
     "f5BrEh6mlLeLmWiC2DCNJz"
   ],
@@ -106,8 +106,8 @@
         {
           "name": "b_idle2",
           "rect": [
-            252,
-            263,
+            542,
+            266,
             66,
             81
           ],
@@ -147,7 +147,7 @@
         {
           "name": "b_idle1",
           "rect": [
-            90,
+            351,
             332,
             66,
             81

@@ -16,9 +16,7 @@
   "apiLevel": "android-31",
   "appABIs": [
     "arm64-v8a",
-    "armeabi-v7a",
-    "x86",
-    "x86_64"
+    "armeabi-v7a"
   ],
   "vsVersion": "auto",
   "buildScriptsOnly": false

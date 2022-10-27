@@ -12,7 +12,6 @@
                         if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}
 require('./assets/migration/use_reversed_rotateBy');
 require('./assets/migration/use_v2.1-2.2.1_cc.Toggle_event');
-require('./assets/script/AdMob');
 require('./assets/script/AdsManager');
 require('./assets/script/ai/pet_ai');
 require('./assets/script/ai/player_role');

@@ -16,14 +16,14 @@
                 {
                     "units": [
                         {
-                            "unit": "AdColony", 
+                            "weight": 30, 
                             "name": "video", 
-                            "weight": 30
+                            "unit": "AdColony"
                         }, 
                         {
-                            "unit": "Chartboost", 
+                            "weight": 20, 
                             "name": "Default", 
-                            "weight": 20
+                            "unit": "Chartboost"
                         }
                     ], 
                     "id": "placement-1", 
@@ -65,6 +65,29 @@
                 }
             ]
         }, 
+        "iap": {
+            "items": {
+                "coin_package2": {
+                    "id": "com.cocos2dx.plugintest3"
+                }, 
+                "remove_ads": {
+                    "type": "non_consumable", 
+                    "id": "com.cocos2dx.non1"
+                }, 
+                "double_coin": {
+                    "type": "non_consumable", 
+                    "id": "com.cocos2dx.non2"
+                }, 
+                "coin_package": {
+                    "id": "com.cocos2dx.plugintest2"
+                }, 
+                "subs": {
+                    "type": "subs", 
+                    "id": "subscription1"
+                }
+            }, 
+            "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq7eIGu7dRcBRBSC05cYvxjBMd7cqq9w6++1er+cqO2tyWPtWB4vuTkliq4k/Fkylx5UMfptdOYOW8ENgQyVucs/NyuOAGmve4j5JFhLPcLa6LjO2HUSY6zk04DRR9Zw7YPET4WAezZTz8jYMGhPG08HYltVj8cmSpSFWd1nI0pGOJoLQIMkIkXplgnPQRbMpuOu70vnQQBS1RFcoFT7OjaV8U0cfJzMoS1TMkGqaJKks2T+qOBNTtkXzge92EnvYIkhpCfN98dj6aQmETNp5yj5Fa+jcbAVF8dy5xymJwioL89XQKfKkGR+P6ESMoBEPfIZYIlMU8EUwmC+UKGLujQIDAQAB"
+        }, 
         "Appnext": {
             "debug": true, 
             "ads": {
@@ -73,22 +96,22 @@
                     "postback": "postback", 
                     "can_close": false, 
                     "mute": false, 
-                    "type": "interstitial", 
+                    "skip_text": "Skip Text", 
                     "cache": true, 
                     "button_text": "Button Text", 
                     "button_color": "#6AB344", 
-                    "skip_text": "Skip Text", 
+                    "type": "interstitial", 
                     "id": "2f6850dd-190a-499d-aa50-1f4a3dd1ed5f", 
                     "categories": "Action,Puzzle", 
                     "autoplay": true
                 }, 
                 "fullscreen": {
-                    "cache": true, 
+                    "postback": "postback", 
                     "can_close": false, 
                     "progress_color": "#ffffff", 
                     "show_close_button": true, 
                     "progress_type": "clock", 
-                    "postback": "postback", 
+                    "cache": true, 
                     "button_text": "Button Text", 
                     "button_color": "#6AB344", 
                     "kVideoLength": "short", 
@@ -143,7 +166,7 @@
             "app_key": "7acb75c06e543c3c49452f4acb0711377d77b63993cbad49"
         }, 
         "Chartboost": {
-            "signature": "dd2d41b69ac01b80f443f5b6cf06096d457f82bd", 
+            "id": "4f7b433509b6025804000002", 
             "ads": {
                 "Default": {
                     "type": "interstitial"
@@ -155,7 +178,7 @@
                     "type": "more_app"
                 }
             }, 
-            "id": "4f7b433509b6025804000002"
+            "signature": "dd2d41b69ac01b80f443f5b6cf06096d457f82bd"
         }, 
         "AdColony": {
             "debug": true, 
@@ -193,14 +216,14 @@
                 {
                     "units": [
                         {
-                            "unit": "AdColony", 
+                            "weight": 30, 
                             "name": "video", 
-                            "weight": 30
+                            "unit": "AdColony"
                         }, 
                         {
-                            "unit": "Chartboost", 
+                            "weight": 20, 
                             "name": "Default", 
-                            "weight": 20
+                            "unit": "Chartboost"
                         }
                     ], 
                     "id": "placement-1", 
@@ -241,6 +264,24 @@
                     "strategy": "round-robin"
                 }
             ]
+        }, 
+        "iap": {
+            "items": {
+                "remove_ads": {
+                    "type": "non_consumable", 
+                    "id": "com.cocos2dx.non1"
+                }, 
+                "double_coin": {
+                    "type": "non_consumable", 
+                    "id": "com.cocos2dx.non2"
+                }, 
+                "coin_package": {
+                    "id": "com.cocos2dx.plugintest2"
+                }, 
+                "coin_package2": {
+                    "id": "com.cocos2dx.plugintest3"
+                }
+            }
         }, 
         "Appnext": {
             "debug": true, 
@@ -296,7 +337,7 @@
             "app_key": "2cfc9cc638980eb7f5ff35d6eb63dbe404503151ccc451ed"
         }, 
         "Chartboost": {
-            "signature": "92e2de2fd7070327bdeb54c15a5295309c6fcd2d", 
+            "id": "4f21c409cd1cb2fb7000001b", 
             "ads": {
                 "Default": {
                     "type": "interstitial"
@@ -308,7 +349,7 @@
                     "type": "more_app"
                 }
             }, 
-            "id": "4f21c409cd1cb2fb7000001b"
+            "signature": "92e2de2fd7070327bdeb54c15a5295309c6fcd2d"
         }, 
         "AdColony": {
             "id": "appbdee68ae27024084bb334a", 

@@ -1,7 +1,7 @@
 [
   1,
   [
-    "1ab505897",
+    "1df2dede2",
     "ecpdLyjvZBwrvm+cedCcQy",
     "24u1c+APZHEKGcEh0yeXPg",
     "acHzoFzgxM9Yc8q4o3y5PT",
@@ -189,8 +189,8 @@
         {
           "name": "rest_icon",
           "rect": [
-            259,
-            982,
+            974,
+            603,
             47,
             37
           ],
@@ -229,8 +229,8 @@
         {
           "name": "pupple",
           "rect": [
-            976,
-            917,
+            177,
+            575,
             44,
             36
           ],
@@ -242,6 +242,7 @@
             44,
             36
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -269,8 +270,8 @@
         {
           "name": "z_idle1",
           "rect": [
-            865,
-            862,
+            225,
+            817,
             91,
             105
           ],
@@ -310,8 +311,8 @@
         {
           "name": "shadow",
           "rect": [
-            67,
-            987,
+            993,
+            197,
             58,
             28
           ],
@@ -323,6 +324,7 @@
             58,
             28
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,

@@ -77,7 +77,7 @@ cc.Class({
   },
   //宠物按钮被点击
   on_pet_button_click: function on_pet_button_click() {
-    this.sound_control.play_sound_effect("main_button_click");
+    // this.sound_control.play_sound_effect("main_button_click");
     var node = this.game_scene_js.create_pet_ui(this.node);
 
     if (node != null) {
@@ -207,6 +207,7 @@ cc.Class({
             user_data.user_data.now_ex = 0;
             user_data.user_data.level++;
             user_data.user_data.skill_point++;
+            this.game_scene_js.create_tips_ui(this.game_scene_js.node, "gift_ad_level"); // show notic level up
           }
 
           this.unschedule(callback);
@@ -217,7 +218,7 @@ cc.Class({
         ;
       };
 
-      this.schedule(callback, 0.03);
+      this.schedule(callback, 0.05);
     } else {
       user_data.user_data.now_ex += num;
     }
@@ -273,7 +274,7 @@ cc.Class({
       ;
     };
 
-    this.schedule(this.wareHouse_shcedule, 0.5);
+    this.schedule(this.wareHouse_shcedule, 0.1);
   },
   //果园被点击
   on_orchard_button_click: function on_orchard_button_click() {
@@ -287,7 +288,7 @@ cc.Class({
       _fx["default"].save();
     };
 
-    this.schedule(callback, 10, cc.macro.REPEAT_FOREVER);
+    this.schedule(callback, 1, cc.macro.REPEAT_FOREVER);
   },
   //刷新土地
   updata_land: function updata_land(land_index) {

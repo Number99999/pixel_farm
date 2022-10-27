@@ -15,26 +15,6 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
-#admob
--keep class com.google.ads.** { *; }
--dontwarn com.google.ads.**
-#sdkbox
--keep class com.sdkbox.** { *; }
--dontwarn com.sdkbox.**
-# unityads
-# Keep filenames and line numbers for stack traces
--keepattributes SourceFile,LineNumberTable
-# Keep JavascriptInterface for WebView bridge
--keepattributes JavascriptInterface
-# Sometimes keepattributes is not enough to keep annotations
--keep class android.webkit.JavascriptInterface {
-   *;
-}
-# Keep all classes in Unity Ads package
--keep class com.unity3d.ads.** {
-   *;
-}
--dontwarn com.unity3d.services.**
 # google play service
 -keep class com.google.android.gms.** { *; }
 -dontwarn com.google.android.gms.**

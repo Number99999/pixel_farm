@@ -92,6 +92,7 @@ cc.Class({
                     user_data.user_data.pet[this.index].have = 1;
                     this.game_scene_js.create_pet(this.game_scene_js.node, this.index);
                     this.button_buy.active = false;
+                    
                 }
                 else this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_gold");
                 this.update_content();

@@ -1119,8 +1119,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "421691hC8FIY7NsvX/7RhYr",
-    "handler": "showInterstitial",
+    "_componentId": "7548f9QM11K+qkbzP1yyO2m",
+    "handler": "showRewardedVideo",
     "customEventData": ""
   },
   {
@@ -1142,7 +1142,7 @@
       "__id__": 6
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 32
@@ -2106,13 +2106,19 @@
     "_id": ""
   },
   {
-    "__type__": "421691hC8FIY7NsvX/7RhYr",
+    "__type__": "7548f9QM11K+qkbzP1yyO2m",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
+    "showFullUnitId": "4FFDC51A8F644662015A54080BC34192",
+    "videoUnitId": "3AE3B3F472BC3F1D02F8C794A3376F56",
+    "banner": null,
+    "showFull": null,
+    "video": null,
+    "rewardVideoCallback": null,
     "_id": ""
   },
   {

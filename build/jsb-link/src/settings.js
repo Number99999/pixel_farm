@@ -50,5 +50,7 @@ window._CCSettings = {
     orientation: "",
     server: "",
     debug: true,
-    jsList: []
+    jsList: [
+        "assets/cs-tradplusad/tradplusad.js"
+    ]
 };

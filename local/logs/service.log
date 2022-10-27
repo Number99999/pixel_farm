@@ -106,3 +106,240 @@ Cocos Service 10/19/2022, 2:28:58 PM pixel_farm-main	insert code "
 Cocos Service 10/19/2022, 2:28:58 PM pixel_farm-main	replace code "packagingOptions {
         exclude 'okhttp3/internal/publicsuffix/publicsuffixes.gz' to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/packagingOptions[ ]*\{/"
 
+Cocos Service 10/25/2022, 4:56:23 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 4:56:23 PM pixel_farm-main	insert code "    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml" in line 7
+
+Cocos Service 10/25/2022, 4:56:23 PM pixel_farm-main	append code "
+# Proguard Cocos Analytics for release
+-keep class com.cocos.analytics.** { *; }
+-dontwarn com.cocos.analytics.**
+ to "C:\pixel_farm-main\build\jsb-link/frameworks/runtime-src/proj.android-studio/app/proguard-rules.pro"
+
+Cocos Service 10/25/2022, 4:56:23 PM pixel_farm-main	replace code "    ndk { abiFilters PROP_APP_ABI.split(':') }
+        }
+    }
+
+    sourceSets.main to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/\}[\s]*\}[\s]*sourceSets\.main/g"
+
+Cocos Service 10/25/2022, 4:56:23 PM pixel_farm-main	insert code "
+    packagingOptions {
+    } to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" in line 4
+
+Cocos Service 10/25/2022, 4:56:23 PM pixel_farm-main	replace code "packagingOptions {
+        exclude 'okhttp3/internal/publicsuffix/publicsuffixes.gz' to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/packagingOptions[ ]*\{/"
+
+Cocos Service 10/25/2022, 5:23:50 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 5:36:41 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 5:36:41 PM pixel_farm-main	insert code "    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml" in line 7
+
+Cocos Service 10/25/2022, 5:36:41 PM pixel_farm-main	append code "
+# Proguard Cocos Analytics for release
+-keep class com.cocos.analytics.** { *; }
+-dontwarn com.cocos.analytics.**
+ to "C:\pixel_farm-main\build\jsb-link/frameworks/runtime-src/proj.android-studio/app/proguard-rules.pro"
+
+Cocos Service 10/25/2022, 5:36:41 PM pixel_farm-main	replace code "    ndk { abiFilters PROP_APP_ABI.split(':') }
+        }
+    }
+
+    sourceSets.main to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/\}[\s]*\}[\s]*sourceSets\.main/g"
+
+Cocos Service 10/25/2022, 5:36:41 PM pixel_farm-main	insert code "
+    packagingOptions {
+    } to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" in line 4
+
+Cocos Service 10/25/2022, 5:36:41 PM pixel_farm-main	replace code "packagingOptions {
+        exclude 'okhttp3/internal/publicsuffix/publicsuffixes.gz' to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/packagingOptions[ ]*\{/"
+
+Cocos Service 10/25/2022, 5:49:24 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 5:50:51 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 5:52:10 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 5:52:10 PM pixel_farm-main	insert code "    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml" in line 7
+
+Cocos Service 10/25/2022, 5:52:10 PM pixel_farm-main	append code "
+# Proguard Cocos Analytics for release
+-keep class com.cocos.analytics.** { *; }
+-dontwarn com.cocos.analytics.**
+ to "C:\pixel_farm-main\build\jsb-link/frameworks/runtime-src/proj.android-studio/app/proguard-rules.pro"
+
+Cocos Service 10/25/2022, 5:52:10 PM pixel_farm-main	replace code "    ndk { abiFilters PROP_APP_ABI.split(':') }
+        }
+    }
+
+    sourceSets.main to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/\}[\s]*\}[\s]*sourceSets\.main/g"
+
+Cocos Service 10/25/2022, 5:52:10 PM pixel_farm-main	insert code "
+    packagingOptions {
+    } to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" in line 4
+
+Cocos Service 10/25/2022, 5:52:10 PM pixel_farm-main	replace code "packagingOptions {
+        exclude 'okhttp3/internal/publicsuffix/publicsuffixes.gz' to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/packagingOptions[ ]*\{/"
+
+Cocos Service 10/25/2022, 5:52:30 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 6:08:59 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 6:09:23 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 6:11:19 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 6:11:19 PM pixel_farm-main	insert code "    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml" in line 7
+
+Cocos Service 10/25/2022, 6:11:19 PM pixel_farm-main	append code "
+# Proguard Cocos Analytics for release
+-keep class com.cocos.analytics.** { *; }
+-dontwarn com.cocos.analytics.**
+ to "C:\pixel_farm-main\build\jsb-link/frameworks/runtime-src/proj.android-studio/app/proguard-rules.pro"
+
+Cocos Service 10/25/2022, 6:11:19 PM pixel_farm-main	replace code "    ndk { abiFilters PROP_APP_ABI.split(':') }
+        }
+    }
+
+    sourceSets.main to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/\}[\s]*\}[\s]*sourceSets\.main/g"
+
+Cocos Service 10/25/2022, 6:11:19 PM pixel_farm-main	insert code "
+    packagingOptions {
+    } to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" in line 4
+
+Cocos Service 10/25/2022, 6:11:19 PM pixel_farm-main	replace code "packagingOptions {
+        exclude 'okhttp3/internal/publicsuffix/publicsuffixes.gz' to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/packagingOptions[ ]*\{/"
+
+Cocos Service 10/25/2022, 6:21:03 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/25/2022, 6:21:03 PM pixel_farm-main	insert code "    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml" in line 7
+
+Cocos Service 10/25/2022, 6:21:03 PM pixel_farm-main	append code "
+# Proguard Cocos Analytics for release
+-keep class com.cocos.analytics.** { *; }
+-dontwarn com.cocos.analytics.**
+ to "C:\pixel_farm-main\build\jsb-link/frameworks/runtime-src/proj.android-studio/app/proguard-rules.pro"
+
+Cocos Service 10/25/2022, 6:21:03 PM pixel_farm-main	replace code "    ndk { abiFilters PROP_APP_ABI.split(':') }
+        }
+    }
+
+    sourceSets.main to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/\}[\s]*\}[\s]*sourceSets\.main/g"
+
+Cocos Service 10/25/2022, 6:21:03 PM pixel_farm-main	insert code "
+    packagingOptions {
+    } to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" in line 4
+
+Cocos Service 10/25/2022, 6:21:03 PM pixel_farm-main	replace code "packagingOptions {
+        exclude 'okhttp3/internal/publicsuffix/publicsuffixes.gz' to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/packagingOptions[ ]*\{/"
+
+Cocos Service 10/25/2022, 6:22:13 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 10:57:35 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 11:26:38 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 11:26:38 AM pixel_farm-main	insert code "    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml" in line 7
+
+Cocos Service 10/26/2022, 11:26:38 AM pixel_farm-main	append code "
+# Proguard Cocos Analytics for release
+-keep class com.cocos.analytics.** { *; }
+-dontwarn com.cocos.analytics.**
+ to "C:\pixel_farm-main\build\jsb-link/frameworks/runtime-src/proj.android-studio/app/proguard-rules.pro"
+
+Cocos Service 10/26/2022, 11:26:38 AM pixel_farm-main	replace code "    ndk { abiFilters PROP_APP_ABI.split(':') }
+        }
+    }
+
+    sourceSets.main to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/\}[\s]*\}[\s]*sourceSets\.main/g"
+
+Cocos Service 10/26/2022, 11:26:38 AM pixel_farm-main	insert code "
+    packagingOptions {
+    } to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" in line 4
+
+Cocos Service 10/26/2022, 11:26:38 AM pixel_farm-main	replace code "packagingOptions {
+        exclude 'okhttp3/internal/publicsuffix/publicsuffixes.gz' to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/packagingOptions[ ]*\{/"
+
+Cocos Service 10/26/2022, 2:20:21 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 2:20:21 PM pixel_farm-main	insert code "    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml" in line 7
+
+Cocos Service 10/26/2022, 2:20:21 PM pixel_farm-main	append code "
+# Proguard Cocos Analytics for release
+-keep class com.cocos.analytics.** { *; }
+-dontwarn com.cocos.analytics.**
+ to "C:\pixel_farm-main\build\jsb-link/frameworks/runtime-src/proj.android-studio/app/proguard-rules.pro"
+
+Cocos Service 10/26/2022, 2:20:22 PM pixel_farm-main	replace code "    ndk { abiFilters PROP_APP_ABI.split(':') }
+        }
+    }
+
+    sourceSets.main to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/\}[\s]*\}[\s]*sourceSets\.main/g"
+
+Cocos Service 10/26/2022, 2:20:22 PM pixel_farm-main	insert code "
+    packagingOptions {
+    } to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" in line 4
+
+Cocos Service 10/26/2022, 2:20:22 PM pixel_farm-main	replace code "packagingOptions {
+        exclude 'okhttp3/internal/publicsuffix/publicsuffixes.gz' to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build.gradle" with regular "/packagingOptions[ ]*\{/"
+
+Cocos Service 10/26/2022, 2:30:36 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 2:35:12 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 2:37:26 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 3:02:54 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 5:09:45 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 5:14:55 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 5:43:15 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 5:50:13 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 6:00:03 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 6:04:23 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 6:07:31 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/26/2022, 6:10:08 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 9:19:51 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 9:20:14 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 9:22:40 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 9:37:11 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 10:02:25 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 10:22:47 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 10:57:42 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 11:03:31 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 11:12:08 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 11:14:59 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 11:21:55 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 11:24:57 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 11:35:03 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 11:40:09 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 11:47:10 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 11:53:35 AM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 12:00:22 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+
+Cocos Service 10/27/2022, 12:04:14 PM pixel_farm-main	copy file "C:\Users\admin\.CocosCreator\services\tradplusad\resources\analytics\android\libcocosanalytics.jar to "C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\libs\libcocosanalytics.jar"
+

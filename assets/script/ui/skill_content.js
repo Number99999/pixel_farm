@@ -34,10 +34,10 @@ cc.Class({
                 this.icon_frame.spriteFrame = this.icon_frame_arr[this.skill_index];
                 this.name_frame.spriteFrame = this.name_frame_arr[this.skill_index];
                 this.button_frame.spriteFrame = this.button_frame_arr[0];
-                this.introduce_label.string = "Max gold+" + (500 * gold_max + 500);
+                this.introduce_label.string = "Max gold: " + (500 * gold_max + 500);
                 this.level_label.string = "lv: " + gold_max;
-                this.progress.progress = gold_max / 100;
-                if (gold_max >= 100) {
+                this.progress.progress = gold_max / 200;
+                if (gold_max >= 200) {
                     this.button_frame.node.active = false;
                 }
                 else this.button_frame.node.active=true;
@@ -48,8 +48,8 @@ cc.Class({
                 this.button_frame.spriteFrame = this.button_frame_arr[0];
                 this.introduce_label.string = "Harvest plants faster " + (speed_the_cut + 1) + "%";
                 this.level_label.string = "lv: " + speed_the_cut;
-                this.progress.progress = speed_the_cut / 100;
-                if (speed_the_cut >= 100) {
+                this.progress.progress = speed_the_cut / 99;
+                if (speed_the_cut >= 99) {
                     this.button_frame.node.active = false;
                 }
                 else this.button_frame.node.active=true;
@@ -60,8 +60,8 @@ cc.Class({
                 this.button_frame.spriteFrame = this.button_frame_arr[0];
                 this.introduce_label.string = "Plant growth consumes less resource " + (water_saving + 1) + "%";
                 this.level_label.string = "lv: " + water_saving;
-                this.progress.progress = water_saving / 100;
-                if (water_saving >= 100) {
+                this.progress.progress = water_saving / 99;
+                if (water_saving >= 99) {
                     this.button_frame.node.active = false;
                 }
                 else this.button_frame.node.active=true;
@@ -72,8 +72,8 @@ cc.Class({
                 this.button_frame.spriteFrame = this.button_frame_arr[0];
                 this.introduce_label.string = "Faster planting " + (tool_improve + 1) + "%";
                 this.level_label.string = "lv: " + tool_improve;
-                this.progress.progress = tool_improve / 100;
-                if (tool_improve >= 100) {
+                this.progress.progress = tool_improve / 99;
+                if (tool_improve >= 99) {
                     this.button_frame.node.active = false;
                 }
                 else this.button_frame.node.active=true;
@@ -84,8 +84,8 @@ cc.Class({
                 this.button_frame.spriteFrame = this.button_frame_arr[0];
                 this.introduce_label.string = "Extend worker hours " + (labor_contract + 1) + " \nseconds";
                 this.level_label.string = "lv: " + labor_contract;
-                this.progress.progress = labor_contract / 100;
-                if (labor_contract >= 100) {
+                this.progress.progress = labor_contract / 99;
+                if (labor_contract >= 99) {
                     this.button_frame.node.active = false;
                 }
                 else this.button_frame.node.active=true;
@@ -96,8 +96,8 @@ cc.Class({
                 this.button_frame.spriteFrame = this.button_frame_arr[0];
                 this.introduce_label.string = "Extra every 5 minutes " + (offline_profit + 1) + " \ngold";
                 this.level_label.string = "lv: " + offline_profit;
-                this.progress.progress = offline_profit / 100;
-                if (offline_profit >= 100) {
+                this.progress.progress = offline_profit / 99;
+                if (offline_profit >= 99) {
                     this.button_frame.node.active = false;
                 }
                 else this.button_frame.node.active=true;

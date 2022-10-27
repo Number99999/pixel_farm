@@ -10,19 +10,19 @@
 			"services": [
 				{
 					"service_id": "314",
-					"enable": false,
+					"enable": true,
 					"params": {
 						"appIds": {
-							"android": "04F2B78335B2E7750E54922C8653FE46",
-							"ios": "C8D3D9D1ECB6FD517298477F1FFDF511"
+							"android": "625669A27594D2EAA5A30FAD1CDEF3F2",
+							"ios": ""
 						},
 						"adEnabledMap": {
 							"Admob": true
 						},
 						"isPublishInMainlandChina": false,
 						"paramMap": {
-							"admobAndroidAppId": "2FAAB2CCF0657DD3128F00FA025C4FDF",
-							"admobIosAppId": "9328B5533AF9AA70F85BBEA1EBA13B2A"
+							"admobAndroidAppId": "ca-app-pub-3940256099942544~3347511713",
+							"admobIosAppId": ""
 						},
 						"enableIos14Adaptation": false,
 						"userTrackingUsageDesc": "",

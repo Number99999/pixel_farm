@@ -26,56 +26,6 @@ window.__require = function e(t, n, r) {
   for (var o = 0; o < r.length; o++) s(r[o]);
   return s;
 }({
-  AdMob: [ function(require, module, exports) {
-    "use strict";
-    cc._RF.push(module, "421691hC8FIY7NsvX/7RhYr", "AdMob");
-    "use strict";
-    cc.Class({
-      extends: cc.Component,
-      onLoad: function onLoad() {
-        this.admobInit();
-      },
-      admobInit: function admobInit() {
-        if (cc.sys.isMobile) {
-          var self = this;
-          sdkbox.PluginAdMob.setListener({
-            adViewDidReceiveAd: function adViewDidReceiveAd(name) {
-              self.showInfo("adViewDidReceiveAd name=" + name);
-            },
-            adViewDidFailToReceiveAdWithError: function adViewDidFailToReceiveAdWithError(name, msg) {
-              self.showInfo("adViewDidFailToReceiveAdWithError name=" + name + " msg=" + msg);
-            },
-            adViewWillPresentScreen: function adViewWillPresentScreen(name) {
-              self.showInfo("adViewWillPresentScreen name=" + name);
-            },
-            adViewDidDismissScreen: function adViewDidDismissScreen(name) {
-              self.showInfo("adViewDidDismissScreen name=" + name);
-            },
-            adViewWillDismissScreen: function adViewWillDismissScreen(name) {
-              self.showInfo("adViewWillDismissScreen=" + name);
-            },
-            adViewWillLeaveApplication: function adViewWillLeaveApplication(name) {
-              self.showInfo("adViewWillLeaveApplication=" + name);
-            }
-          });
-          sdkbox.PluginAdMob.init();
-        }
-      },
-      showInfo: function showInfo(string) {
-        cc.log(string);
-      },
-      cacheInterstitial: function cacheInterstitial() {
-        cc.sys.isMobile && sdkbox.PluginAdMob.cache("interstitial");
-      },
-      showInterstitial: function showInterstitial() {
-        cc.sys.isMobile && sdkbox.PluginAdMob.show("interstitial");
-      },
-      showVideo: function showVideo() {
-        cc.sys.isMobile && sdkbox.PluginAdMob.show("reward");
-      }
-    });
-    cc._RF.pop();
-  }, {} ],
   AdsManager: [ function(require, module, exports) {
     "use strict";
     cc._RF.push(module, "7548f9QM11K+qkbzP1yyO2m", "AdsManager");
@@ -83,24 +33,28 @@ window.__require = function e(t, n, r) {
     cc.Class({
       extends: cc.Component,
       properties: {
+        bannerUnitId: "",
         showFullUnitId: "",
         videoUnitId: "",
+        bannerOnStart: false,
         banner: null,
         showFull: null,
         video: null,
-        rewardVideoCallback: null
+        rewardVideoCallback: null,
+        isTest: false
       },
       onLoad: function onLoad() {
         var _this = this;
         if (cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD) {
           tradplus.tradPlusService.setEnableLog(true);
           tradplus.tradPlusService.initSdk();
+          cc.log("====25====");
           tradplus.tradPlusService.setNeedTestDevice(true);
           tradplus.tradPlusService.setEnableLog(true);
-          this.banner = tradplus.tradPlusService.getBanner(this.bannerUnitId);
+          this.bannerOnStart && (this.banner = tradplus.tradPlusService.getBanner(this.bannerUnitId));
           this.showFull = tradplus.tradPlusService.getInterstitial(this.showFullUnitId);
           this.video = tradplus.tradPlusService.getRewardedVideo(this.videoUnitId);
-          this.banner.setAdListener({
+          this.bannerOnStart && this.banner.setAdListener({
             onAdLoaded: function onAdLoaded(adSourceName) {
               cc.log("banner loaded");
             },
@@ -133,13 +87,19 @@ window.__require = function e(t, n, r) {
             onAdAllLoaded: function onAdAllLoaded(adSourceName) {},
             onAdLoaded: function onAdLoaded(adSourceName) {},
             onAdClicked: function onAdClicked() {},
-            onAdFailed: function onAdFailed(adError) {},
+            onAdFailed: function onAdFailed(adError) {
+              cc.log("onAdFailed: " + adError);
+            },
             onAdImpression: function onAdImpression() {},
             onAdClosed: function onAdClosed() {
               _this.video.loadAd();
             },
-            onAdPlayFailed: function onAdPlayFailed(adError) {},
-            onOneLayerLoadFailed: function onOneLayerLoadFailed(adSourceName, adError) {},
+            onAdPlayFailed: function onAdPlayFailed(adError) {
+              cc.log("onAdPlayFailed: " + adError);
+            },
+            onOneLayerLoadFailed: function onOneLayerLoadFailed(adSourceName, adError) {
+              cc.log("onOneLayerLoadFailed: " + adError);
+            },
             onOneLayerLoaded: function onOneLayerLoaded(adSourceName) {},
             onAdNotReward: function onAdNotReward() {},
             onAdReward: function onAdReward(currencyName, amount) {
@@ -157,7 +117,8 @@ window.__require = function e(t, n, r) {
         this.video.loadAd();
       },
       showRewardedVideo: function showRewardedVideo(callback) {
-        if ((cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD) && null != this.showFull && this.video.ready) {
+        cc.log(this.isTest);
+        if (this.isTest) callback(); else if ((cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD) && null != this.video && this.video.ready) {
           this.rewardVideoCallback = callback;
           this.video.showAd();
         }
@@ -169,10 +130,14 @@ window.__require = function e(t, n, r) {
         cc.sys.platform !== cc.sys.IPHONE && cc.sys.platform !== cc.sys.ANDROID && cc.sys.platform !== cc.sys.IPAD || null != this.showFull && this.showFull.ready && this.showFull.showAd();
       },
       isHasVideo: function isHasVideo() {
-        return this.video.ready;
+        if (this.isTest) return true;
+        if (cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD) return this.video.ready;
+        return false;
       },
       isHasInterstitial: function isHasInterstitial() {
-        return this.showFull.ready;
+        if (this.isTest) return true;
+        if (cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD) return this.showFull.ready;
+        return false;
       }
     });
     cc._RF.pop();
@@ -449,6 +414,7 @@ window.__require = function e(t, n, r) {
           for (var i = 0; i < this.land_group.children.length; i++) if (1 == user_data.user_data.land[i].have) {
             this.group_node.children[i].active = true;
             this.group_node.children[i].getChildByName("button_icon").getComponent(cc.Sprite).spriteFrame = this.frame_arr[1];
+            console.log("hello 32");
           }
           break;
 
@@ -456,6 +422,7 @@ window.__require = function e(t, n, r) {
           for (var i = 0; i < this.land_group.children.length; i++) if (1 == user_data.user_data.land[i].have) {
             this.group_node.children[i].active = true;
             this.group_node.children[i].getChildByName("button_icon").getComponent(cc.Sprite).spriteFrame = this.frame_arr[2];
+            console.log("hello 41");
           }
           break;
 
@@ -463,6 +430,7 @@ window.__require = function e(t, n, r) {
           for (var i = 0; i < this.land_group.children.length; i++) if (1 == user_data.user_data.land[i].have) {
             this.group_node.children[i].active = true;
             this.group_node.children[i].getChildByName("button_icon").getComponent(cc.Sprite).spriteFrame = this.frame_arr[0];
+            console.log("hello 50");
           }
         }
       },
@@ -484,7 +452,7 @@ window.__require = function e(t, n, r) {
 
          case "till":
           this.land_group.children[land_index].getComponent("land").till();
-          user_data.user_data.land[land_index].land_state = "tilling";
+          user_data.user_data.land[land_index].land_state = "wait_plant";
           break;
 
          case "plant":
@@ -515,41 +483,41 @@ window.__require = function e(t, n, r) {
       staff: {
         0: {
           name: "Alice",
-          introduce: "Dream of owning      your own farm,          believe it or not",
+          introduce: "Dream of owning \nyour own farm, \nbelieve it or not",
           work_time: 120,
           rest_time: 220,
           cost: 30
         },
         1: {
-          name: "Cute Lit",
-          introduce: "It's impossible to     work part-time, it's impossible to work   part-time in this life",
+          name: "Norman",
+          introduce: "It's impossible to \nwork part-time, it's impossible to work \npart-time in this life",
           work_time: 125,
           rest_time: 225,
           cost: 60
         },
         2: {
-          name: "Light",
-          introduce: "I'm creater of this  game",
+          name: "Peter",
+          introduce: "I'm creater of this\ngame",
           work_time: 130,
           rest_time: 230,
           cost: 600
         },
         3: {
-          name: "Girl",
+          name: "Samatha",
           introduce: "Supper cute",
           work_time: 135,
           rest_time: 235,
           cost: 2400
         },
         4: {
-          name: "Honest Man Black",
+          name: "Richad",
           introduce: "A simp lord :))",
           work_time: 140,
           rest_time: 240,
           cost: 12e3
         },
         5: {
-          name: "Little Red Riding Hood",
+          name: "Owen",
           introduce: "Why can't i meet my grandma",
           work_time: 145,
           rest_time: 245,
@@ -686,7 +654,7 @@ window.__require = function e(t, n, r) {
       },
       pet: {
         0: {
-          name: "Shiba",
+          name: "Dog",
           introduce: "A cute dog",
           skill_introduce: "Every 60 seconds, give the player 3 exp",
           need_ad: 5,
@@ -698,7 +666,7 @@ window.__require = function e(t, n, r) {
           get_type: "ad"
         },
         1: {
-          name: "Cat",
+          name: "Gray cat",
           introduce: "A cute dog",
           skill_introduce: "Every 80 seconds, give the player 5 exp",
           need_ad: 10,
@@ -710,7 +678,7 @@ window.__require = function e(t, n, r) {
           get_type: "ad"
         },
         2: {
-          name: "Hamster",
+          name: "Yellow dog",
           introduce: "Little Eight's brother will stay for 300s",
           skill_introduce: "Every 60 seconds, give the player 3 exp",
           need_ad: 1,
@@ -718,12 +686,12 @@ window.__require = function e(t, n, r) {
           produce_ex_time: 80,
           get_type: "share",
           cost: 500,
-          type_buy: "diamond",
+          type_buy: "gold",
           stay_time: 300,
           share_max: 3
         },
         3: {
-          name: "Corgi",
+          name: "Yellow cat",
           introduce: "The white rabbit will only stay for 400s",
           skill_introduce: "Every 80 seconds, give the player 5 exp",
           need_ad: 1,
@@ -731,7 +699,7 @@ window.__require = function e(t, n, r) {
           produce_ex_time: 80,
           get_type: "share",
           cost: 700,
-          type_buy: "diamond",
+          type_buy: "gold",
           stay_time: 400,
           share_max: 3
         }
@@ -802,10 +770,10 @@ window.__require = function e(t, n, r) {
       },
       load: function load() {
         try {
-          var local_user_data = JSON.parse(cc.sys.localStorage.getItem("user_data"));
+          var local_user_data = null;
           if (null !== local_user_data) {
             this.updata_user_data(local_user_data);
-            cc.log("error load");
+            cc.log("load successfull");
           } else this.save();
         } catch (err) {
           this.save();
@@ -884,7 +852,6 @@ window.__require = function e(t, n, r) {
         this.game_scene_js.create_option_ui();
       },
       on_pet_button_click: function on_pet_button_click() {
-        this.sound_control.play_sound_effect("main_button_click");
         var node = this.game_scene_js.create_pet_ui(this.node);
         null != node && node.getComponent("pet_ui").ini_node();
       },
@@ -967,13 +934,14 @@ window.__require = function e(t, n, r) {
                 user_data.user_data.now_ex = 0;
                 user_data.user_data.level++;
                 user_data.user_data.skill_point++;
+                this.game_scene_js.create_tips_ui(this.game_scene_js.node, "gift_ad_level");
               }
               this.unschedule(callback);
               this.set_ex_progress();
               this.add_ex_anim = 0;
             }
           };
-          this.schedule(callback, .03);
+          this.schedule(callback, .05);
         } else user_data.user_data.now_ex += num;
       },
       set_gold_progress: function set_gold_progress() {
@@ -1010,7 +978,7 @@ window.__require = function e(t, n, r) {
             this.wareHouse_node.getChildByName("wareHouse_full").active = false;
           }
         };
-        this.schedule(this.wareHouse_shcedule, .5);
+        this.schedule(this.wareHouse_shcedule, .1);
       },
       on_orchard_button_click: function on_orchard_button_click() {
         this.sound_control.play_sound_effect("un_click");
@@ -1020,7 +988,7 @@ window.__require = function e(t, n, r) {
         var callback = function callback() {
           _fx["default"].save();
         };
-        this.schedule(callback, 10, cc.macro.REPEAT_FOREVER);
+        this.schedule(callback, 1, cc.macro.REPEAT_FOREVER);
       },
       updata_land: function updata_land(land_index) {
         this.land_group_node.children[land_index].getComponent("land").ini_node(land_index);
@@ -1615,7 +1583,7 @@ window.__require = function e(t, n, r) {
                 break;
               }
             }
-            _this2.game_rules_js.add_ex(1);
+            _this2.game_rules_js.jgg(1);
             _this2.on_node_kill(node);
           }).start();
         }
@@ -2049,6 +2017,7 @@ window.__require = function e(t, n, r) {
           break;
 
          case "wait_till":
+          user_data.user_data.land[this.land_index].land_state = "wait_till";
           this.till();
           break;
 
@@ -2069,13 +2038,15 @@ window.__require = function e(t, n, r) {
           var water_num = user_data.user_data.land[this.land_index].water_num;
           user_data.user_data.land[this.land_index].water_num -= .1 * (1 - user_data.user_data.skill["water_saving"] / 100);
           water_num = user_data.user_data.land[this.land_index].water_num;
+          0 == user_data.user_data.land[this.land_index].have_water && (water_num = 0);
           if (water_num <= 0) {
             this.unschedule(this.water_schedule);
             this.water_buff = 1;
+            user_data.user_data.land[this.land_index].have_water = 0;
             user_data.user_data.land[this.land_index].water_num = 0;
             return;
           }
-          bar.progress = water_num / all_water;
+          0 == user_data.user_data.land[this.land_index].have_water ? bar.progress = 0 : bar.progress = water_num / all_water;
         };
         this.schedule(this.water_schedule, .1);
       },
@@ -2085,10 +2056,10 @@ window.__require = function e(t, n, r) {
           this.water_state = "charge";
           var all_water = config.all_water_num;
           var bar = this.water_progress_node.getComponent(cc.ProgressBar);
+          user_data.user_data.land[this.land_index].have_water = 1;
           var callback = function callback() {
             var now_water = user_data.user_data.land[this.land_index].water_num;
             user_data.user_data.land[this.land_index].water_num += 1;
-            user_data.user_data.land[this.land_index].have_water = 1;
             if (now_water >= all_water) {
               this.unschedule(callback);
               user_data.user_data.land[this.land_index].water_num = all_water;
@@ -2125,11 +2096,11 @@ window.__require = function e(t, n, r) {
           this.tips_node.active = false;
           switch (land_state) {
            case "wait_till":
+            this.wait_next("wait_till");
             this.plant_node.active = false;
             this.plant_progress_node.active = false;
-            this.water_progress_node.active = false;
+            this.water_progress_node.active = true;
             this.node.getComponent(cc.Sprite).spriteFrame = this.land_frame_arr[0];
-            this.wait_next("wait_till");
             break;
 
            case "wait_plant":
@@ -2137,6 +2108,7 @@ window.__require = function e(t, n, r) {
             this.plant_progress_node.active = true;
             this.water_progress_node.active = true;
             this.plant_progress_label.string = "Waiting to be planted";
+            this.plant_node.active = false;
             this.wait_next("plant");
             break;
 
@@ -2154,6 +2126,7 @@ window.__require = function e(t, n, r) {
            default:
             this.set_plant();
             this.node.getComponent(cc.Sprite).spriteFrame = this.land_frame_arr[1];
+            console.log("new land");
             return;
           }
         }
@@ -3202,7 +3175,10 @@ window.__require = function e(t, n, r) {
         box_frame_arr: [ cc.SpriteFrame ],
         icon_group_node: cc.Node,
         label_group_node: cc.Node,
-        lock_group_node: cc.Node
+        lock_group_node: cc.Node,
+        confirm_button_node: cc.Node,
+        sum_gold: 0,
+        index: 0
       },
       ini_node: function ini_node() {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
@@ -3211,6 +3187,32 @@ window.__require = function e(t, n, r) {
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control.show_bannerAd();
         this.set_sell();
+      },
+      button_unlock_click: function button_unlock_click(e, custom) {
+        this.node.children[2].active = false;
+        this.node.children[3].active = true;
+        this.show_comfirm_buy(custom);
+      },
+      show_comfirm_buy: function show_comfirm_buy(custom) {
+        this.sum_gold = Number(0);
+        for (var i = 0; i <= custom; i++) 0 == user_data.user_data.wareHouse[i].have && (this.sum_gold += user_data.user_data.wareHouse[i].cost);
+        this.node.children[3].children[0].getComponent(cc.Label).string = "Do you want use " + this.sum_gold + " gold to buy new repository?";
+        this.index = custom;
+      },
+      buy_repo: function buy_repo() {
+        if (user_data.user_data.gold >= this.sum_gold) {
+          for (var i = 0; i <= this.index; i++) {
+            user_data.user_data.wareHouse[i].have = 1;
+            this.lock_group_node.children[i].active = false;
+            this.label_group_node.children[i].getComponent(cc.Label).string = "0/30";
+            this.game_scene_js.create_tips_ui(this.game_scene_js.node, "unlocked_repo");
+          }
+          this.game_rules_js.add_gold(-this.sum_gold);
+          this.touch_exit();
+        } else {
+          console.log(this.sum_gold + " sum_gold");
+          this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_gold");
+        }
       },
       set_sell: function set_sell() {
         var all_capacity = 30;
@@ -3229,9 +3231,14 @@ window.__require = function e(t, n, r) {
         }
       },
       touch_exit: function touch_exit() {
-        this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
-        this.game_scene_js.on_node_kill(this.node);
+        if (false == this.node.children[2].active) {
+          this.node.children[2].active = true;
+          this.node.children[3].active = false;
+        } else {
+          this.sound_control.play_sound_effect("button_exit");
+          this.ad_control.hide_bannerAd();
+          this.game_scene_js.on_node_kill(this.node);
+        }
       },
       set_estimate_label: function set_estimate_label() {
         var sum = 0;
@@ -3687,10 +3694,10 @@ window.__require = function e(t, n, r) {
           this.icon_frame.spriteFrame = this.icon_frame_arr[this.skill_index];
           this.name_frame.spriteFrame = this.name_frame_arr[this.skill_index];
           this.button_frame.spriteFrame = this.button_frame_arr[0];
-          this.introduce_label.string = "Max gold+" + (500 * gold_max + 500);
+          this.introduce_label.string = "Max gold: " + (500 * gold_max + 500);
           this.level_label.string = "lv: " + gold_max;
-          this.progress.progress = gold_max / 100;
-          this.button_frame.node.active = !(gold_max >= 100);
+          this.progress.progress = gold_max / 200;
+          this.button_frame.node.active = !(gold_max >= 200);
           break;
 
          case 1:
@@ -3699,8 +3706,8 @@ window.__require = function e(t, n, r) {
           this.button_frame.spriteFrame = this.button_frame_arr[0];
           this.introduce_label.string = "Harvest plants faster " + (speed_the_cut + 1) + "%";
           this.level_label.string = "lv: " + speed_the_cut;
-          this.progress.progress = speed_the_cut / 100;
-          this.button_frame.node.active = !(speed_the_cut >= 100);
+          this.progress.progress = speed_the_cut / 99;
+          this.button_frame.node.active = !(speed_the_cut >= 99);
           break;
 
          case 2:
@@ -3709,8 +3716,8 @@ window.__require = function e(t, n, r) {
           this.button_frame.spriteFrame = this.button_frame_arr[0];
           this.introduce_label.string = "Plant growth consumes less resource " + (water_saving + 1) + "%";
           this.level_label.string = "lv: " + water_saving;
-          this.progress.progress = water_saving / 100;
-          this.button_frame.node.active = !(water_saving >= 100);
+          this.progress.progress = water_saving / 99;
+          this.button_frame.node.active = !(water_saving >= 99);
           break;
 
          case 3:
@@ -3719,8 +3726,8 @@ window.__require = function e(t, n, r) {
           this.button_frame.spriteFrame = this.button_frame_arr[0];
           this.introduce_label.string = "Faster planting " + (tool_improve + 1) + "%";
           this.level_label.string = "lv: " + tool_improve;
-          this.progress.progress = tool_improve / 100;
-          this.button_frame.node.active = !(tool_improve >= 100);
+          this.progress.progress = tool_improve / 99;
+          this.button_frame.node.active = !(tool_improve >= 99);
           break;
 
          case 4:
@@ -3729,8 +3736,8 @@ window.__require = function e(t, n, r) {
           this.button_frame.spriteFrame = this.button_frame_arr[0];
           this.introduce_label.string = "Extend worker hours " + (labor_contract + 1) + " \nseconds";
           this.level_label.string = "lv: " + labor_contract;
-          this.progress.progress = labor_contract / 100;
-          this.button_frame.node.active = !(labor_contract >= 100);
+          this.progress.progress = labor_contract / 99;
+          this.button_frame.node.active = !(labor_contract >= 99);
           break;
 
          case 5:
@@ -3739,8 +3746,8 @@ window.__require = function e(t, n, r) {
           this.button_frame.spriteFrame = this.button_frame_arr[0];
           this.introduce_label.string = "Extra every 5 minutes " + (offline_profit + 1) + " \ngold";
           this.level_label.string = "lv: " + offline_profit;
-          this.progress.progress = offline_profit / 100;
-          this.button_frame.node.active = !(offline_profit >= 100);
+          this.progress.progress = offline_profit / 99;
+          this.button_frame.node.active = !(offline_profit >= 99);
           break;
 
          default:
@@ -4160,7 +4167,6 @@ window.__require = function e(t, n, r) {
       },
       on_buy_button_click: function on_buy_button_click() {
         if (user_data.user_data.gold >= config.staff[this.staff_index].cost) {
-          cc.log("\u96c7\u4f63\u5de5\u4eba");
           this.game_rules_js.add_gold(-config.staff[this.staff_index].cost);
           user_data.user_data.staff[this.staff_index].have = 1;
           this.game_rules_js.create_staff(this.staff_index);
@@ -4171,7 +4177,6 @@ window.__require = function e(t, n, r) {
         } else {
           this.sound_control.play_sound_effect("un_click");
           var node = this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_money");
-          cc.log("\u91d1\u5e01\u4e0d\u8db3");
         }
       },
       touch_exit: function touch_exit() {
@@ -4523,6 +4528,16 @@ window.__require = function e(t, n, r) {
          case "share_max":
           this.label.string = "Reached today's limit~";
           this.icon_frame.spriteFrame = this.icon_frame_arr[1];
+          break;
+
+         case "unlocked_repo":
+          this.label.string = "Unlocked this repository";
+          this.icon_frame.spriteFrame = this.icon_frame_arr[1];
+          break;
+
+         case "no_video_today":
+          this.label.string = "Out of video view";
+          this.icon_frame.spriteFrame = this.icon_frame_arr[1];
         }
         this.end_anim();
       },
@@ -4568,6 +4583,7 @@ window.__require = function e(t, n, r) {
       save_date: 0,
       novice: 0,
       gold: 0,
+      diamond: 0,
       level: 1,
       now_ex: 0,
       wareHouse_level: 1,
@@ -4576,6 +4592,8 @@ window.__require = function e(t, n, r) {
       sound_state: 1,
       hotel_cache_gold: 0,
       videotape_share_count: 0,
+      watch_video: 0,
+      auto_sell: 0,
       staff: {
         0: {
           have: 0,
@@ -4689,140 +4707,140 @@ window.__require = function e(t, n, r) {
         0: {
           have: 1,
           type_bye: "gold",
-          cost: 500,
+          cost: 0,
           id_product: 8,
           count: 0
         },
         1: {
           have: 1,
           type_bye: "gold",
-          cost: 500,
+          cost: 0,
           id_product: 8,
           count: 0
         },
         2: {
           have: 1,
           type_bye: "gold",
-          cost: 500,
+          cost: 0,
           id_product: 8,
           count: 0
         },
         3: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 5e3,
           id_product: 8,
           count: 0
         },
         4: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 15e3,
           id_product: 8,
           count: 0
         },
         5: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 3e4,
           id_product: 8,
           count: 0
         },
         6: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 6e4,
           id_product: 8,
           count: 0
         },
         7: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         8: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         9: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         10: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         11: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         12: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         13: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         14: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         15: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         16: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         17: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         18: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         },
         19: {
           have: 0,
           type_bye: "gold",
-          cost: 500,
+          cost: 1e5,
           id_product: 8,
           count: 0
         }
@@ -4907,8 +4925,8 @@ window.__require = function e(t, n, r) {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
+        this.adsManager = cc.find("UI_ROOT").getComponent("AdsManager");
         this.ad_control.show_bannerAd();
-        this.tips_label.string = "Successfully shared:" + _user_data["default"].user_data.videotape_share_count + "Second-rate";
         this.add_gold = Math.floor((500 * _user_data["default"].user_data.skill["gold_max"] + 500) / 20) + 1;
         this.add_ex = Math.floor(_user_data["default"].user_data.level / 10) + 1;
         if (null == this.game_rules_js.videotape_path) {
@@ -4920,13 +4938,29 @@ window.__require = function e(t, n, r) {
         }
         this.gold_lable.string = "+" + this.add_gold;
         this.ex_label.string = "+" + this.add_ex;
+        var today = new Date();
+        _user_data["default"].user_data.save_date == today.getDate() ? this.tips_label.string = "Watched: " + _user_data["default"].user_data.watch_video + "/3" : this.tips_label.string = "Watched: 0/3";
       },
       on_button_click: function on_button_click() {
-        this.sound_control.play_sound_effect("button_click");
-        if (null == this.game_rules_js.videotape_path) {
-          this.game_rules_js.start_videotape();
-          this.touch_exit();
-        } else this.video_share();
+        var _this = this;
+        var today = new Date();
+        if (today.getDate() == _user_data["default"].user_data.save_date && _user_data["default"].user_data.watch_video < 3) {
+          cc.log("=======48=======");
+          this.adsManager.showRewardedVideo(function() {
+            _user_data["default"].user_data.watch_video++;
+            cc.log("=======50=======");
+            _this.tips_label.string = "Watched: " + _user_data["default"].user_data.watch_video + "/3";
+            _user_data["default"].user_data.save_date = today.getDate();
+          });
+        } else if (today.getDate() != _user_data["default"].user_data.save_date) {
+          this.adsManager.showRewardedVideo(function() {
+            cc.log("=======59=======");
+            watch_video = 1;
+            _this.tips_label.string = "Watched: " + _user_data["default"].user_data.watch_video + "/3";
+            _user_data["default"].user_data.save_date = today.getDate();
+          });
+          cc.log("====65====");
+        } else this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_video_today");
       },
       on_delete_button_click: function on_delete_button_click() {
         this.game_rules_js.videotape_path = null;
@@ -4934,7 +4968,7 @@ window.__require = function e(t, n, r) {
         this.ini_node();
       },
       video_share: function video_share() {
-        var _this = this;
+        var _this2 = this;
         if ("undefined" !== typeof wx) {
           if (null == this.game_rules_js.videotape_path) return;
           var self = this;
@@ -4950,21 +4984,11 @@ window.__require = function e(t, n, r) {
               self.videotape_share_succes();
             },
             fail: function fail() {
-              console.log("\u5f55\u5c4f\u5206\u4eab\u5931\u8d25", _this.videotape_path);
+              console.log("\u5f55\u5c4f\u5206\u4eab\u5931\u8d25", _this2.videotape_path);
               self.videotape_share_fail();
             }
           });
         }
-      },
-      videotape_share_succes: function videotape_share_succes() {
-        this.game_scene_js.create_tips_ui(this.node.parent, "videotape_share_succes");
-        this.game_rules_js.videotape_path = null;
-        _user_data["default"].user_data.videotape_share_count++;
-        var gold = Math.floor(this.add_gold / 6);
-        var ex = Math.floor(this.add_ex / 3);
-        for (var i = 0; i < 6; i++) this.game_scene_js.create_gold_effect(this.purse_node, i, gold);
-        for (var i = 0; i < 5; i++) this.game_scene_js.create_ex_effect(this.ex_node, i, ex);
-        this.ini_node();
       },
       videotape_share_fail: function videotape_share_fail() {
         this.game_scene_js.create_tips_ui(this.node.parent, "videotape_share_fail");
@@ -4974,6 +4998,9 @@ window.__require = function e(t, n, r) {
         this.sound_control.play_sound_effect("button_exit");
         this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
+      },
+      add_gold_video: function add_gold_video() {
+        this.game_rules_js.add_gold(Math.floor((500 * _user_data["default"].user_data.skill["gold_max"] + 500) / 20) + 1);
       },
       start: function start() {}
     });
@@ -4993,4 +5020,4 @@ window.__require = function e(t, n, r) {
     });
     cc._RF.pop();
   }, {} ]
-}, {}, [ "use_reversed_rotateBy", "use_v2.1-2.2.1_cc.Toggle_event", "AdMob", "AdsManager", "pet_ai", "player_role", "staff_ai", "config", "push", "videotape", "ad_control", "sound_control", "ad_car", "light", "fx", "game_rules", "game_scene", "loading_scene", "button_more", "gift_ui", "hotel_ui", "land", "novice_ui", "offline_profit", "option_ui", "pet_content", "pet_ui", "plant_ui", "repo_ui", "rest_ui", "sell_ui", "shop_buy_ui", "shop_content", "shop_ui", "skill_content", "staff_content", "staff_ui", "study_ui", "tips_ui", "videotape_ui", "user_data" ]);
+}, {}, [ "use_reversed_rotateBy", "use_v2.1-2.2.1_cc.Toggle_event", "AdsManager", "pet_ai", "player_role", "staff_ai", "config", "push", "videotape", "ad_control", "sound_control", "ad_car", "light", "fx", "game_rules", "game_scene", "loading_scene", "button_more", "gift_ui", "hotel_ui", "land", "novice_ui", "offline_profit", "option_ui", "pet_content", "pet_ui", "plant_ui", "repo_ui", "rest_ui", "sell_ui", "shop_buy_ui", "shop_content", "shop_ui", "skill_content", "staff_content", "staff_ui", "study_ui", "tips_ui", "videotape_ui", "user_data" ]);

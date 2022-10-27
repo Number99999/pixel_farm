@@ -9,68 +9,75 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // bannerUnitId: "",
+        bannerUnitId: "",
         showFullUnitId: "",
         videoUnitId: "",
+        bannerOnStart: false,
         banner: null,
         showFull: null,
         video: null,
         rewardVideoCallback: null,
+        isTest: false,
         //bannerLoaded: false,
     },
 
     onLoad() {
-        if (cc.sys.platform===cc.sys.IPHONE || cc.sys.platform===cc.sys.ANDROID || cc.sys.platform===cc.sys.IPAD) {
+        if (cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD) {
             // Enable debug log, this is for testing only, please comment it out before publish.
             tradplus.tradPlusService.setEnableLog(true);
             // Initialize the SDK.
             tradplus.tradPlusService.initSdk();
+            cc.log("====25====");
             // Enable test mode, this is for testing only, please comment it out before publish.
             tradplus.tradPlusService.setNeedTestDevice(true);
             // Enable debug log, this is for testing only, please comment it out before publish.
             tradplus.tradPlusService.setEnableLog(true);
 
-            this.banner = tradplus.tradPlusService.getBanner(this.bannerUnitId);
+            if (this.bannerOnStart) {
+                this.banner = tradplus.tradPlusService.getBanner(this.bannerUnitId);
+            }
+
             this.showFull = tradplus.tradPlusService.getInterstitial(this.showFullUnitId);
             this.video = tradplus.tradPlusService.getRewardedVideo(this.videoUnitId);
 
-            this.banner.setAdListener({
-                onAdLoaded: (adSourceName) => {
-                    // Triggered on Ad loaded, adSourceName is the name of Ad source platform.
-                    //this.bannerLoaded = true;
-                    cc.log("banner loaded");
-                },
+            if (this.bannerOnStart) {
+                this.banner.setAdListener({
+                    onAdLoaded: (adSourceName) => {
+                        // Triggered on Ad loaded, adSourceName is the name of Ad source platform.
+                        //this.bannerLoaded = true;
+                        cc.log("banner loaded");
+                    },
 
-                onAdClicked: () => {
-                    // Triggered on Ad clicked.
-                },
+                    onAdClicked: () => {
+                        // Triggered on Ad clicked.
+                    },
 
-                onAdLoadFailed: (adError) => {
-                    // Triggered on Ad load failed, adError contains error information.
-                    cc.log("AdLoadFailed: " + adError);
-                },
+                    onAdLoadFailed: (adError) => {
+                        // Triggered on Ad load failed, adError contains error information.
+                        cc.log("AdLoadFailed: " + adError);
+                    },
 
-                onAdImpression: () => {
-                    // Triggered on Ad shown.
-                },
+                    onAdImpression: () => {
+                        // Triggered on Ad shown.
+                    },
 
-                onAdShowFailed: (adError) => {
-                    // Triggered on Ad show failed, adError contains error information.
-                    // NOTE: This callback will only triggered on Android.
-                    cc.log("AdShowFailed" + adError);
-                },
+                    onAdShowFailed: (adError) => {
+                        // Triggered on Ad show failed, adError contains error information.
+                        // NOTE: This callback will only triggered on Android.
+                        cc.log("AdShowFailed" + adError);
+                    },
 
-                onAdClosed: () => {
-                    // Triggered on Ad closed.
-                    // NOTE: This callback will only triggered on Android.
-                },
+                    onAdClosed: () => {
+                        // Triggered on Ad closed.
+                        // NOTE: This callback will only triggered on Android.
+                    },
 
-                onBannerRefreshed: () => {
-                    // Triggered on Ad refreshed.
-                    // NOTE: This callback will only triggered on Android.
-                },
-            });
-
+                    onBannerRefreshed: () => {
+                        // Triggered on Ad refreshed.
+                        // NOTE: This callback will only triggered on Android.
+                    },
+                });
+            }
             this.showFull.setAdListener({
                 onAdAllLoaded: (adSourceName) => {
                     // Triggered on Ad loaded, adSourceName is the name of Ad source platform.
@@ -131,7 +138,7 @@ cc.Class({
 
                 onAdFailed: (adError) => {
                     // Triggered on Ad load failed, adError contains error information.
-                    // cc.log("onAdFailed: " + adError);
+                    cc.log("onAdFailed: " + adError);
                 },
 
                 onAdImpression: () => {
@@ -146,12 +153,12 @@ cc.Class({
 
                 onAdPlayFailed: (adError) => {
                     // Triggered on Ad shown, adSourceName is the name of Ad source platform
-                    // cc.log("onAdPlayFailed: " + adError);
+                    cc.log("onAdPlayFailed: " + adError);
                 },
 
                 onOneLayerLoadFailed: (adSourceName, adError) => {
                     // Triggered on Ad load failed, adError contains error information.
-                    // cc.log("onOneLayerLoadFailed: " + adError);
+                    cc.log("onOneLayerLoadFailed: " + adError);
                 },
 
                 onOneLayerLoaded: (adSourceName) => {
@@ -163,8 +170,9 @@ cc.Class({
                 },
 
                 onAdReward: (currencyName, amount) => {
-                    if(this.rewardVideoCallback != null)
-                    {
+                    console.log("ads: ====173====");
+                    if (this.rewardVideoCallback != null) {
+                        console.log("ads: ====175====");
                         this.rewardVideoCallback();
                     }
                 },
@@ -174,50 +182,58 @@ cc.Class({
         }
     },
 
-    loadInterstitial(){
+    loadInterstitial() {
         this.showFull.loadAd();
     },
 
-    loadVideo(){
+    loadVideo() {
         this.video.loadAd();
     },
 
     showRewardedVideo(callback) {
-        if(cc.sys.platform===cc.sys.IPHONE || cc.sys.platform===cc.sys.ANDROID || cc.sys.platform===cc.sys.IPAD)
-        {
-            if(this.showFull != null && this.video.ready)
-            {
-                this.rewardVideoCallback = callback;
-                this.video.showAd();
+        cc.log(this.isTest);
+        if (this.isTest) {
+            callback();
+        }
+        else {
+            if (cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD) {
+                if (this.video != null && this.video.ready) {
+                    this.rewardVideoCallback = callback;
+                    this.video.showAd();
+                }
             }
         }
     },
 
     showBanner() {
-        if(cc.sys.platform===cc.sys.IPHONE || cc.sys.platform===cc.sys.ANDROID || cc.sys.platform===cc.sys.IPAD)
-        {
-            if(this.banner != null)
-            {
+        if (cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD) {
+            if (this.banner != null) {
                 this.banner.loadAd('bottom');
             }
         }
     },
 
     showInterstitial() {
-        if(cc.sys.platform===cc.sys.IPHONE || cc.sys.platform===cc.sys.ANDROID || cc.sys.platform===cc.sys.IPAD)
-        {
-            if(this.showFull != null && this.showFull.ready)
-            {
+        if (cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD) {
+            if (this.showFull != null && this.showFull.ready) {
                 this.showFull.showAd();
             }
         }
     },
 
-    isHasVideo(){
-        return this.video.ready;
+    isHasVideo() {
+        if (this.isTest)
+            return true
+        if (cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD)
+            return this.video.ready;
+        return false;
     },
 
-    isHasInterstitial(){
-        return this.showFull.ready;
+    isHasInterstitial() {
+        if (this.isTest)
+            return true
+        if (cc.sys.platform === cc.sys.IPHONE || cc.sys.platform === cc.sys.ANDROID || cc.sys.platform === cc.sys.IPAD)
+            return this.showFull.ready;
+        return false;
     },
 });

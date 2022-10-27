@@ -156,7 +156,7 @@ cc.Class({
                 this.unschedule(this.cut_schedule);
                 this.rest_plat_alive_stage();
                 var node = this.game_scene_js.create_light_effect(this.node, 1, this.plant_type);
-                
+
                 if (node != null) {
                     node.getComponent("light").ini_node(this.plant_type, this.node);
                 };
@@ -175,16 +175,19 @@ cc.Class({
         switch (this.button.state) {
             case "wait_cut":
                 this.cut();
+                // console.log("hello 123 cutt"); // harvesting
                 break;
             case "plant":
                 var node = this.game_scene_js.create_plant_ui(this.game_scene_js.node);
                 if (node != null) {
                     node.getComponent("plant_ui").ini_node(this.land_index);
                 };
+                // console.log("hello plant"); // choose plant 
                 break;
             case "wait_till":
                 user_data.user_data.land[this.land_index].land_state = "wait_till";
                 this.till();
+                // console.log("hello 123");   // planting
                 break;
             default:
                 return;
@@ -199,18 +202,20 @@ cc.Class({
         this.water_schedule = function () {
             if (user_data.user_data.land[this.land_index].land_state == "grow") {
                 var water_num = user_data.user_data.land[this.land_index].water_num;
-                // if (user_data.user_data.land[this.land_index].have_water == 0) water_num = 0;//ktra xem ô đất còn nước k
                 user_data.user_data.land[this.land_index].water_num -= 0.1 * (1 - user_data.user_data.skill["water_saving"] / 100);
                 water_num = user_data.user_data.land[this.land_index].water_num;
+                if (user_data.user_data.land[this.land_index].have_water == 0) water_num = 0;
                 if (water_num <= 0) {
                     this.unschedule(this.water_schedule);
                     this.water_buff = 1;
+                    user_data.user_data.land[this.land_index].have_water = 0;
                     user_data.user_data.land[this.land_index].water_num = 0;
                     // user_data.user_data.land[this.land_index].have_water = 0;   // lưu trạng thái có nước hay k của ô đất
                     // console.log("hello " + user_data.user_data.land[this.land_index].have_water)
                     return;
                 } else {
-                    bar.progress = water_num / all_water;
+                    if (user_data.user_data.land[this.land_index].have_water == 0) bar.progress = 0;
+                    else bar.progress = water_num / all_water;
                 };
             } else {
                 this.unschedule(this.water_schedule);
@@ -225,10 +230,11 @@ cc.Class({
             this.water_state = "charge";
             var all_water = config.all_water_num;
             var bar = this.water_progress_node.getComponent(cc.ProgressBar);
+            user_data.user_data.land[this.land_index].have_water = 1;
             var callback = function () {
                 var now_water = user_data.user_data.land[this.land_index].water_num
                 user_data.user_data.land[this.land_index].water_num += 1;
-                user_data.user_data.land[this.land_index].have_water = 1;
+
                 if (now_water >= all_water) {
                     this.unschedule(callback);
                     user_data.user_data.land[this.land_index].water_num = all_water;
@@ -281,11 +287,12 @@ cc.Class({
                 this.tips_node.active = false;
                 switch (land_state) {
                     case "wait_till":
+                        this.wait_next("wait_till");
                         this.plant_node.active = false;
                         this.plant_progress_node.active = false;
-                        this.water_progress_node.active = false;
+                        this.water_progress_node.active = true;
                         this.node.getComponent(cc.Sprite).spriteFrame = this.land_frame_arr[0];
-                        this.wait_next("wait_till");
+                        // this.wait_next("wait_till");
                         break;
                     case "wait_plant":
                         this.node.getComponent(cc.Sprite).spriteFrame = this.land_frame_arr[1];
@@ -294,6 +301,7 @@ cc.Class({
                         // var bar = this.water_progress_node.getComponent(cc.ProgressBar);
                         // if (user_data.user_data.land[this.land_index].have_water == 0) bar.progress = 0;
                         this.plant_progress_label.string = "Waiting to be planted";
+                        this.plant_node.active = false;
                         this.wait_next("plant");
                         break;
                     case "wait_cut":
@@ -309,11 +317,15 @@ cc.Class({
                             this.plant_node.children[i].getComponent(cc.Sprite).spriteFrame = this.plant_frame_arr[this.plant_type][3];
                         };
                         this.wait_next("wait_cut");
+                        // console.log(land_state + " hello");
                         break;
+                    // case "tilling":     // trạng thái chưa trồng cây
+                    //     this.till();
                     default:
                         this.set_plant();
                         this.node.getComponent(cc.Sprite).spriteFrame = this.land_frame_arr[1];
                         // cc.log(land_state);
+                        console.log("new land");
                         return;
 
                 };
@@ -388,7 +400,6 @@ cc.Class({
     },
     onLoad() {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
-
     },
 
     start() {

@@ -59,7 +59,6 @@ cc.Class({
     //buy staff
     on_buy_button_click: function () {
         if (user_data.user_data.gold >= config.staff[this.staff_index].cost) {
-            cc.log("雇佣工人");
             this.game_rules_js.add_gold(-config.staff[this.staff_index].cost);
             user_data.user_data.staff[this.staff_index].have = 1;
             this.game_rules_js.create_staff(this.staff_index);
@@ -70,7 +69,6 @@ cc.Class({
         } else {
             this.sound_control.play_sound_effect("un_click");
             var node = this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_money");
-            cc.log("金币不足");
         };
     },
     touch_exit: function () {

@@ -2,9 +2,9 @@
   1,
   [
     "ecpdLyjvZBwrvm+cedCcQy",
-    "112bff64f",
+    "18ca8feef",
     "402xmOoG5BepO9BiNfF2/G",
-    "1ab505897",
+    "11d22d987",
     "7f7a5baLBL5bJqlUUnlTCE",
     "99Ji9IHVhOIKtfUMWpPLjd",
     "4fcgNAMNtBsoirj5sqBlig"
@@ -236,7 +236,7 @@
         {
           "name": "gold_icon",
           "rect": [
-            287,
+            339,
             3,
             38,
             41
@@ -277,8 +277,8 @@
         {
           "name": "tips_floor",
           "rect": [
-            221,
-            325,
+            500,
+            914,
             106,
             60
           ],
@@ -318,7 +318,7 @@
         {
           "name": "common_tips_icon",
           "rect": [
-            238,
+            290,
             3,
             37,
             43

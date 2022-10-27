@@ -1,10 +1,9 @@
 [
   1,
   [
-    "112bff64f",
+    "18ca8feef",
     "45uG5GHDtHCp8X68gI/SgX",
-    "05jYlgVP1LzLW0KX+So5O/",
-    "1ab505897"
+    "05jYlgVP1LzLW0KX+So5O/"
   ],
   [
     "_textureSetter",
@@ -44,8 +43,8 @@
         {
           "name": "b_idle2",
           "rect": [
-            754,
-            72,
+            573,
+            53,
             65,
             98
           ],
@@ -148,8 +147,8 @@
         {
           "name": "b_ilde1",
           "rect": [
-            773,
-            431,
+            706,
+            134,
             65,
             102
           ],
@@ -181,7 +180,7 @@
         0
       ],
       [
-        3
+        0
       ]
     ]
   ]

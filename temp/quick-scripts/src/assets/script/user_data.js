@@ -24,6 +24,7 @@ var user_data = {
   sound_state: 1,
   hotel_cache_gold: 0,
   videotape_share_count: 0,
+  watch_video: 0,
   auto_sell: 0,
   // tự động bán rau củ
   staff: {
@@ -140,140 +141,140 @@ var user_data = {
     0: {
       have: 1,
       type_bye: 'gold',
-      cost: 500,
+      cost: 0,
       id_product: 8,
       count: 0
     },
     1: {
       have: 1,
       type_bye: 'gold',
-      cost: 500,
+      cost: 0,
       id_product: 8,
       count: 0
     },
     2: {
       have: 1,
       type_bye: 'gold',
-      cost: 500,
+      cost: 0,
       id_product: 8,
       count: 0
     },
     3: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 5000,
       id_product: 8,
       count: 0
     },
     4: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 15000,
       id_product: 8,
       count: 0
     },
     5: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 30000,
       id_product: 8,
       count: 0
     },
     6: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 60000,
       id_product: 8,
       count: 0
     },
     7: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     8: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     9: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     10: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     11: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     12: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     13: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     14: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     15: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     16: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     17: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     18: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     },
     19: {
       have: 0,
       type_bye: 'gold',
-      cost: 500,
+      cost: 100000,
       id_product: 8,
       count: 0
     }

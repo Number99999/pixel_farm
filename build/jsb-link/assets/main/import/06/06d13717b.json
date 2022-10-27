@@ -1,9 +1,10 @@
 [
   1,
   [
-    "112bff64f",
+    "1df2dede2",
     "dadAAVKYpJHYbyTuUlUTgm",
-    "09tVDytipK5qqByobTPo0O"
+    "09tVDytipK5qqByobTPo0O",
+    "18ca8feef"
   ],
   [
     "_textureSetter",
@@ -43,8 +44,8 @@
         {
           "name": "b_run1",
           "rect": [
-            497,
-            200,
+            90,
+            553,
             66,
             81
           ],
@@ -147,8 +148,8 @@
         {
           "name": "b_run2",
           "rect": [
-            667,
-            63,
+            3,
+            248,
             65,
             81
           ],
@@ -180,7 +181,7 @@
         0
       ],
       [
-        0
+        3
       ]
     ]
   ]

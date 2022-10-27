@@ -34,6 +34,7 @@ cc.Class({
           if (user_data.user_data.land[i].have == 1) {
             this.group_node.children[i].active = true;
             this.group_node.children[i].getChildByName("button_icon").getComponent(cc.Sprite).spriteFrame = this.frame_arr[1];
+            console.log("hello 32");
           }
 
           ;
@@ -47,6 +48,7 @@ cc.Class({
           if (user_data.user_data.land[i].have == 1) {
             this.group_node.children[i].active = true;
             this.group_node.children[i].getChildByName("button_icon").getComponent(cc.Sprite).spriteFrame = this.frame_arr[2];
+            console.log("hello 41");
           }
 
           ;
@@ -60,6 +62,7 @@ cc.Class({
           if (user_data.user_data.land[i].have == 1) {
             this.group_node.children[i].active = true;
             this.group_node.children[i].getChildByName("button_icon").getComponent(cc.Sprite).spriteFrame = this.frame_arr[0];
+            console.log("hello 50");
           }
 
           ;
@@ -92,12 +95,14 @@ cc.Class({
 
     switch (this.button_type) {
       case "watering":
-        this.land_group.children[land_index].getComponent("land").water_charge();
+        this.land_group.children[land_index].getComponent("land").water_charge(); // console.log("hello land "+land_index);
+
         break;
 
       case "till":
         this.land_group.children[land_index].getComponent("land").till();
-        user_data.user_data.land[land_index].land_state = "tilling";
+        user_data.user_data.land[land_index].land_state = "wait_plant"; // console.log("hello land "+land_index  + " "+ user_data.user_data.land[land_index].land_state + " till");
+
         break;
 
       case "plant":

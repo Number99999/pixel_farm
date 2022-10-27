@@ -2,7 +2,7 @@
   1,
   [
     "de8oMiHx9JnqZfjp5g4SJV",
-    "112bff64f"
+    "18ca8feef"
   ],
   [
     "value",
@@ -105,8 +105,8 @@
         {
           "name": "b_idle1",
           "rect": [
-            206,
-            189,
+            90,
+            249,
             65,
             90
           ],

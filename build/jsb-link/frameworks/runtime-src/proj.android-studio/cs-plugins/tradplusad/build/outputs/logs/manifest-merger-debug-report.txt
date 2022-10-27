@@ -42,9 +42,9 @@ ADDED from C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android
 	android:name
 		ADDED from C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:38:13-58
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:41:9-43:63
+ADDED from C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:41:9-43:69
 	android:value
-		ADDED from C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:43:13-61
+		ADDED from C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:43:13-67
 	android:name
 		ADDED from C:\pixel_farm-main\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:42:13-69
 uses-sdk

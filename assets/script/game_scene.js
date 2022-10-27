@@ -332,7 +332,7 @@ cc.Class({
                         // user_data.user_data.wareHouse[plant_index].count++; // thêm vật phẩm vào kho
 
 
-                    this.game_rules_js.add_ex(1);
+                    this.game_rules_js.jgg(1);
                     this.on_node_kill(node);
                 })
                 .start();
