@@ -28,7 +28,7 @@ cc.Class({
     this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
     this.sound_control = cc.find("sound_control").getComponent("sound_control");
     this.ad_control = cc.find("ad_control").getComponent("ad_control");
-    this.adsManager = cc.find("UI_ROOT").getComponent("AdsManager");
+    this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
     this.ad_control.show_bannerAd();
     this.add_gold = Math.floor((500 * _user_data["default"].user_data.skill["gold_max"] + 500) / 20) + 1;
     this.add_ex = Math.floor(_user_data["default"].user_data.level / 10) + 1;
@@ -56,21 +56,21 @@ cc.Class({
     var today = new Date();
 
     if (today.getDate() == _user_data["default"].user_data.save_date && _user_data["default"].user_data.watch_video < 3) {
-      cc.log("=======48=======");
-      this.adsManager.showRewardedVideo(function () {
+      this.adsManager_js.showRewardedVideo(function () {
         _user_data["default"].user_data.watch_video++;
-        cc.log("=======50=======");
         _this.tips_label.string = "Watched: " + _user_data["default"].user_data.watch_video + "/3";
         _user_data["default"].user_data.save_date = today.getDate();
+
+        _this.game_rules_js.add_gold(Math.floor((500 * _user_data["default"].user_data.skill["gold_max"] + 500) / 20) + 1);
+
+        _this.game_rules_js.add_ex(Math.floor(_user_data["default"].user_data.level / 10) + 1);
       });
     } else if (today.getDate() != _user_data["default"].user_data.save_date) {
-      this.adsManager.showRewardedVideo(function () {
-        cc.log("=======59=======");
+      this.adsManager_js.showRewardedVideo(function () {
         watch_video = 1;
         _this.tips_label.string = "Watched: " + _user_data["default"].user_data.watch_video + "/3";
         _user_data["default"].user_data.save_date = today.getDate();
       });
-      cc.log("====65====");
     } else this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_video_today");
   },
   on_delete_button_click: function on_delete_button_click() {

@@ -2,7 +2,7 @@
   1,
   [
     "ecpdLyjvZBwrvm+cedCcQy",
-    "1df2dede2",
+    "1fe8cfba1",
     "24u1c+APZHEKGcEh0yeXPg",
     "9dup77sAtKOrCEyIA2eHEM",
     "33UFnlbNpKH688l+2SscvA",
@@ -11,7 +11,8 @@
     "b94BmHwhNHV4FRDnQsbd5Z",
     "52LN4qUhRA8YsNskrPDc5T",
     "91dQNGxINF0an7wb9b+fXa",
-    "18ca8feef"
+    "1df994536",
+    "15c212e7a"
   ],
   [
     "node",
@@ -190,8 +191,8 @@
         {
           "name": "rest_icon",
           "rect": [
-            974,
-            603,
+            884,
+            860,
             47,
             37
           ],
@@ -203,6 +204,7 @@
             47,
             37
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -520,8 +522,8 @@
         {
           "name": "pupple",
           "rect": [
-            177,
-            575,
+            906,
+            245,
             44,
             36
           ],
@@ -533,89 +535,6 @@
             44,
             36
           ],
-          "rotated": 1,
-          "capInsets": [
-            0,
-            0,
-            0,
-            0
-          ]
-        }
-      ],
-      [
-        0
-      ],
-      0,
-      [
-        0
-      ],
-      [
-        1
-      ],
-      [
-        1
-      ]
-    ],
-    [
-      [
-        {
-          "name": "shadow",
-          "rect": [
-            993,
-            133,
-            58,
-            28
-          ],
-          "offset": [
-            0,
-            0
-          ],
-          "originalSize": [
-            58,
-            28
-          ],
-          "rotated": 1,
-          "capInsets": [
-            0,
-            0,
-            0,
-            0
-          ]
-        }
-      ],
-      [
-        0
-      ],
-      0,
-      [
-        0
-      ],
-      [
-        1
-      ],
-      [
-        1
-      ]
-    ],
-    [
-      [
-        {
-          "name": "z_idle1",
-          "rect": [
-            729,
-            691,
-            95,
-            104
-          ],
-          "offset": [
-            0,
-            0
-          ],
-          "originalSize": [
-            95,
-            104
-          ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -636,6 +555,86 @@
       ],
       [
         10
+      ]
+    ],
+    [
+      [
+        {
+          "name": "shadow",
+          "rect": [
+            368,
+            353,
+            58,
+            28
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            58,
+            28
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        11
+      ]
+    ],
+    [
+      [
+        {
+          "name": "z_idle1",
+          "rect": [
+            446,
+            674,
+            95,
+            104
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            95,
+            104
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        1
       ]
     ]
   ]

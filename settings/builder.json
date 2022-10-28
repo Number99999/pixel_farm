@@ -49,7 +49,7 @@
   "xxteaKey": "c72c0dee-d27f-49",
   "zipCompressJs": true,
   "android": {
-    "packageName": "org.cocos2d.idlefram",
+    "packageName": "com.sevenkolo.idlefarm",
     "REMOTE_SERVER_ROOT": ""
   },
   "ios": {

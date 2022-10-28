@@ -1,10 +1,10 @@
 [
   1,
   [
-    "1df2dede2",
+    "1df994536",
     "dadAAVKYpJHYbyTuUlUTgm",
     "09tVDytipK5qqByobTPo0O",
-    "18ca8feef"
+    "15c212e7a"
   ],
   [
     "_textureSetter",
@@ -44,8 +44,8 @@
         {
           "name": "b_run1",
           "rect": [
-            90,
-            553,
+            859,
+            513,
             66,
             81
           ],
@@ -57,7 +57,6 @@
             66,
             81
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -148,8 +147,8 @@
         {
           "name": "b_run2",
           "rect": [
+            295,
             3,
-            248,
             65,
             81
           ],

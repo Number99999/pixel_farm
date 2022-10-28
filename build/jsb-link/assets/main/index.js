@@ -103,7 +103,11 @@ window.__require = function e(t, n, r) {
             onOneLayerLoaded: function onOneLayerLoaded(adSourceName) {},
             onAdNotReward: function onAdNotReward() {},
             onAdReward: function onAdReward(currencyName, amount) {
-              null != _this.rewardVideoCallback && _this.rewardVideoCallback();
+              console.log("ads: ====173====");
+              if (null != _this.rewardVideoCallback) {
+                console.log("ads: ====175====");
+                _this.rewardVideoCallback();
+              }
             }
           });
           this.loadVideo();
@@ -770,7 +774,7 @@ window.__require = function e(t, n, r) {
       },
       load: function load() {
         try {
-          var local_user_data = null;
+          var local_user_data = JSON.parse(cc.sys.localStorage.getItem("user_data"));
           if (null !== local_user_data) {
             this.updata_user_data(local_user_data);
             cc.log("load successfull");
@@ -818,6 +822,7 @@ window.__require = function e(t, n, r) {
         gold_label: cc.Label,
         ex_label: cc.Label,
         level_label: cc.Label,
+        diamond_label: cc.Label,
         gold_progress_node: cc.ProgressBar,
         ex_progress_node: cc.ProgressBar,
         player_prefab: cc.Prefab,
@@ -1583,7 +1588,6 @@ window.__require = function e(t, n, r) {
                 break;
               }
             }
-            _this2.game_rules_js.jgg(1);
             _this2.on_node_kill(node);
           }).start();
         }
@@ -1677,7 +1681,6 @@ window.__require = function e(t, n, r) {
          default:
           return;
         }
-        cc.log(node.name, "\u653e\u5165\u8282\u70b9\u6c60");
       },
       ini_node: function ini_node() {
         this.new_button_group_node_pool();
@@ -1723,13 +1726,14 @@ window.__require = function e(t, n, r) {
       ini_node: function ini_node() {
         var _this = this;
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
+        this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control.show_bannerAd();
         this.center_node.scale = 0;
         this.exit_button_node.active = false;
-        user_data.user_data.level < 15 ? this.introduce_label.string = "Watch short commercials, \ncurrent rating+1" : this.introduce_label.string = "Watch short commercials and \ngain half-level experience";
+        user_data.user_data.level < 15 ? this.introduce_label.string = "Watch short commercials, \nlevel+1" : this.introduce_label.string = "Watch short commercials and \ngain half-level experience";
         cc.tween(this.center_node).to(.3, {
           scale: 1
         }, {
@@ -1741,9 +1745,23 @@ window.__require = function e(t, n, r) {
         }).start();
       },
       on_i_wanner_ad_button_click: function on_i_wanner_ad_button_click() {
+        var _this2 = this;
         this.sound_control.play_sound_effect("button_click");
-        this.ad_control.show_videoAd("gift_ad");
-        this.video_succes();
+        this.adsManager_js.showRewardedVideo(function() {
+          if (user_data.user_data.level > 15) {
+            _this2.game_rules_js.add_ex(user_data.user_data.level);
+            _this2.game_scene_js.create_tips_ui(_this2.game_scene_js.node, "gift_ad_ex");
+          } else {
+            user_data.user_data.level++;
+            user_data.user_data.now_ex = 0;
+            user_data.user_data.skill_point++;
+            _this2.game_rules_js.set_ex_progress();
+            _this2.game_scene_js.create_tips_ui(_this2.game_scene_js.node, "gift_ad_level");
+          }
+          _this2.ad_control.hide_bannerAd();
+          _this2.unschedule(callback);
+          _this2.node.destroy();
+        });
       },
       on_exit_button_click: function on_exit_button_click() {
         this.sound_control.play_sound_effect("button_exit");
@@ -2370,6 +2388,7 @@ window.__require = function e(t, n, r) {
       ini_node: function ini_node() {
         this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
+        this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.normal_button_node.active = false;
@@ -2404,10 +2423,16 @@ window.__require = function e(t, n, r) {
         }
       },
       on_double_recevie_button_click: function on_double_recevie_button_click() {
-        cc.log("create_ad");
+        var _this = this;
         this.sound_control.play_sound_effect("button_click");
-        this.ad_control.show_videoAd("double_profit");
-        this.video_succes();
+        this.adsManager_js.showRewardedVideo(function() {
+          _this.game_scene_js.create_tips_ui(_this.game_scene_js.node, "video_exit");
+          user_data.user_data.login_time = 0;
+          _this.game_rules_js.save_login_time();
+          _this.game_rules_js.add_gold(2 * _this.offline_profit);
+          _this.game_rules_js.add_ex(2 * _this.offline_profit_ex);
+          _this.node.destroy();
+        });
       },
       on_normal_recevie_button_click: function on_normal_recevie_button_click() {
         this.sound_control.play_sound_effect("button_click");
@@ -2924,7 +2949,6 @@ window.__require = function e(t, n, r) {
       anim_select: function anim_select() {
         var anim = this.player_node.getComponent(cc.Animation);
         var anim_clips = anim.getClips();
-        cc.log("this.movement_direction: ", this.movement_direction);
         switch (this.movement_direction) {
          case "z_idle":
           anim.play(anim_clips[0].name);
@@ -3112,6 +3136,7 @@ window.__require = function e(t, n, r) {
       ini_node: function ini_node(staff_index) {
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
+        this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control.show_bannerAd();
         this.staff_index = staff_index;
@@ -3136,8 +3161,15 @@ window.__require = function e(t, n, r) {
         this.node.destroy();
       },
       on_keep_rest_button_click: function on_keep_rest_button_click() {
-        this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
+        var _this = this;
+        this.adsManager_js.showRewardedVideo(function() {
+          var callback = function callback() {
+            user_data.user_data.staff[this.staff_index].over_time = 0;
+            this.game_scene_js.create_tips_ui(this.game_scene_js.node, "staff_rest_over");
+            this.node.destroy();
+          };
+          _this.schedule(callback, .2);
+        });
         this.node.destroy();
       },
       video_succes: function video_succes() {
@@ -3183,6 +3215,7 @@ window.__require = function e(t, n, r) {
       ini_node: function ini_node() {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
+        this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control.show_bannerAd();
@@ -3267,17 +3300,24 @@ window.__require = function e(t, n, r) {
         }
       },
       on_double_sell_button_click: function on_double_sell_button_click() {
+        var _this = this;
         this.sound_control.play_sound_effect("button_click");
-        var sum = 0;
-        for (var i = 0; i < this.icon_group_node.children.length; i++) {
-          var count = user_data.user_data.wareHouse[i].count;
-          var sell = config.plant[i].sell;
-          sum += count * sell;
-        }
-        if (0 == sum) this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_sell"); else {
-          this.ad_control.show_videoAd("double_sell");
-          this.video_succes();
-        }
+        this.adsManager_js.showRewardedVideo(function() {
+          var sum = 0;
+          for (var i = 0; i < _this.icon_group_node.children.length; i++) {
+            var count = user_data.user_data.wareHouse[i].count;
+            var id_product = user_data.user_data.wareHouse[i].id_product;
+            if (id_product > 7) continue;
+            var sell = config.plant[id_product].sell;
+            sum += count * sell;
+          }
+          if (0 == sum) _this.game_scene_js.create_tips_ui(_this.game_rules_js.node, "no_sell"); else {
+            for (var j = 0; j < _this.icon_group_node.children.length; j++) user_data.user_data.wareHouse[j].count = 0;
+            _this.game_scene_js.create_tips_ui(_this.game_rules_js.node, "gold", sum);
+            _this.game_rules_js.add_gold(sum);
+            _this.set_sell();
+          }
+        });
       },
       video_succes: function video_succes() {
         if ("undefined" != typeof wx) {
@@ -4033,7 +4073,7 @@ window.__require = function e(t, n, r) {
             return;
           }
         };
-        this.schedule(callback, 1, cc.macro.REPEAT_FOREVER);
+        this.schedule(callback, .5, cc.macro.REPEAT_FOREVER);
       },
       work_schedule: function work_schedule() {
         this.work_state = "work";
@@ -4081,11 +4121,12 @@ window.__require = function e(t, n, r) {
             }
           } else this.unschedule(callback);
         };
-        this.schedule(callback, 1, cc.macro.REPEAT_FOREVER);
+        this.schedule(callback, .5, cc.macro.REPEAT_FOREVER);
       },
       ini_node: function ini_node(staff_index) {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
+        this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.staff_index = staff_index;
         this.all_direction = [ "z_idle", "c_idle", "c_run_l", "c_run_r" ];
         this.rest_direction = [ "z_idle", "c_idle" ];
@@ -4140,7 +4181,6 @@ window.__require = function e(t, n, r) {
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.staff_index = staff_index;
         this.update_content();
-        this.create_ad_car();
       },
       update_content: function update_content() {
         this.icon_sprite.spriteFrame = this.icon_frame_arr[this.staff_index];
@@ -4167,16 +4207,15 @@ window.__require = function e(t, n, r) {
       },
       on_buy_button_click: function on_buy_button_click() {
         if (user_data.user_data.gold >= config.staff[this.staff_index].cost) {
-          this.game_rules_js.add_gold(-config.staff[this.staff_index].cost);
+          user_data.user_data.gold -= config.staff[this.staff_index].cost;
           user_data.user_data.staff[this.staff_index].have = 1;
           this.game_rules_js.create_staff(this.staff_index);
-          var node = this.game_scene_js.create_tips_ui(this.game_rules_js.node, "empoly_succes");
           this.buy_button.active = false;
           this.sound_control.play_sound_effect("button_click");
           this.update_content();
         } else {
           this.sound_control.play_sound_effect("un_click");
-          var node = this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_money");
+          this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_money_gold");
         }
       },
       touch_exit: function touch_exit() {
@@ -4189,10 +4228,7 @@ window.__require = function e(t, n, r) {
         var all_capacity = 500 * user_data.user_data.skill["gold_max"] + 500;
         var cost = config.staff[this.staff_index].cost;
         var price_difference = cost - gold;
-        if (gold >= .8 * cost && all_capacity >= cost && gold < cost) {
-          this.ad_control.hide_bannerAd();
-          this.game_scene_js.create_ad_car(this.node, price_difference);
-        }
+        gold >= .8 * cost && all_capacity >= cost && gold < cost && this.ad_control.hide_bannerAd();
       },
       onLoad: function onLoad() {},
       start: function start() {}
@@ -4288,6 +4324,7 @@ window.__require = function e(t, n, r) {
       ini_node: function ini_node() {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
+        this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control.show_bannerAd();
@@ -4315,19 +4352,20 @@ window.__require = function e(t, n, r) {
         this.game_scene_js.on_node_kill(this.node);
       },
       on_rest_skill_point_button_click: function on_rest_skill_point_button_click() {
+        var _this = this;
         this.sound_control.play_sound_effect("button_click");
-        this.ad_control.video_tag = null;
-        this.ad_control.video_state = 2;
-        var level = user_data.user_data.level;
-        var arr = Object.keys(user_data.user_data.skill);
-        user_data.user_data.skill_point = level;
-        var skill_arr = Object.keys(user_data.user_data.skill);
-        for (var j = 0; j < arr.length; j++) "offline_profit" == arr[j] ? user_data.user_data.skill["offline_profit"] = 1 : user_data.user_data.skill[arr[j]] = 0;
-        var gold_max = 500 * user_data.user_data.skill["gold_max"] + 500;
-        user_data.user_data.gold > gold_max && (user_data.user_data.gold = gold_max);
-        for (var i = 0; i < skill_arr.length; i++) this.skill_group_node.children[i].getComponent("skill_content").ini_node(i);
-        this.game_scene_js.create_tips_ui(this.game_scene_js.node, "skill_rest");
-        this.game_rules_js.set_gold_progress();
+        this.adsManager_js.showRewardedVideo(function() {
+          var level = user_data.user_data.level;
+          var arr = Object.keys(user_data.user_data.skill);
+          user_data.user_data.skill_point = level;
+          var skill_arr = Object.keys(user_data.user_data.skill);
+          for (var j = 0; j < arr.length; j++) "offline_profit" == arr[j] ? user_data.user_data.skill["offline_profit"] = 1 : user_data.user_data.skill[arr[j]] = 0;
+          var gold_max = 500 * user_data.user_data.skill["gold_max"] + 500;
+          user_data.user_data.gold > gold_max && (user_data.user_data.gold = gold_max);
+          for (var i = 0; i < skill_arr.length; i++) _this.skill_group_node.children[i].getComponent("skill_content").ini_node(i);
+          _this.game_scene_js.create_tips_ui(_this.game_scene_js.node, "skill_rest");
+          _this.game_rules_js.set_gold_progress();
+        });
       },
       video_succes: function video_succes() {
         if ("undefined" != typeof wx) {
@@ -4925,7 +4963,7 @@ window.__require = function e(t, n, r) {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
-        this.adsManager = cc.find("UI_ROOT").getComponent("AdsManager");
+        this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.ad_control.show_bannerAd();
         this.add_gold = Math.floor((500 * _user_data["default"].user_data.skill["gold_max"] + 500) / 20) + 1;
         this.add_ex = Math.floor(_user_data["default"].user_data.level / 10) + 1;
@@ -4944,23 +4982,17 @@ window.__require = function e(t, n, r) {
       on_button_click: function on_button_click() {
         var _this = this;
         var today = new Date();
-        if (today.getDate() == _user_data["default"].user_data.save_date && _user_data["default"].user_data.watch_video < 3) {
-          cc.log("=======48=======");
-          this.adsManager.showRewardedVideo(function() {
-            _user_data["default"].user_data.watch_video++;
-            cc.log("=======50=======");
-            _this.tips_label.string = "Watched: " + _user_data["default"].user_data.watch_video + "/3";
-            _user_data["default"].user_data.save_date = today.getDate();
-          });
-        } else if (today.getDate() != _user_data["default"].user_data.save_date) {
-          this.adsManager.showRewardedVideo(function() {
-            cc.log("=======59=======");
-            watch_video = 1;
-            _this.tips_label.string = "Watched: " + _user_data["default"].user_data.watch_video + "/3";
-            _user_data["default"].user_data.save_date = today.getDate();
-          });
-          cc.log("====65====");
-        } else this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_video_today");
+        today.getDate() == _user_data["default"].user_data.save_date && _user_data["default"].user_data.watch_video < 3 ? this.adsManager_js.showRewardedVideo(function() {
+          _user_data["default"].user_data.watch_video++;
+          _this.tips_label.string = "Watched: " + _user_data["default"].user_data.watch_video + "/3";
+          _user_data["default"].user_data.save_date = today.getDate();
+          _this.game_rules_js.add_gold(Math.floor((500 * _user_data["default"].user_data.skill["gold_max"] + 500) / 20) + 1);
+          _this.game_rules_js.add_ex(Math.floor(_user_data["default"].user_data.level / 10) + 1);
+        }) : today.getDate() != _user_data["default"].user_data.save_date ? this.adsManager_js.showRewardedVideo(function() {
+          watch_video = 1;
+          _this.tips_label.string = "Watched: " + _user_data["default"].user_data.watch_video + "/3";
+          _user_data["default"].user_data.save_date = today.getDate();
+        }) : this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_video_today");
       },
       on_delete_button_click: function on_delete_button_click() {
         this.game_rules_js.videotape_path = null;

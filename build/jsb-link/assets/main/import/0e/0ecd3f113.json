@@ -2,9 +2,10 @@
   1,
   [
     "ecpdLyjvZBwrvm+cedCcQy",
-    "18ca8feef",
     "402xmOoG5BepO9BiNfF2/G",
-    "11d22d987",
+    "1fe8cfba1",
+    "1df994536",
+    "15c212e7a",
     "7f7a5baLBL5bJqlUUnlTCE",
     "99Ji9IHVhOIKtfUMWpPLjd",
     "4fcgNAMNtBsoirj5sqBlig"
@@ -236,8 +237,8 @@
         {
           "name": "gold_icon",
           "rect": [
-            339,
-            3,
+            300,
+            983,
             38,
             41
           ],
@@ -269,7 +270,7 @@
         0
       ],
       [
-        1
+        2
       ]
     ],
     [
@@ -277,8 +278,8 @@
         {
           "name": "tips_floor",
           "rect": [
-            500,
-            914,
+            136,
+            711,
             106,
             60
           ],
@@ -318,8 +319,8 @@
         {
           "name": "common_tips_icon",
           "rect": [
-            290,
-            3,
+            417,
+            454,
             37,
             43
           ],
@@ -351,7 +352,7 @@
         0
       ],
       [
-        1
+        4
       ]
     ],
     [
@@ -607,11 +608,11 @@
         0,
         0,
         0,
-        4,
-        2,
         5,
-        2,
-        6
+        1,
+        6,
+        1,
+        7
       ]
     ]
   ]

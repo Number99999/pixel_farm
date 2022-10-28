@@ -18,6 +18,7 @@ cc.Class({
     var _this = this;
 
     this.ad_control = cc.find("ad_control").getComponent("ad_control");
+    this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
     this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
     this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
     this.sound_control = cc.find("sound_control").getComponent("sound_control");
@@ -26,7 +27,7 @@ cc.Class({
     this.exit_button_node.active = false;
 
     if (user_data.user_data.level < 15) {
-      this.introduce_label.string = "Watch short commercials, \ncurrent rating+1";
+      this.introduce_label.string = "Watch short commercials, \nlevel+1";
     } else {
       this.introduce_label.string = "Watch short commercials and \ngain half-level experience";
     }
@@ -44,9 +45,32 @@ cc.Class({
   },
   //我要看视频按钮被点击
   on_i_wanner_ad_button_click: function on_i_wanner_ad_button_click() {
+    var _this2 = this;
+
     this.sound_control.play_sound_effect("button_click");
-    this.ad_control.show_videoAd("gift_ad");
-    this.video_succes();
+    this.adsManager_js.showRewardedVideo(function () {
+      if (user_data.user_data.level > 15) {
+        _this2.game_rules_js.add_ex(user_data.user_data.level);
+
+        _this2.game_scene_js.create_tips_ui(_this2.game_scene_js.node, "gift_ad_ex");
+      } else {
+        user_data.user_data.level++;
+        user_data.user_data.now_ex = 0;
+        user_data.user_data.skill_point++;
+
+        _this2.game_rules_js.set_ex_progress();
+
+        _this2.game_scene_js.create_tips_ui(_this2.game_scene_js.node, "gift_ad_level");
+      }
+
+      ;
+
+      _this2.ad_control.hide_bannerAd();
+
+      _this2.unschedule(callback);
+
+      _this2.node.destroy();
+    });
   },
   //exit button
   on_exit_button_click: function on_exit_button_click() {

@@ -12,6 +12,7 @@ cc.Class({
         gold_label: cc.Label,
         ex_label: cc.Label,
         level_label: cc.Label,
+        diamond_label: cc.Label,
         gold_progress_node: cc.ProgressBar,
         ex_progress_node: cc.ProgressBar,
         player_prefab: cc.Prefab,

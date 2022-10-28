@@ -1,7 +1,7 @@
 [
   1,
   [
-    "1df2dede2",
+    "15c212e7a",
     "a1IiYAxIBKMZNib6njHhq8",
     "bbFES92P5OCIrdVPZuJOhV"
   ],
@@ -106,8 +106,8 @@
         {
           "name": "c_run2",
           "rect": [
-            264,
-            722,
+            103,
+            73,
             89,
             81
           ],
@@ -119,7 +119,6 @@
             89,
             81
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -147,8 +146,8 @@
         {
           "name": "c_run1",
           "rect": [
-            581,
-            722,
+            197,
+            160,
             89,
             79
           ],

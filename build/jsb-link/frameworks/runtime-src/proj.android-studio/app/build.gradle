@@ -16,7 +16,7 @@ android {
     buildToolsVersion PROP_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId "org.cocos2d.idlefram"
+        applicationId "com.sevenkolo.idlefarm"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 1

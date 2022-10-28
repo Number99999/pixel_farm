@@ -1,7 +1,7 @@
 [
   1,
   [
-    "18ca8feef",
+    "1fe8cfba1",
     "ecpdLyjvZBwrvm+cedCcQy",
     "402xmOoG5BepO9BiNfF2/G"
   ],
@@ -100,8 +100,8 @@
         {
           "name": "gold_icon",
           "rect": [
-            339,
-            3,
+            300,
+            983,
             38,
             41
           ],

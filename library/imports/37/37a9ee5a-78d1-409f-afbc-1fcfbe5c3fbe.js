@@ -18,6 +18,7 @@ cc.Class({
   ini_node: function ini_node() {
     this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
     this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
+    this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
     this.ad_control = cc.find("ad_control").getComponent("ad_control");
     this.sound_control = cc.find("sound_control").getComponent("sound_control");
     this.normal_button_node.active = false;
@@ -66,10 +67,25 @@ cc.Class({
   },
   //video_double
   on_double_recevie_button_click: function on_double_recevie_button_click() {
-    cc.log("create_ad");
+    var _this = this;
+
     this.sound_control.play_sound_effect("button_click");
-    this.ad_control.show_videoAd("double_profit");
-    this.video_succes();
+    this.adsManager_js.showRewardedVideo(function () {
+      // sau khi xem het video
+      _this.game_scene_js.create_tips_ui(_this.game_scene_js.node, "video_exit"); // thông báo đã chạy xong video 
+
+
+      user_data.user_data.login_time = 0;
+
+      _this.game_rules_js.save_login_time();
+
+      _this.game_rules_js.add_gold(_this.offline_profit * 2);
+
+      _this.game_rules_js.add_ex(_this.offline_profit_ex * 2);
+
+      _this.node.destroy();
+    }); // this.ad_control.show_videoAd("double_profit");
+    // this.video_succes();
   },
   //normal_get
   on_normal_recevie_button_click: function on_normal_recevie_button_click() {

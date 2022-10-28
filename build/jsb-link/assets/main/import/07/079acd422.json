@@ -10,8 +10,8 @@
     "25xMvxVP5AuaFY4kELkzwZ",
     "0ert0IwVtDP5IQV8om5y2G",
     "cfhI809ZJPnpva2HEaQsXC",
-    "18ca8feef",
-    "1df2dede2"
+    "1df994536",
+    "15c212e7a"
   ],
   [
     "node",
@@ -385,8 +385,8 @@
         {
           "name": "z_idle1",
           "rect": [
-            492,
-            195,
+            635,
+            473,
             65,
             101
           ],
@@ -398,7 +398,6 @@
             65,
             102
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -426,8 +425,8 @@
         {
           "name": "shadow",
           "rect": [
-            938,
-            817,
+            463,
+            71,
             58,
             28
           ],
@@ -439,7 +438,6 @@
             58,
             28
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,

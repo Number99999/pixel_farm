@@ -24,23 +24,20 @@
         "__id__": 6
       },
       {
-        "__id__": 41
+        "__id__": 40
       }
     ],
     "_active": true,
     "_components": [
       {
+        "__id__": 45
+      },
+      {
         "__id__": 46
-      },
-      {
-        "__id__": 47
-      },
-      {
-        "__id__": 48
       }
     ],
     "_prefab": {
-      "__id__": 49
+      "__id__": 47
     },
     "_opacity": 255,
     "_color": {
@@ -233,7 +230,7 @@
     "_active": true,
     "_components": [],
     "_prefab": {
-      "__id__": 40
+      "__id__": 39
     },
     "_opacity": 255,
     "_color": {
@@ -1271,7 +1268,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 39
+      "__id__": 38
     },
     "_opacity": 255,
     "_color": {
@@ -1367,9 +1364,6 @@
     "clickEvents": [
       {
         "__id__": 37
-      },
-      {
-        "__id__": 38
       }
     ],
     "_N$interactable": true,
@@ -1433,16 +1427,6 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "7548f9QM11K+qkbzP1yyO2m",
-    "handler": "showRewardedVideo",
-    "customEventData": ""
-  },
-  {
-    "__type__": "cc.ClickEvent",
-    "target": {
-      "__id__": 1
-    },
-    "component": "",
     "_componentId": "17b54SZhR1E8bfWvHiKAZPX",
     "handler": "on_rest_skill_point_button_click",
     "customEventData": ""
@@ -1480,14 +1464,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 42
+        "__id__": 41
       },
       {
-        "__id__": 43
+        "__id__": 42
       }
     ],
     "_prefab": {
-      "__id__": 45
+      "__id__": 44
     },
     "_opacity": 255,
     "_color": {
@@ -1541,7 +1525,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 41
+      "__id__": 40
     },
     "_enabled": true,
     "_materials": [
@@ -1573,7 +1557,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 41
+      "__id__": 40
     },
     "_enabled": true,
     "_normalMaterial": null,
@@ -1582,7 +1566,7 @@
     "zoomScale": 0.8,
     "clickEvents": [
       {
-        "__id__": 44
+        "__id__": 43
       }
     ],
     "_N$interactable": true,
@@ -1705,22 +1689,6 @@
     "skill_point_label": {
       "__id__": 21
     },
-    "_id": ""
-  },
-  {
-    "__type__": "7548f9QM11K+qkbzP1yyO2m",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "showFullUnitId": "4FFDC51A8F644662015A54080BC34192",
-    "videoUnitId": "3AE3B3F472BC3F1D02F8C794A3376F56",
-    "banner": null,
-    "showFull": null,
-    "video": null,
-    "rewardVideoCallback": null,
     "_id": ""
   },
   {

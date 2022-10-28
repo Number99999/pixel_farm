@@ -11,6 +11,7 @@ cc.Class({
     ini_node(staff_index) {
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
+        this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control.show_bannerAd();
         //初始小人的形象
@@ -37,10 +38,17 @@ cc.Class({
     },
     //keep rest
     on_keep_rest_button_click() {
-        this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
+        this.adsManager_js.showRewardedVideo(() => {
+            var callback = function () {
+                user_data.user_data.staff[this.staff_index].over_time = 0;
+                this.game_scene_js.create_tips_ui(this.game_scene_js.node, "staff_rest_over");
+                this.node.destroy();
+            };
+            this.schedule(callback, 0.2);
+        });
         this.node.destroy();
     },
+
     //检测视频是否播放成功
     video_succes: function () {
         if (typeof (wx) != "undefined") {

@@ -19,7 +19,7 @@ cc.Class({
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
-        this.adsManager = cc.find("UI_ROOT").getComponent("AdsManager");
+        this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.ad_control.show_bannerAd();
         this.add_gold = Math.floor(((500 * user_data.user_data.skill["gold_max"] + 500)) / 20) + 1;
         this.add_ex = Math.floor(user_data.user_data.level / 10) + 1;
@@ -45,24 +45,21 @@ cc.Class({
     on_button_click() {
         var today = new Date();
         if (today.getDate() == user_data.user_data.save_date && user_data.user_data.watch_video < 3) {
-            cc.log("=======48=======");
-            this.adsManager.showRewardedVideo(() => {
+            this.adsManager_js.showRewardedVideo(() => {
                 user_data.user_data.watch_video++;
-                cc.log("=======50=======");
                 this.tips_label.string = "Watched: " + user_data.user_data.watch_video + "/3";
                 user_data.user_data.save_date = today.getDate();
+                this.game_rules_js.add_gold(Math.floor(((500 * user_data.user_data.skill["gold_max"] + 500)) / 20) + 1);
+                this.game_rules_js.add_ex(Math.floor(user_data.user_data.level / 10) + 1);
             });
 
         }
         else if (today.getDate() != user_data.user_data.save_date) {
-            this.adsManager.showRewardedVideo(() => {
-                cc.log("=======59=======");
+            this.adsManager_js.showRewardedVideo(() => {
                 watch_video = 1;
                 this.tips_label.string = "Watched: " + user_data.user_data.watch_video + "/3";
                 user_data.user_data.save_date = today.getDate();
             });
-
-            cc.log("====65====");
         }
         else this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_video_today");
     },

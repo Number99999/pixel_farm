@@ -2,16 +2,17 @@
   1,
   [
     "ecpdLyjvZBwrvm+cedCcQy",
-    "1df2dede2",
     "24u1c+APZHEKGcEh0yeXPg",
-    "12590097f",
+    "1df994536",
+    "15c212e7a",
     "15RCPw/XlIIKA+oxYwsw2i",
     "b6NTY2UHpAn47lrTdJkqVG",
     "4bERv+gk1DGJrk+uO0Ie1A",
     "13shF16t9P3oojuGbf3LfR",
     "b7foOhtjVLFrSijf2HtGEX",
     "52LN4qUhRA8YsNskrPDc5T",
-    "91dQNGxINF0an7wb9b+fXa"
+    "91dQNGxINF0an7wb9b+fXa",
+    "1fe8cfba1"
   ],
   [
     "node",
@@ -190,8 +191,8 @@
         {
           "name": "shadow",
           "rect": [
-            92,
-            213,
+            103,
+            255,
             58,
             28
           ],
@@ -511,8 +512,8 @@
         9,
         0,
         10,
-        2,
-        2
+        1,
+        1
       ]
     ],
     [
@@ -520,8 +521,8 @@
         {
           "name": "rest_icon",
           "rect": [
-            974,
-            603,
+            884,
+            860,
             47,
             37
           ],
@@ -532,46 +533,6 @@
           "originalSize": [
             47,
             37
-          ],
-          "capInsets": [
-            0,
-            0,
-            0,
-            0
-          ]
-        }
-      ],
-      [
-        0
-      ],
-      0,
-      [
-        0
-      ],
-      [
-        1
-      ],
-      [
-        1
-      ]
-    ],
-    [
-      [
-        {
-          "name": "pupple",
-          "rect": [
-            177,
-            575,
-            44,
-            36
-          ],
-          "offset": [
-            0,
-            0
-          ],
-          "originalSize": [
-            44,
-            36
           ],
           "rotated": 1,
           "capInsets": [
@@ -593,7 +554,47 @@
         1
       ],
       [
+        11
+      ]
+    ],
+    [
+      [
+        {
+          "name": "pupple",
+          "rect": [
+            906,
+            245,
+            44,
+            36
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            44,
+            36
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
         1
+      ],
+      [
+        2
       ]
     ],
     [
@@ -601,8 +602,8 @@
         {
           "name": "z_idle1",
           "rect": [
-            518,
-            914,
+            377,
+            597,
             91,
             105
           ],
@@ -633,7 +634,7 @@
         1
       ],
       [
-        1
+        2
       ]
     ]
   ]

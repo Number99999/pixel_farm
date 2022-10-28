@@ -148,7 +148,7 @@ cc.Class({
       ; //end if
     };
 
-    this.schedule(callback, 1, cc.macro.REPEAT_FOREVER);
+    this.schedule(callback, 0.5, cc.macro.REPEAT_FOREVER);
   },
   //工作定时器
   work_schedule: function work_schedule() {
@@ -228,12 +228,13 @@ cc.Class({
       ; // end if
     };
 
-    this.schedule(callback, 1, cc.macro.REPEAT_FOREVER);
+    this.schedule(callback, 0.5, cc.macro.REPEAT_FOREVER);
   },
   ini_node: function ini_node(staff_index) {
     this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
     ;
     this.sound_control = cc.find("sound_control").getComponent("sound_control");
+    this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
     this.staff_index = staff_index;
     this.all_direction = ["z_idle", "c_idle", "c_run_l", "c_run_r"];
     this.rest_direction = ["z_idle", "c_idle"];

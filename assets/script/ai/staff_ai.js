@@ -112,7 +112,7 @@ cc.Class({
             }; //end if
 
         };
-        this.schedule(callback, 1, cc.macro.REPEAT_FOREVER);
+        this.schedule(callback, 0.5, cc.macro.REPEAT_FOREVER);
     },
     //工作定时器
     work_schedule: function () {
@@ -171,7 +171,7 @@ cc.Class({
                         this.unschedule(callback);
                         this.work_schedule();
                         this.staff_node.off("touchstart", this.on_staff_node_touch, this);
-                        this.pupple_node.on("touchstart", this.on_staff_node_touch, this)
+                        this.pupple_node.on("touchstart", this.on_staff_node_touch, this);
                     } else {
                         // cc.log("休息");
                         this.work_state = "rest";
@@ -185,11 +185,12 @@ cc.Class({
             };// end if
 
         };
-        this.schedule(callback, 1, cc.macro.REPEAT_FOREVER);
+        this.schedule(callback, 0.5, cc.macro.REPEAT_FOREVER);
     },
     ini_node: function (staff_index) {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");;
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
+        this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.staff_index = staff_index;
         this.all_direction = ["z_idle", "c_idle", "c_run_l", "c_run_r"];
         this.rest_direction = ["z_idle", "c_idle"];

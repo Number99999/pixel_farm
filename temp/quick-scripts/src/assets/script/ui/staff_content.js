@@ -30,8 +30,7 @@ cc.Class({
     this.ad_control = cc.find("ad_control").getComponent("ad_control");
     this.sound_control = cc.find("sound_control").getComponent("sound_control");
     this.staff_index = staff_index;
-    this.update_content();
-    this.create_ad_car();
+    this.update_content(); // this.create_ad_car();
   },
   //刷新数据
   update_content: function update_content() {
@@ -73,16 +72,15 @@ cc.Class({
   //buy staff
   on_buy_button_click: function on_buy_button_click() {
     if (user_data.user_data.gold >= config.staff[this.staff_index].cost) {
-      this.game_rules_js.add_gold(-config.staff[this.staff_index].cost);
+      user_data.user_data.gold -= config.staff[this.staff_index].cost;
       user_data.user_data.staff[this.staff_index].have = 1;
       this.game_rules_js.create_staff(this.staff_index);
-      var node = this.game_scene_js.create_tips_ui(this.game_rules_js.node, "empoly_succes");
       this.buy_button.active = false;
       this.sound_control.play_sound_effect("button_click");
       this.update_content();
     } else {
       this.sound_control.play_sound_effect("un_click");
-      var node = this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_money");
+      this.game_scene_js.create_tips_ui(this.game_rules_js.node, "no_money_gold");
     }
 
     ;
@@ -101,8 +99,7 @@ cc.Class({
       var price_difference = cost - gold; //大于4/5,且能够拥有，且金币不足
 
       if (gold >= cost * (4 / 5) && all_capacity >= cost && gold < cost) {
-        this.ad_control.hide_bannerAd();
-        this.game_scene_js.create_ad_car(this.node, price_difference);
+        this.ad_control.hide_bannerAd(); // this.game_scene_js.create_ad_car(this.node, price_difference);
       }
 
       ;

@@ -3,8 +3,8 @@
   [
     "d0TDsJrOtJJIHcVMmkqA9l",
     "70n58Y3b5EQpJ7qHVEHcW4",
-    "1df2dede2",
-    "18ca8feef"
+    "1df994536",
+    "15c212e7a"
   ],
   [
     "value",
@@ -107,8 +107,8 @@
         {
           "name": "c_idle1",
           "rect": [
-            90,
-            722,
+            931,
+            522,
             89,
             81
           ],
@@ -120,7 +120,6 @@
             89,
             81
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -148,8 +147,8 @@
         {
           "name": "c_idle2",
           "rect": [
-            324,
-            487,
+            200,
+            3,
             89,
             79
           ],

@@ -545,8 +545,8 @@
     "relativePath": "res\\sound"
   },
   "97e2da0f-6eb2-4aa1-a6ae-a08b171c04b2": {
-    "asset": 1666077722762,
-    "meta": 1666086206814,
+    "asset": 1666929142409,
+    "meta": 1666933151276,
     "relativePath": "res\\texture"
   },
   "a611876c-11d2-40ca-8c1c-d1685e90615a": {
@@ -1155,13 +1155,13 @@
     "relativePath": "res\\prefabs\\ui\\button_more.prefab"
   },
   "1d7c2d5e-d489-4443-bc42-b2755f61f0f0": {
-    "asset": 1666837045972,
-    "meta": 1666837045979,
+    "asset": 1666927559983,
+    "meta": 1666927560019,
     "relativePath": "res\\prefabs\\ui\\gift_ui.prefab"
   },
   "1a1956b5-7025-4307-9929-68d3cb66e57a": {
-    "asset": 1665632007757,
-    "meta": 1665632007772,
+    "asset": 1666925401330,
+    "meta": 1666925401339,
     "relativePath": "res\\prefabs\\ui\\hotel_ui.prefab"
   },
   "933cbe8a-a065-4e19-a2fd-b6700b9b1231": {
@@ -1175,8 +1175,8 @@
     "relativePath": "res\\prefabs\\ui\\land.prefab"
   },
   "b8db1ef3-a583-4a53-91cc-ebfc73e73e1c": {
-    "asset": 1666840077937,
-    "meta": 1666840077944,
+    "asset": 1666923461337,
+    "meta": 1666923461352,
     "relativePath": "res\\prefabs\\ui\\offline_profit_ui.prefab"
   },
   "1884788a-9cf2-4924-a8b3-8d8392f47975": {
@@ -1200,8 +1200,8 @@
     "relativePath": "res\\prefabs\\ui\\plant_ui.prefab"
   },
   "711e452f-93f3-4af2-8b96-a44082c36bc8": {
-    "asset": 1666837098444,
-    "meta": 1666837098456,
+    "asset": 1666923494582,
+    "meta": 1666923494591,
     "relativePath": "res\\prefabs\\ui\\rest_ui.prefab"
   },
   "4eb8c554-df3f-462f-ac41-a88efa9a5595": {
@@ -1215,8 +1215,8 @@
     "relativePath": "res\\prefabs\\ui\\shop_ui.prefab"
   },
   "febc11ac-58d8-4a2a-b0d1-ba4ebd1ab0c3": {
-    "asset": 1666837165600,
-    "meta": 1666837165608,
+    "asset": 1666925667042,
+    "meta": 1666925667049,
     "relativePath": "res\\prefabs\\ui\\study_ui.prefab"
   },
   "88b614f9-7d35-4206-87ed-01329432cc6a": {
@@ -1230,8 +1230,8 @@
     "relativePath": "res\\prefabs\\ui\\tips_ui.prefab"
   },
   "f19966c8-d0a2-484a-bcd3-80804772ba4e": {
-    "asset": 1666847671858,
-    "meta": 1666847671869,
+    "asset": 1666926364709,
+    "meta": 1666926364906,
     "relativePath": "res\\prefabs\\ui\\videotape_ui.prefab"
   },
   "684d6d58-d15f-4e49-81d7-2f5aa9865253": {
@@ -2784,11 +2784,6 @@
     "meta": 1666086206815,
     "relativePath": "script\\ai"
   },
-  "b811fc03-48b5-405e-be8b-e1cea775dc3c": {
-    "asset": 1659520841000,
-    "meta": 1663127161938,
-    "relativePath": "script\\ai\\staff_ai.js"
-  },
   "6a03c463-cad5-4f07-aa2a-926aa511225e": {
     "asset": 1663300063857,
     "meta": 1663300125218,
@@ -2828,11 +2823,6 @@
     "asset": 1659520841000,
     "meta": 1663127162081,
     "relativePath": "script\\effect\\light.js"
-  },
-  "ac98e901-bf45-4228-8247-c77ef427457c": {
-    "asset": 1662364529437,
-    "meta": 1663127162248,
-    "relativePath": "script\\loading_scene.js"
   },
   "3ec8bd19-6b87-4bbf-a11b-064b3fa7026e": {
     "asset": 1666077609202,
@@ -3204,25 +3194,10 @@
     "meta": 1665478013294,
     "relativePath": "res\\texture\\level_icon.png"
   },
-  "2194d87d-ec8c-47de-b9a6-f8813618ea01": {
-    "asset": 1665483685681,
-    "meta": 1665483962786,
-    "relativePath": "script\\ui\\gift_ui.js"
-  },
   "efa79bf3-7776-4a82-a87c-510537a37e6a": {
     "asset": 1665717863465,
     "meta": 1665717922219,
     "relativePath": "script\\ai\\pet_ai.js"
-  },
-  "f51a558b-85f4-49bb-b993-11258e7272a1": {
-    "asset": 1665718172453,
-    "meta": 1665718174480,
-    "relativePath": "script\\ui\\rest_ui.js"
-  },
-  "b5a19ce8-1672-4cd4-9a4b-8b3a632eb62a": {
-    "asset": 1665719610138,
-    "meta": 1665719667409,
-    "relativePath": "script\\ai\\player_role.js"
   },
   "4ead8a5b-702e-4d26-aaa0-549f6d580c25": {
     "asset": 1665723091636,
@@ -3239,14 +3214,9 @@
     "meta": 1666081605668,
     "relativePath": "script\\ui\\repo_ui.js"
   },
-  "17b54499-851d-44f1-b7d6-bc788a0193d7": {
-    "asset": 1666321694504,
-    "meta": 1666321859103,
-    "relativePath": "script\\ui\\study_ui.js"
-  },
   "afbb2aea-1863-4dfa-9333-81a79f168cf8": {
-    "asset": 1666846437544,
-    "meta": 1666846437574,
+    "asset": 1666931982485,
+    "meta": 1666931982497,
     "relativePath": "scene\\game_scene.fire"
   },
   "0f2a67c4-1aaa-4d89-96eb-d3d2c1090cb3": {
@@ -3270,19 +3240,9 @@
     "relativePath": "cs-tradplusad\\tradplusad.js"
   },
   "eaa716af-9fd9-4ea9-8476-dcf9cf77514e": {
-    "asset": 1666838214205,
-    "meta": 1666838214221,
+    "asset": 1666925099507,
+    "meta": 1666925099516,
     "relativePath": "res\\prefabs\\ui\\sell_ui.prefab"
-  },
-  "b44e1469-78ae-4e00-9fb3-b16c41d48991": {
-    "asset": 1666754346002,
-    "meta": 1666754404975,
-    "relativePath": "script\\ui\\staff_content.js"
-  },
-  "f804c0bc-c915-4b88-be29-5e0f7f81b492": {
-    "asset": 1666755111055,
-    "meta": 1666755111074,
-    "relativePath": "res\\prefabs\\ui\\staff_content.prefab"
   },
   "3cc9dec4-b39c-4536-9296-effabad78c1f": {
     "asset": 1666755164828,
@@ -3299,49 +3259,94 @@
     "meta": 1666777362423,
     "relativePath": "script\\ui\\pet_content.js"
   },
-  "b34082c5-c2ea-4e3c-aa0d-f4fa236fe662": {
-    "asset": 1666838206961,
-    "meta": 1666838207729,
-    "relativePath": "script\\ui\\sell_ui.js"
-  },
-  "09fa54a5-2c08-4371-8d7c-b9a39fffbb50": {
-    "asset": 1666839551809,
-    "meta": 1666839552796,
-    "relativePath": "script\\game_scene.js"
-  },
-  "37a9ee5a-78d1-409f-afbc-1fcfbe5c3fbe": {
-    "asset": 1666841709715,
-    "meta": 1666841710411,
-    "relativePath": "script\\ui\\offline_profit.js"
-  },
-  "08dfe4d4-d4cf-426b-bfdb-7752fc87332d": {
-    "asset": 1666841771387,
-    "meta": 1666841787801,
-    "relativePath": "script\\game_rules.js"
-  },
-  "1575175e-5b8a-425d-ac5c-f8da01640cdf": {
-    "asset": 1666842811758,
-    "meta": 1666842840920,
-    "relativePath": "script\\ui\\tips_ui.js"
-  },
   "65eac7ba-9c12-4fd1-9863-eb4ae309f218": {
     "asset": 1666842435580,
     "meta": 1666842840980,
     "relativePath": "script\\user_data.js"
   },
-  "01580bdc-29ad-49be-84af-c94f6b765c66": {
-    "asset": 1666844680758,
-    "meta": 1666844681846,
-    "relativePath": "script\\fx.js"
-  },
-  "21fcb4db-9d29-4131-8100-fd743262e1b9": {
-    "asset": 1666847039095,
-    "meta": 1666847040505,
-    "relativePath": "script\\ui\\videotape_ui.js"
-  },
   "7548ff50-335d-4afa-a91b-ccfd72c8eda6": {
     "asset": 1666847608935,
     "meta": 1666847611610,
     "relativePath": "script\\AdsManager.js"
+  },
+  "37a9ee5a-78d1-409f-afbc-1fcfbe5c3fbe": {
+    "asset": 1666923446167,
+    "meta": 1666923448704,
+    "relativePath": "script\\ui\\offline_profit.js"
+  },
+  "b811fc03-48b5-405e-be8b-e1cea775dc3c": {
+    "asset": 1666924843038,
+    "meta": 1666924843912,
+    "relativePath": "script\\ai\\staff_ai.js"
+  },
+  "f51a558b-85f4-49bb-b993-11258e7272a1": {
+    "asset": 1666924795060,
+    "meta": 1666924843954,
+    "relativePath": "script\\ui\\rest_ui.js"
+  },
+  "b34082c5-c2ea-4e3c-aa0d-f4fa236fe662": {
+    "asset": 1666925084450,
+    "meta": 1666925088187,
+    "relativePath": "script\\ui\\sell_ui.js"
+  },
+  "17b54499-851d-44f1-b7d6-bc788a0193d7": {
+    "asset": 1666926216774,
+    "meta": 1666926363575,
+    "relativePath": "script\\ui\\study_ui.js"
+  },
+  "21fcb4db-9d29-4131-8100-fd743262e1b9": {
+    "asset": 1666926342867,
+    "meta": 1666926363696,
+    "relativePath": "script\\ui\\videotape_ui.js"
+  },
+  "01580bdc-29ad-49be-84af-c94f6b765c66": {
+    "asset": 1666926713002,
+    "meta": 1666926713834,
+    "relativePath": "script\\fx.js"
+  },
+  "2194d87d-ec8c-47de-b9a6-f8813618ea01": {
+    "asset": 1666927940963,
+    "meta": 1666927942342,
+    "relativePath": "script\\ui\\gift_ui.js"
+  },
+  "69500b9e-fb77-42f5-92c4-5bd85103efaa": {
+    "asset": 1666928814245,
+    "meta": 1666929142714,
+    "relativePath": "res\\texture\\icon_diamond.png"
+  },
+  "08dfe4d4-d4cf-426b-bfdb-7752fc87332d": {
+    "asset": 1666929569730,
+    "meta": 1666929572482,
+    "relativePath": "script\\game_rules.js"
+  },
+  "ac98e901-bf45-4228-8247-c77ef427457c": {
+    "asset": 1666929785363,
+    "meta": 1666929787261,
+    "relativePath": "script\\loading_scene.js"
+  },
+  "b5a19ce8-1672-4cd4-9a4b-8b3a632eb62a": {
+    "asset": 1666931743957,
+    "meta": 1666931769597,
+    "relativePath": "script\\ai\\player_role.js"
+  },
+  "f804c0bc-c915-4b88-be29-5e0f7f81b492": {
+    "asset": 1666933073955,
+    "meta": 1666933073970,
+    "relativePath": "res\\prefabs\\ui\\staff_content.prefab"
+  },
+  "09fa54a5-2c08-4371-8d7c-b9a39fffbb50": {
+    "asset": 1666933008833,
+    "meta": 1666933073200,
+    "relativePath": "script\\game_scene.js"
+  },
+  "b44e1469-78ae-4e00-9fb3-b16c41d48991": {
+    "asset": 1666933034183,
+    "meta": 1666933073234,
+    "relativePath": "script\\ui\\staff_content.js"
+  },
+  "1575175e-5b8a-425d-ac5c-f8da01640cdf": {
+    "asset": 1666933072318,
+    "meta": 1666933073267,
+    "relativePath": "script\\ui\\tips_ui.js"
   }
 }

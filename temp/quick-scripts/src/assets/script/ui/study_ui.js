@@ -18,7 +18,8 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   ini_node: function ini_node() {
     this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
-    this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules"); // this.skill_content_js = cc.find("skill_content").getComponent("skill_content");
+    this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
+    this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager"); // this.skill_content_js = cc.find("skill_content").getComponent("skill_content");
 
     this.ad_control = cc.find("ad_control").getComponent("ad_control");
     this.sound_control = cc.find("sound_control").getComponent("sound_control");
@@ -59,36 +60,39 @@ cc.Class({
     this.game_scene_js.on_node_kill(this.node);
   },
   on_rest_skill_point_button_click: function on_rest_skill_point_button_click() {
-    this.sound_control.play_sound_effect("button_click"); // this.ad_control.show_videoAd("skill_rest");
+    var _this = this;
 
-    this.ad_control.video_tag = null;
-    this.ad_control.video_state = 2;
-    var level = user_data.user_data.level;
-    var arr = Object.keys(user_data.user_data.skill);
-    user_data.user_data.skill_point = level;
-    var skill_arr = Object.keys(user_data.user_data.skill); //reset skill to lv 0
+    this.sound_control.play_sound_effect("button_click");
+    this.adsManager_js.showRewardedVideo(function () {
+      var level = user_data.user_data.level;
+      var arr = Object.keys(user_data.user_data.skill);
+      user_data.user_data.skill_point = level;
+      var skill_arr = Object.keys(user_data.user_data.skill); //reset skill to lv 0
 
-    for (var j = 0; j < arr.length; j++) {
-      if (arr[j] == "offline_profit") {
-        user_data.user_data.skill["offline_profit"] = 1;
-      } else {
-        user_data.user_data.skill[arr[j]] = 0;
+      for (var j = 0; j < arr.length; j++) {
+        if (arr[j] == "offline_profit") {
+          user_data.user_data.skill["offline_profit"] = 1;
+        } else {
+          user_data.user_data.skill[arr[j]] = 0;
+        }
+
+        ;
       }
 
       ;
-    }
+      var gold_max = 500 * user_data.user_data.skill["gold_max"] + 500;
+      if (user_data.user_data.gold > gold_max) user_data.user_data.gold = gold_max; // reset skill_content
 
-    ;
-    var gold_max = 500 * user_data.user_data.skill["gold_max"] + 500;
-    if (user_data.user_data.gold > gold_max) user_data.user_data.gold = gold_max; // reset skill_content
+      for (var i = 0; i < skill_arr.length; i++) {
+        _this.skill_group_node.children[i].getComponent("skill_content").ini_node(i);
+      }
 
-    for (var i = 0; i < skill_arr.length; i++) {
-      this.skill_group_node.children[i].getComponent("skill_content").ini_node(i);
-    }
+      ;
 
-    ;
-    this.game_scene_js.create_tips_ui(this.game_scene_js.node, "skill_rest");
-    this.game_rules_js.set_gold_progress();
+      _this.game_scene_js.create_tips_ui(_this.game_scene_js.node, "skill_rest");
+
+      _this.game_rules_js.set_gold_progress();
+    });
   },
   video_succes: function video_succes() {
     if (typeof wx != "undefined") {

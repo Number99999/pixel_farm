@@ -25,7 +25,6 @@ cc.Class({
     anim_select: function () {
         var anim = this.player_node.getComponent(cc.Animation);
         var anim_clips = anim.getClips();//获取动画剪辑
-        cc.log("this.movement_direction: ", this.movement_direction);
         switch (this.movement_direction) {
             case "z_idle":
                 anim.play(anim_clips[0].name);

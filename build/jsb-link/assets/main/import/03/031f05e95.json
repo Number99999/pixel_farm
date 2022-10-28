@@ -2,11 +2,11 @@
   1,
   [
     "ecpdLyjvZBwrvm+cedCcQy",
-    "18ca8feef",
+    "1df994536",
     "17jhe2B9JDPqrm6S4VGcyu",
     "4fWA2Qu/dMXLO65qdwmntH",
-    "12590097f",
-    "1df2dede2",
+    "15c212e7a",
+    "1fe8cfba1",
     "25Xgrp7IRN3IBeI1htS+xi",
     "70D/gc0WVOg65joDhPWBjO",
     "3cFagM+RpFWawhyBSlONw0",
@@ -254,8 +254,8 @@
         {
           "name": "gift0",
           "rect": [
-            431,
-            50,
+            849,
+            948,
             66,
             62
           ],
@@ -294,8 +294,8 @@
         {
           "name": "shadow",
           "rect": [
-            156,
-            213,
+            197,
+            327,
             58,
             28
           ],
@@ -334,8 +334,8 @@
         {
           "name": "z_idle1",
           "rect": [
-            195,
-            110,
+            931,
+            860,
             65,
             90
           ],
@@ -367,7 +367,7 @@
         1
       ],
       [
-        1
+        5
       ]
     ],
     [
@@ -375,8 +375,8 @@
         {
           "name": "gift1",
           "rect": [
-            509,
-            722,
+            780,
+            603,
             66,
             69
           ],
@@ -388,6 +388,7 @@
             66,
             69
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -407,7 +408,7 @@
         1
       ],
       [
-        5
+        1
       ]
     ],
     [

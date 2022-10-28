@@ -30,17 +30,14 @@
     "_active": true,
     "_components": [
       {
+        "__id__": 31
+      },
+      {
         "__id__": 32
-      },
-      {
-        "__id__": 33
-      },
-      {
-        "__id__": 34
       }
     ],
     "_prefab": {
-      "__id__": 35
+      "__id__": 33
     },
     "_opacity": 255,
     "_color": {
@@ -464,16 +461,16 @@
         "__id__": 17
       },
       {
-        "__id__": 23
+        "__id__": 22
       },
       {
-        "__id__": 28
+        "__id__": 27
       }
     ],
     "_active": true,
     "_components": [],
     "_prefab": {
-      "__id__": 31
+      "__id__": 30
     },
     "_opacity": 255,
     "_color": {
@@ -718,7 +715,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 22
+      "__id__": 21
     },
     "_opacity": 255,
     "_color": {
@@ -814,9 +811,6 @@
     "clickEvents": [
       {
         "__id__": 20
-      },
-      {
-        "__id__": 21
       }
     ],
     "_N$interactable": true,
@@ -880,18 +874,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "7548f9QM11K+qkbzP1yyO2m",
-    "handler": "showInterstitial",
-    "customEventData": ""
-  },
-  {
-    "__type__": "cc.ClickEvent",
-    "target": {
-      "__id__": 1
-    },
-    "component": "",
     "_componentId": "f51a5WLhfRJu7mTESWOcnKh",
-    "handler": "video_succes",
+    "handler": "on_keep_rest_button_click",
     "customEventData": ""
   },
   {
@@ -916,14 +900,14 @@
     "_active": false,
     "_components": [
       {
-        "__id__": 24
+        "__id__": 23
       },
       {
-        "__id__": 25
+        "__id__": 24
       }
     ],
     "_prefab": {
-      "__id__": 27
+      "__id__": 26
     },
     "_opacity": 255,
     "_color": {
@@ -977,7 +961,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 23
+      "__id__": 22
     },
     "_enabled": true,
     "_materials": [
@@ -1009,7 +993,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 23
+      "__id__": 22
     },
     "_enabled": true,
     "_normalMaterial": null,
@@ -1018,7 +1002,7 @@
     "zoomScale": 0.8,
     "clickEvents": [
       {
-        "__id__": 26
+        "__id__": 25
       }
     ],
     "_N$interactable": true,
@@ -1108,11 +1092,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 29
+        "__id__": 28
       }
     ],
     "_prefab": {
-      "__id__": 30
+      "__id__": 29
     },
     "_opacity": 255,
     "_color": {
@@ -1166,7 +1150,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 28
+      "__id__": 27
     },
     "_enabled": true,
     "_materials": [
@@ -1251,7 +1235,7 @@
     },
     "_enabled": true,
     "role_sprite": {
-      "__id__": 29
+      "__id__": 28
     },
     "role_arr": [
       {
@@ -1276,22 +1260,6 @@
     "center_node": {
       "__id__": 12
     },
-    "_id": ""
-  },
-  {
-    "__type__": "7548f9QM11K+qkbzP1yyO2m",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "showFullUnitId": "4FFDC51A8F644662015A54080BC34192",
-    "videoUnitId": "3AE3B3F472BC3F1D02F8C794A3376F56",
-    "banner": null,
-    "showFull": null,
-    "video": null,
-    "rewardVideoCallback": null,
     "_id": ""
   },
   {

@@ -332,7 +332,7 @@ cc.Class({
                         // user_data.user_data.wareHouse[plant_index].count++; // thêm vật phẩm vào kho
 
 
-                    this.game_rules_js.jgg(1);
+                    // this.game_rules_js.jgg(1);
                     this.on_node_kill(node);
                 })
                 .start();
@@ -420,8 +420,8 @@ cc.Class({
             default:
                 return;
         };
-        cc.log(node.name, "放入节点池");
     },
+
     //初始化节点
     ini_node: function () {
         this.new_button_group_node_pool();

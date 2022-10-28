@@ -63,8 +63,7 @@ var _default = {
   //读取本地数据
   load: function load() {
     try {
-      // var local_user_data = JSON.parse(cc.sys.localStorage.getItem('user_data'));
-      var local_user_data = null;
+      var local_user_data = JSON.parse(cc.sys.localStorage.getItem('user_data')); // var local_user_data = null;
 
       if (local_user_data !== null) {
         this.updata_user_data(local_user_data);
