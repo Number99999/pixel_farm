@@ -1,0 +1,16 @@
+lỗi nước:	(chưa xong)
+	tỉ lệ lỗi do: khi hết nước, tắt thanh progress -> khi vào lại bật nên đầy
+	khắc phục: - thêm 1 biến trong congif thể hiện còn nước hay hết
+		   - còn thì như bth, nếu hết thì fix lại: thanh progress tỉ lệ 0/100 chứ k để active nữa
+
+
+lỗi pet hiển thị lên pop up:
+	hủy pet_ui xong tạo lại, pet sẽ ở dưới: 
+		
+
+thêm diamond vào game(cập nhật số diamond đang có)
+
+
+
+
+
