@@ -144,7 +144,10 @@ cc.Class({
         } else {
             user_data.user_data.gold += num;
         };
+    },
 
+    add_diamond: function (num) {
+        user_data.user_data.diamond += num;
     },
     //刷新ex数
     add_ex: function (num) {
@@ -603,6 +606,7 @@ cc.Class({
         this.judge_date();
         this.wareHouse_full();
         this.ini_videotape();
+        this.diamond_label.string = user_data.user_data.diamond;
     },
 
 

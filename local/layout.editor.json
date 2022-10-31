@@ -5,21 +5,21 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 0,
-      "y": 0,
-      "width": 1920,
-      "height": 1040,
+      "x": -8,
+      "y": -8,
+      "width": 1936,
+      "height": 1056,
       "layout": {
         "type": "dock-h",
         "children": [
           {
-            "width": 393,
-            "height": 924,
+            "width": 469,
+            "height": 940,
             "type": "dock-v",
             "children": [
               {
-                "width": 393,
-                "height": 461,
+                "width": 469,
+                "height": 506,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -27,8 +27,8 @@
                 ]
               },
               {
-                "width": 393,
-                "height": 460,
+                "width": 469,
+                "height": 431,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -38,13 +38,13 @@
             ]
           },
           {
-            "width": 1075,
-            "height": 924,
+            "width": 978,
+            "height": 940,
             "type": "dock-v",
             "children": [
               {
-                "width": 1075,
-                "height": 625,
+                "width": 978,
+                "height": 636,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -52,8 +52,8 @@
                 ]
               },
               {
-                "width": 1075,
-                "height": 296,
+                "width": 978,
+                "height": 301,
                 "type": "panel",
                 "active": 1,
                 "children": [
@@ -64,8 +64,8 @@
             ]
           },
           {
-            "width": 430,
-            "height": 924,
+            "width": 467,
+            "height": 940,
             "type": "panel",
             "active": 0,
             "children": [

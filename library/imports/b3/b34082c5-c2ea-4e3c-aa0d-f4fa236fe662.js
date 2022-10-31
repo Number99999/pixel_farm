@@ -18,6 +18,7 @@ cc.Class({
     lock_group_node: cc.Node,
     confirm_button_node: cc.Node,
     sum_gold: 0,
+    sum_diamond: 0,
     index: 0
   },
   // LIFE-CYCLE CALLBACKS:
@@ -32,41 +33,47 @@ cc.Class({
   },
   button_unlock_click: function button_unlock_click(e, custom) {
     // button unlock repo
+    // if (custom <= 7) {
     this.node.children[2].active = false; // show POP-UP open new repo
 
     this.node.children[3].active = true; // hidden repo
 
-    this.show_comfirm_buy(custom);
+    this.show_comfirm_buy(custom); // }
+    // else
+    //     this.game_scene_js.create_tips_ui(this.game_scene_js.node, "cant_unlock_repo");
   },
   show_comfirm_buy: function show_comfirm_buy(custom) {
     // hiển thị số tiền để mua rương, thêm nút xác nhận
-    this.sum_gold = Number(0); // var sum_diamond = 0;
+    this.sum_gold = Number(0);
+    this.sum_diamond = Number(0); // var sum_diamond = 0;
 
     for (var i = 0; i <= custom; i++) {
       if (user_data.user_data.wareHouse[i].have == 0) {
-        this.sum_gold += user_data.user_data.wareHouse[i].cost;
+        if (user_data.user_data.wareHouse[i].type_buy == "gold") this.sum_gold += user_data.user_data.wareHouse[i].cost;else this.sum_diamond += user_data.user_data.wareHouse[i].cost; // cc.log("43 index " + i + " cost " + user_data.user_data.wareHouse[i].cost);
       }
     }
 
-    this.node.children[3].children[0].getComponent(cc.Label).string = "Do you want use " + this.sum_gold + " gold to buy new repository?";
+    this.node.children[3].children[0].getComponent(cc.Label).string = "Do you want use " + this.sum_gold + " gold and " + this.sum_diamond + " diamond to buy new repository?";
     this.index = custom;
   },
   buy_repo: function buy_repo() {
-    if (user_data.user_data.gold >= this.sum_gold) {
+    if (user_data.user_data.gold >= this.sum_gold && user_data.user_data.diamond >= this.sum_diamond) {
       // console.log("sum_godl " + sum_gold);
       // user_data.user_data.diamond -= this.sum_diamond;
       for (var i = 0; i <= this.index; i++) {
         user_data.user_data.wareHouse[i].have = 1;
         this.lock_group_node.children[i].active = false;
-        this.label_group_node.children[i].getComponent(cc.Label).string = "0/30";
+        this.label_group_node.children[i].getComponent(cc.Label).string = user_data.user_data.wareHouse[i].count + "/30";
         this.game_scene_js.create_tips_ui(this.game_scene_js.node, "unlocked_repo");
       }
 
       this.game_rules_js.add_gold(-this.sum_gold);
+      this.game_rules_js.add_diamond(-this.sum_diamond);
       this.touch_exit();
-    } else {
-      console.log(this.sum_gold + " sum_gold");
+    } else if (user_data.user_data.gold < this.gold) {
       this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_gold");
+    } else if (user_data.user_data.diamond < this.diamond) {
+      this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_diamond");
     }
   },
   // auto_sell: function () {    // tự động bán hàng trong kho // chưa xong
@@ -182,7 +189,7 @@ cc.Class({
 
         _this.game_scene_js.create_tips_ui(_this.game_rules_js.node, "gold", sum);
 
-        _this.game_rules_js.add_gold(sum);
+        _this.game_rules_js.add_gold(sum * 2);
 
         _this.set_sell();
       }

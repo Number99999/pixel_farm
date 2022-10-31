@@ -29,7 +29,6 @@ cc.Class({
                     if (user_data.user_data.land[i].have == 1) {
                         this.group_node.children[i].active = true;
                         this.group_node.children[i].getChildByName("button_icon").getComponent(cc.Sprite).spriteFrame = this.frame_arr[1];
-                        console.log("hello 32");
                     };
                 };
                 break;
@@ -38,7 +37,6 @@ cc.Class({
                     if (user_data.user_data.land[i].have == 1) {
                         this.group_node.children[i].active = true;
                         this.group_node.children[i].getChildByName("button_icon").getComponent(cc.Sprite).spriteFrame = this.frame_arr[2];
-                        console.log("hello 41");
                     };
                 };
                 break;
@@ -47,7 +45,6 @@ cc.Class({
                     if (user_data.user_data.land[i].have == 1) {
                         this.group_node.children[i].active = true;
                         this.group_node.children[i].getChildByName("button_icon").getComponent(cc.Sprite).spriteFrame = this.frame_arr[0];
-                        console.log("hello 50");
                     };
                 };
                 break;

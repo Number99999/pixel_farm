@@ -188,6 +188,9 @@ cc.Class({
 
     ;
   },
+  add_diamond: function add_diamond(num) {
+    user_data.user_data.diamond += num;
+  },
   //刷新ex数
   add_ex: function add_ex(num) {
     if (this.add_ex_anim == 0) {
@@ -750,6 +753,7 @@ cc.Class({
     this.judge_date();
     this.wareHouse_full();
     this.ini_videotape();
+    this.diamond_label.string = user_data.user_data.diamond;
   },
   //===================================================================================
   //===================================================================================

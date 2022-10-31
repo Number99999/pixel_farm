@@ -1,4 +1,5 @@
 var user_data = require("user_data");
+var config = require("config");
 cc.Class({
     extends: cc.Component,
 
@@ -38,15 +39,21 @@ cc.Class({
     },
     //keep rest
     on_keep_rest_button_click() {
+        // user_data.user_data.staff[this.staff_index].now_time = new Date().getTime() /1000;
+        // user_data.user_data.staff[this.staff_index].over_time -= config.staff[this.staff_index].rest_time;
+        // console.log("43 now time " + user_data.user_data.staff[this.staff_index].now_time );
+        // console.log("44 rest time " + config.staff[this.staff_index].rest_time );
+        // console.log("45 over time" + user_data.user_data.staff[this.staff_index].over_time);
         this.adsManager_js.showRewardedVideo(() => {
             var callback = function () {
-                user_data.user_data.staff[this.staff_index].over_time = 0;
+                // this.game_scene_js.create_tips_ui(this.game_scene_js.node, "staff_rest_over");
+                user_data.user_data.staff[this.staff_index].now_time = new Date().getTime() / 1000;
+                user_data.user_data.staff[this.staff_index].over_time -= config.staff[this.staff_index].rest_time;
                 this.game_scene_js.create_tips_ui(this.game_scene_js.node, "staff_rest_over");
                 this.node.destroy();
             };
             this.schedule(callback, 0.2);
         });
-        this.node.destroy();
     },
 
     //检测视频是否播放成功

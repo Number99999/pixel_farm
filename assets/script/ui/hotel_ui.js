@@ -87,7 +87,7 @@ cc.Class({
             this.ini_node();
         } else {
             this.sound_control.play_sound_effect("un_click");
-            this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money");
+            this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_gold");
         };
     },
     //创建ad_car

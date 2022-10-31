@@ -8,9 +8,9 @@ lỗi pet hiển thị lên pop up:
 	hủy pet_ui xong tạo lại, pet sẽ ở dưới: 
 		
 
-thêm diamond vào game(cập nhật số diamond đang có)
+thêm diamond vào game(cập nhật số diamond đang có) xong
 
 
 
 
-
+thêm kho mua bằng kim cương

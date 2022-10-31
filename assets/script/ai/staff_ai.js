@@ -7,6 +7,7 @@ cc.Class({
         player_node: cc.Node,
         pupple_node: cc.Node,
         staff_node: cc.Node,
+        progess_bar: cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -145,19 +146,19 @@ cc.Class({
         var callback = function () {
             if (this.work_state == "rest") {
 
-                //启动监听事件
+                //nghe ev
                 this.staff_node.on("touchstart", this.on_staff_node_touch, this);
                 this.pupple_node.on("touchstart", this.on_staff_node_touch, this)
                 var now_time = new Date().getTime() / 1000;
                 var over_time = user_data.user_data.staff[this.staff_index].over_time;
                 var rest_time = config.staff[this.staff_index].rest_time - user_data.user_data.trader.recipes;
 
-                //休息时间最小值为0
+                // tgian nghỉ min là 0
                 if (rest_time <= 0) {
                     rest_time = 0;
                 };
 
-                //没有工作过就直接工作
+                //làm việc
                 if (over_time == 0) {
                     this.work_schedule();
                     this.pupple_node.active = false;
@@ -165,7 +166,7 @@ cc.Class({
                     return;
                 } else {
                     if (now_time - over_time >= rest_time) {
-                        //休息结束
+                        //hết nghỉ giải lao
                         // cc.log(this.staff_index, "开始工作");
                         this.pupple_node.active = false;
                         this.unschedule(callback);
@@ -176,6 +177,7 @@ cc.Class({
                         // cc.log("休息");
                         this.work_state = "rest";
                         this.pupple_node.active = true;
+
                     };//end if
 
                 };//end if
@@ -185,7 +187,7 @@ cc.Class({
             };// end if
 
         };
-        this.schedule(callback, 0.5, cc.macro.REPEAT_FOREVER);
+        this.schedule(callback, 0.1, cc.macro.REPEAT_FOREVER);
     },
     ini_node: function (staff_index) {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");;

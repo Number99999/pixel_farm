@@ -398,7 +398,6 @@ cc.Class({
             this.set_plant();
             this.node.getComponent(cc.Sprite).spriteFrame = this.land_frame_arr[1]; // cc.log(land_state);
 
-            console.log("new land");
             return;
         }
 

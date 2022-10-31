@@ -37,7 +37,6 @@ require('./assets/script/ui/option_ui');
 require('./assets/script/ui/pet_content');
 require('./assets/script/ui/pet_ui');
 require('./assets/script/ui/plant_ui');
-require('./assets/script/ui/repo_ui');
 require('./assets/script/ui/rest_ui');
 require('./assets/script/ui/sell_ui');
 require('./assets/script/ui/shop_buy_ui');

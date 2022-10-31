@@ -5330,7 +5330,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "gold_icon",
+    "_name": "diamond_icon",
     "_objFlags": 0,
     "_parent": {
       "__id__": 111

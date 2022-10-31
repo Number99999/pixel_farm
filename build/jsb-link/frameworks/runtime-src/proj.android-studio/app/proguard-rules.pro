@@ -15,6 +15,9 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+#sdkbox
+-keep class com.sdkbox.** { *; }
+-dontwarn com.sdkbox.**
 # google play service
 -keep class com.google.android.gms.** { *; }
 -dontwarn com.google.android.gms.**

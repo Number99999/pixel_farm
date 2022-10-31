@@ -181,6 +181,11 @@ cc.Class({
         this.icon_frame.spriteFrame = this.icon_frame_arr[1];
         break;
 
+      case "cant_unlock_repo":
+        this.label.string = "Can't unlock this repository yet";
+        this.icon_frame.spriteFrame = this.icon_frame_arr[1];
+        break;
+
       case "no_video_today":
         this.label.string = "Out of video view";
         this.icon_frame.spriteFrame = this.icon_frame_arr[1];
