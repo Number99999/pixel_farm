@@ -7,10 +7,10 @@
     "6eOAsaApBNy7sE4eExBNMT",
     "44yE23ZjBICK633rKhuX/2",
     "4fcgNAMNtBsoirj5sqBlig",
-    "1db690e72",
-    "1fe8cfba1",
+    "11d22d987",
+    "12590097f",
     "02delMVqdBD70a/HSD99FK",
-    "15c212e7a"
+    "1465a256a"
   ],
   [
     "node",
@@ -689,8 +689,8 @@
         {
           "name": "center",
           "rect": [
-            592,
-            3,
+            559,
+            421,
             429,
             405
           ],
@@ -729,8 +729,8 @@
         {
           "name": "i_wanner_watch",
           "rect": [
-            226,
-            784,
+            534,
+            174,
             216,
             68
           ],
@@ -742,7 +742,6 @@
             216,
             68
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -810,8 +809,8 @@
         {
           "name": "exit_button",
           "rect": [
-            417,
-            387,
+            249,
+            885,
             61,
             61
           ],

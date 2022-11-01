@@ -4,7 +4,7 @@
     "b2m2l1VmJA1IpdBJpq548P",
     "ecpdLyjvZBwrvm+cedCcQy",
     "51rcWsGYRIDpHDBsDOdTXp",
-    "1df994536"
+    "1465a256a"
   ],
   [
     "node",
@@ -234,8 +234,8 @@
         {
           "name": "button_tips",
           "rect": [
-            728,
-            684,
+            469,
+            898,
             40,
             45
           ],
@@ -247,7 +247,6 @@
             40,
             45
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,

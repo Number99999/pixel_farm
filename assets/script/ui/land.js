@@ -215,7 +215,11 @@ cc.Class({
                     return;
                 } else {
                     if (user_data.user_data.land[this.land_index].have_water == 0) bar.progress = 0;
-                    else bar.progress = water_num / all_water;
+                    else 
+                    {
+                        user_data.user_data.land[this.land_index].have_water=1;
+                        bar.progress = water_num / all_water;
+                    }
                 };
             } else {
                 this.unschedule(this.water_schedule);

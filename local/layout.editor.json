@@ -13,13 +13,13 @@
         "type": "dock-h",
         "children": [
           {
-            "width": 469,
-            "height": 940,
+            "width": 465.078125,
+            "height": 924,
             "type": "dock-v",
             "children": [
               {
-                "width": 469,
-                "height": 506,
+                "width": 465.078125,
+                "height": 497.359375,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -27,8 +27,8 @@
                 ]
               },
               {
-                "width": 469,
-                "height": 431,
+                "width": 465.078125,
+                "height": 423.640625,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -38,13 +38,13 @@
             ]
           },
           {
-            "width": 978,
-            "height": 940,
+            "width": 969.828125,
+            "height": 924,
             "type": "dock-v",
             "children": [
               {
-                "width": 978,
-                "height": 636,
+                "width": 969.828125,
+                "height": 625.140625,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -52,8 +52,8 @@
                 ]
               },
               {
-                "width": 978,
-                "height": 301,
+                "width": 969.828125,
+                "height": 295.859375,
                 "type": "panel",
                 "active": 1,
                 "children": [
@@ -64,8 +64,8 @@
             ]
           },
           {
-            "width": 467,
-            "height": 940,
+            "width": 463.09375,
+            "height": 924,
             "type": "panel",
             "active": 0,
             "children": [
@@ -85,7 +85,9 @@
         "cocos-services"
       ]
     },
-    " build-worker-worker": {}
+    " common-asset-worker-worker": {},
+    " build-worker-worker": {},
+    "window-1667302139108": {}
   },
   "panels": {
     "builder": {

@@ -1,10 +1,10 @@
 [
   1,
   [
-    "1db690e72",
+    "11d22d987",
     "97jyFqsFpA+Zx2tK4pHuAZ",
     "7exoGaCXJHAb8EhRKJLaCD",
-    "1df994536"
+    "1465a256a"
   ],
   [
     "_textureSetter",
@@ -44,8 +44,8 @@
         {
           "name": "c_idle1",
           "rect": [
+            3,
             914,
-            854,
             79,
             107
           ],
@@ -57,7 +57,6 @@
             79,
             107
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -148,8 +147,8 @@
         {
           "name": "c_idle2",
           "rect": [
-            407,
-            147,
+            553,
+            203,
             79,
             104
           ],
@@ -161,6 +160,7 @@
             79,
             107
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,

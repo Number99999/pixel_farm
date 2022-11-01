@@ -67,9 +67,9 @@ cc.Class({
         else if (user_data.user_data.gold < this.gold) {
             this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_gold");
         }
-        else if (user_data.user_data.diamond < this.diamond) {
+        else if (user_data.user_data.diamond, this.diamond)
             this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_diamond");
-        }
+        else this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money");
     },
     // auto_sell: function () {    // tự động bán hàng trong kho // chưa xong
     //     var time_auto = 60 * 60;

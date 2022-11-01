@@ -173,7 +173,11 @@ cc.Class({
           // };
 
           if (_user_data["default"].user_data.pet[this.pet_index].have == 1) {
-            this.game_rules_js.add_ex(produce_ex);
+            for (var i = 0; i < produce_ex; i++) {
+              this.game_scene_js.create_ex_effect(this.node, i);
+            }
+
+            ;
           }
 
           ;
@@ -193,7 +197,11 @@ cc.Class({
           // };
 
           if (_user_data["default"].user_data.pet[this.pet_index].have == 1) {
-            this.game_rules_js.add_ex(produce_ex); // console.log("pet " + this.pet_index + " produce_ex: " + produce_ex);
+            for (var i = 0; i < produce_ex; i++) {
+              this.game_scene_js.create_ex_effect(this.node, i);
+            }
+
+            ; // console.log("pet " + this.pet_index + " produce_ex: " + produce_ex);
           }
 
           ;
@@ -214,7 +222,11 @@ cc.Class({
           //     this.game_scene_js.create_ex_effect(this.node, i);
           // };
           if (_user_data["default"].user_data.pet[this.pet_index].have == 1) {
-            this.game_rules_js.add_ex(produce_ex); // console.log("pet " + this.pet_index + " produce_ex: " + config.pet[this.pet_index].produce_ex);
+            for (var i = 0; i < produce_ex; i++) {
+              this.game_scene_js.create_ex_effect(this.node, i);
+            }
+
+            ; // console.log("pet " + this.pet_index + " produce_ex: " + config.pet[this.pet_index].produce_ex);
           }
 
           ;
@@ -233,7 +245,11 @@ cc.Class({
           var produce_ex = config.pet[this.pet_index].produce_ex;
 
           if (_user_data["default"].user_data.pet[this.pet_index].have == 1) {
-            this.game_rules_js.add_ex(produce_ex); // console.log("pet " + this.pet_index + " produce_ex: " + produce_ex);
+            for (var i = 0; i < produce_ex; i++) {
+              this.game_scene_js.create_ex_effect(this.node, i);
+            }
+
+            ; // console.log("pet " + this.pet_index + " produce_ex: " + produce_ex);
           }
 
           ;

@@ -2,7 +2,7 @@
   1,
   [
     "ecpdLyjvZBwrvm+cedCcQy",
-    "1fe8cfba1",
+    "12590097f",
     "02delMVqdBD70a/HSD99FK",
     "a2MjXRFdtLlYQ5ouAFv/+R",
     "23gvA6+E9HhLKU33qp1HJg",
@@ -295,8 +295,8 @@
         {
           "name": "common_ui_floor",
           "rect": [
-            890,
-            137,
+            534,
+            248,
             131,
             126
           ],
@@ -308,6 +308,7 @@
             131,
             126
           ],
+          "rotated": 1,
           "capInsets": [
             37,
             29,

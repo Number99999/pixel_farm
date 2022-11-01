@@ -75,6 +75,8 @@ cc.Class({
       user_data.user_data.gold -= config.staff[this.staff_index].cost;
       user_data.user_data.staff[this.staff_index].have = 1;
       this.game_rules_js.create_staff(this.staff_index);
+      var gold_max = 500 * user_data.user_data.skill["gold_max"] + 500;
+      this.game_rules_js.gold_label.getComponent(cc.Label).string = user_data.user_data.gold + "/" + gold_max;
       this.buy_button.active = false;
       this.sound_control.play_sound_effect("button_click");
       this.update_content();

@@ -1,10 +1,10 @@
 [
   1,
   [
-    "1df994536",
+    "1c0c61f52",
     "e766bRzTZOTJYXUswEFZsa",
     "05L8OZn3RLG7V1GhpIRTaa",
-    "15c212e7a"
+    "1465a256a"
   ],
   [
     "_textureSetter",
@@ -44,8 +44,8 @@
         {
           "name": "z_run1",
           "rect": [
-            859,
-            426,
+            813,
+            395,
             66,
             81
           ],
@@ -57,6 +57,7 @@
             66,
             81
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -147,8 +148,8 @@
         {
           "name": "z_run2",
           "rect": [
-            295,
-            74,
+            322,
+            951,
             63,
             81
           ],

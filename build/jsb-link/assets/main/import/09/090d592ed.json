@@ -3,8 +3,8 @@
   [
     "ecpdLyjvZBwrvm+cedCcQy",
     "7174JvctBFx4b/LyegcESI",
-    "15e1c8449",
-    "1df994536",
+    "12590097f",
+    "1465a256a",
     "b7ssWWvAtDd6vTcWqsuvxq",
     "40BEpIrSdPtYxud/GY5cFG"
   ],
@@ -191,8 +191,8 @@
         {
           "name": "ad_car",
           "rect": [
+            759,
             3,
-            636,
             379,
             262
           ],
@@ -232,8 +232,8 @@
         {
           "name": "ad_car_smoke",
           "rect": [
-            728,
-            764,
+            487,
+            949,
             63,
             44
           ],

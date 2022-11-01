@@ -2,6 +2,7 @@
   1,
   [
     "ecpdLyjvZBwrvm+cedCcQy",
+    "1465a256a",
     "b9b0/em/hAA6lJfiAIhI/9",
     "82lOM3AHhNC7RNeoaEVzey",
     "70TEFgqDFAY4rHAtHBrBF3",
@@ -9,9 +10,7 @@
     "168RFL+ztM2LBzbMiagjJN",
     "4fnp8waNZJxZlck+H4om9E",
     "4c0P3YjI5KW7JspHoYptNT",
-    "88ADDYnTdGhoAaDrHrQGYu",
-    "1df994536",
-    "15c212e7a"
+    "88ADDYnTdGhoAaDrHrQGYu"
   ],
   [
     "node",
@@ -369,15 +368,15 @@
       ],
       [
         0,
-        1,
-        0,
         2,
+        0,
         3,
         4,
         5,
         6,
         7,
-        8
+        8,
+        9
       ]
     ],
     [
@@ -385,8 +384,8 @@
         {
           "name": "z_idle1",
           "rect": [
-            852,
-            687,
+            392,
+            679,
             66,
             81
           ],
@@ -398,6 +397,7 @@
             66,
             81
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -417,7 +417,7 @@
         2
       ],
       [
-        9
+        1
       ]
     ],
     [
@@ -425,8 +425,8 @@
         {
           "name": "shadow",
           "rect": [
-            463,
-            71,
+            993,
+            364,
             58,
             28
           ],
@@ -438,6 +438,7 @@
             58,
             28
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -457,7 +458,7 @@
         2
       ],
       [
-        10
+        1
       ]
     ]
   ]

@@ -8,9 +8,14 @@ lỗi pet hiển thị lên pop up:
 	hủy pet_ui xong tạo lại, pet sẽ ở dưới: 
 		
 
-thêm diamond vào game(cập nhật số diamond đang có) xong
-
 
 
 
 thêm kho mua bằng kim cương
+
+
+hiện thị lỗi thanh nước: khi nước đầy vẫn k hiện (xog)
+
+
+tạo shop nạp kim cương:
+	tạo 1 preafab để chứa các gói nạp như trong shop_ui với nền trắng trogn study_ui

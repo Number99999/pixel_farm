@@ -2,8 +2,8 @@
   1,
   [
     "ecpdLyjvZBwrvm+cedCcQy",
-    "1df994536",
-    "1fe8cfba1",
+    "1c0c61f52",
+    "12590097f",
     "02delMVqdBD70a/HSD99FK",
     "a2MjXRFdtLlYQ5ouAFv/+R",
     "bbEg1taI5KOLA3p3UL8f6q",
@@ -481,8 +481,8 @@
         {
           "name": "common_ui_floor",
           "rect": [
-            890,
-            137,
+            534,
+            248,
             131,
             126
           ],
@@ -494,6 +494,7 @@
             131,
             126
           ],
+          "rotated": 1,
           "capInsets": [
             37,
             29,
@@ -521,7 +522,7 @@
         {
           "name": "plant_button1",
           "rect": [
-            716,
+            379,
             564,
             108,
             45
@@ -554,7 +555,7 @@
         1
       ],
       [
-        2
+        1
       ]
     ],
     [
@@ -562,8 +563,8 @@
         {
           "name": "land_button1",
           "rect": [
-            85,
-            734,
+            430,
+            564,
             108,
             45
           ],
@@ -643,8 +644,8 @@
         {
           "name": "plant_button2",
           "rect": [
-            88,
-            848,
+            481,
+            564,
             108,
             45
           ],
@@ -684,8 +685,8 @@
         {
           "name": "land_button2",
           "rect": [
-            101,
-            149,
+            532,
+            564,
             108,
             45
           ],

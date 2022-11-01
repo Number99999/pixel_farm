@@ -771,7 +771,7 @@ window.__require = function e(t, n, r) {
       },
       load: function load() {
         try {
-          var local_user_data = JSON.parse(cc.sys.localStorage.getItem("user_data"));
+          var local_user_data = null;
           if (null !== local_user_data) {
             this.updata_user_data(local_user_data);
             cc.log("load successfull");
@@ -2065,7 +2065,10 @@ window.__require = function e(t, n, r) {
             user_data.user_data.land[this.land_index].water_num = 0;
             return;
           }
-          0 == user_data.user_data.land[this.land_index].have_water ? bar.progress = 0 : bar.progress = water_num / all_water;
+          if (0 == user_data.user_data.land[this.land_index].have_water) bar.progress = 0; else {
+            user_data.user_data.land[this.land_index].have_water = 1;
+            bar.progress = water_num / all_water;
+          }
         };
         this.schedule(this.water_schedule, .1);
       },
@@ -2674,7 +2677,7 @@ window.__require = function e(t, n, r) {
           var produce_ex = config.pet[this.pet_index].produce_ex;
           var callback = function callback() {
             var produce_ex = config.pet[this.pet_index].produce_ex;
-            1 == _user_data["default"].user_data.pet[this.pet_index].have && this.game_rules_js.add_ex(produce_ex);
+            if (1 == _user_data["default"].user_data.pet[this.pet_index].have) for (var i = 0; i < produce_ex; i++) this.game_scene_js.create_ex_effect(this.node, i);
           };
           this.schedule(callback, produce_ex_time);
           break;
@@ -2685,7 +2688,7 @@ window.__require = function e(t, n, r) {
           var produce_ex = config.pet[this.pet_index].produce_ex;
           var callback = function callback() {
             var produce_ex = config.pet[this.pet_index].produce_ex;
-            1 == _user_data["default"].user_data.pet[this.pet_index].have && this.game_rules_js.add_ex(produce_ex);
+            if (1 == _user_data["default"].user_data.pet[this.pet_index].have) for (var i = 0; i < produce_ex; i++) this.game_scene_js.create_ex_effect(this.node, i);
           };
           this.schedule(callback, produce_ex_time);
           break;
@@ -2695,7 +2698,7 @@ window.__require = function e(t, n, r) {
           var produce_ex_time = config.pet[this.pet_index].produce_ex_time;
           var produce_ex = config.pet[this.pet_index].produce_ex;
           var callback = function callback() {
-            1 == _user_data["default"].user_data.pet[this.pet_index].have && this.game_rules_js.add_ex(produce_ex);
+            if (1 == _user_data["default"].user_data.pet[this.pet_index].have) for (var i = 0; i < produce_ex; i++) this.game_scene_js.create_ex_effect(this.node, i);
           };
           this.schedule(callback, produce_ex_time);
           break;
@@ -2706,7 +2709,7 @@ window.__require = function e(t, n, r) {
           var produce_ex = config.pet[this.pet_index].produce_ex;
           var callback = function callback() {
             var produce_ex = config.pet[this.pet_index].produce_ex;
-            1 == _user_data["default"].user_data.pet[this.pet_index].have && this.game_rules_js.add_ex(produce_ex);
+            if (1 == _user_data["default"].user_data.pet[this.pet_index].have) for (var i = 0; i < produce_ex; i++) this.game_scene_js.create_ex_effect(this.node, i);
           };
           this.schedule(callback, produce_ex_time);
         }
@@ -3232,7 +3235,8 @@ window.__require = function e(t, n, r) {
           this.game_rules_js.add_gold(-this.sum_gold);
           this.game_rules_js.add_diamond(-this.sum_diamond);
           this.touch_exit();
-        } else user_data.user_data.gold < this.gold ? this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_gold") : user_data.user_data.diamond < this.diamond && this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_diamond");
+        } else user_data.user_data.gold < this.gold ? this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_gold") : (user_data.user_data.diamond, 
+        this.diamond ? this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money_diamond") : this.game_scene_js.create_tips_ui(this.game_scene_js.node, "no_money"));
       },
       set_sell: function set_sell() {
         var all_capacity = 30;
@@ -3569,50 +3573,55 @@ window.__require = function e(t, n, r) {
         this.have_icon_node.active = false;
         this.button_tips_node.active = false;
         this.update_content();
-        this.update_schedule();
-      },
-      update_schedule: function update_schedule() {
-        this.schedule(this.update_content, .5);
       },
       update_content: function update_content() {
-        var gold = _user_data["default"].user_data.gold;
-        var level = _user_data["default"].user_data.level;
-        switch (this.type) {
-         case "land":
-          this.name_label.string = _config["default"].land[this.index].name;
-          this.icon_sprite.spriteFrame = this.land_frame;
-          if (1 == _user_data["default"].user_data.land[this.index].have) {
-            this.button_tips_node.active = false;
-            this.cost_label.node.active = false;
-            this.have_icon_node.active = true;
-            this.need_level_label.node.active = false;
-            this.gold_icon_node.active = false;
-          } else {
-            this.need_level_label.node.active = true;
-            this.gold_icon_node.active = true;
-            this.need_level_label.string = "Level " + _config["default"].land[this.index].need_level + " to unlock";
-            level >= _config["default"].land[this.index].need_level ? this.cost_label.string = _config["default"].land[this.index].cost : this.cost_label.string = "???";
-            level >= _config["default"].land[this.index].need_level && gold >= _config["default"].land[this.index].cost ? this.button_tips_node.active = true : this.button_tips_node.active = false;
-          }
-          break;
+        var callback = function callback() {
+          var gold = _user_data["default"].user_data.gold;
+          var level = _user_data["default"].user_data.level;
+          switch (this.type) {
+           case "land":
+            this.name_label.string = _config["default"].land[this.index].name;
+            this.icon_sprite.spriteFrame = this.land_frame;
+            if (1 == _user_data["default"].user_data.land[this.index].have) {
+              this.button_tips_node.active = false;
+              this.cost_label.node.active = false;
+              this.have_icon_node.active = true;
+              this.need_level_label.node.active = false;
+              this.gold_icon_node.active = false;
+            } else {
+              this.need_level_label.node.active = true;
+              this.gold_icon_node.active = true;
+              this.need_level_label.string = "Level " + _config["default"].land[this.index].need_level + " to unlock";
+              if (level >= _config["default"].land[this.index].need_level) {
+                this.cost_label.string = _config["default"].land[this.index].cost;
+                this.need_level_label.string = "";
+              } else this.cost_label.string = "???";
+              level >= _config["default"].land[this.index].need_level && gold >= _config["default"].land[this.index].cost ? this.button_tips_node.active = true : this.button_tips_node.active = false;
+            }
+            break;
 
-         case "plant":
-          this.name_label.string = _config["default"].plant[this.index].name;
-          this.icon_sprite.spriteFrame = this.plant_icon_frame_arr[this.index];
-          if (1 == _user_data["default"].user_data.plant[this.index].have) {
-            this.button_tips_node.active = false;
-            this.cost_label.node.active = false;
-            this.have_icon_node.active = true;
-            this.need_level_label.node.active = false;
-            this.gold_icon_node.active = false;
-          } else {
-            this.gold_icon_node.active = true;
-            this.need_level_label.node.active = true;
-            this.need_level_label.string = "Need " + _config["default"].plant[this.index].need_level + " level unlock";
-            level >= _config["default"].plant[this.index].need_level ? this.cost_label.string = _config["default"].plant[this.index].cost : this.cost_label.string = "???";
-            level >= _config["default"].plant[this.index].need_level && gold >= _config["default"].plant[this.index].cost ? this.button_tips_node.active = true : this.button_tips_node.active = false;
+           case "plant":
+            this.name_label.string = _config["default"].plant[this.index].name;
+            this.icon_sprite.spriteFrame = this.plant_icon_frame_arr[this.index];
+            if (1 == _user_data["default"].user_data.plant[this.index].have) {
+              this.button_tips_node.active = false;
+              this.cost_label.node.active = false;
+              this.have_icon_node.active = true;
+              this.need_level_label.node.active = false;
+              this.gold_icon_node.active = false;
+            } else {
+              this.gold_icon_node.active = true;
+              this.need_level_label.node.active = true;
+              this.need_level_label.string = "Need " + _config["default"].plant[this.index].need_level + " level unlock";
+              if (level >= _config["default"].plant[this.index].need_level) {
+                this.cost_label.string = _config["default"].plant[this.index].cost;
+                this.need_level_label.string = "";
+              } else this.cost_label.string = "???";
+              level >= _config["default"].plant[this.index].need_level && gold >= _config["default"].plant[this.index].cost ? this.button_tips_node.active = true : this.button_tips_node.active = false;
+            }
           }
-        }
+        };
+        this.schedule(callback, .1);
       },
       on_button_click: function on_button_click() {
         this.sound_control.play_sound_effect("button_click");
@@ -4198,6 +4207,8 @@ window.__require = function e(t, n, r) {
           user_data.user_data.gold -= config.staff[this.staff_index].cost;
           user_data.user_data.staff[this.staff_index].have = 1;
           this.game_rules_js.create_staff(this.staff_index);
+          var gold_max = 500 * user_data.user_data.skill["gold_max"] + 500;
+          this.game_rules_js.gold_label.getComponent(cc.Label).string = user_data.user_data.gold + "/" + gold_max;
           this.buy_button.active = false;
           this.sound_control.play_sound_effect("button_click");
           this.update_content();
@@ -4568,6 +4579,11 @@ window.__require = function e(t, n, r) {
 
          case "no_video_today":
           this.label.string = "Out of video view";
+          this.icon_frame.spriteFrame = this.icon_frame_arr[1];
+          break;
+
+         case "no_money":
+          this.label.string = "Not engought gold and diamond!!!";
           this.icon_frame.spriteFrame = this.icon_frame_arr[1];
         }
         this.end_anim();

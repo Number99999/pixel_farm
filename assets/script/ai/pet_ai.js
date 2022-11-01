@@ -141,7 +141,9 @@ cc.Class({
                     //     this.game_scene_js.create_ex_effect(this.node, i);
                     // };
                     if (user_data.user_data.pet[this.pet_index].have == 1) {
-                        this.game_rules_js.add_ex(produce_ex);
+                        for (var i = 0; i < produce_ex; i++) {
+                            this.game_scene_js.create_ex_effect(this.node, i);
+                        };
                     };
                 };
                 this.schedule(callback, produce_ex_time);
@@ -156,7 +158,9 @@ cc.Class({
                     //     this.game_scene_js.create_ex_effect(this.node, i);
                     // };
                     if (user_data.user_data.pet[this.pet_index].have == 1) {
-                        this.game_rules_js.add_ex(produce_ex);
+                        for (var i = 0; i < produce_ex; i++) {
+                            this.game_scene_js.create_ex_effect(this.node, i);
+                        };
                         // console.log("pet " + this.pet_index + " produce_ex: " + produce_ex);
                     };
                 };
@@ -174,7 +178,9 @@ cc.Class({
                     //     this.game_scene_js.create_ex_effect(this.node, i);
                     // };
                     if (user_data.user_data.pet[this.pet_index].have == 1) {
-                        this.game_rules_js.add_ex(produce_ex);
+                        for (var i = 0; i < produce_ex; i++) {
+                            this.game_scene_js.create_ex_effect(this.node, i);
+                        };
                         // console.log("pet " + this.pet_index + " produce_ex: " + config.pet[this.pet_index].produce_ex);
                     };
                 };
@@ -188,7 +194,9 @@ cc.Class({
                 var callback = function () {
                     var produce_ex = config.pet[this.pet_index].produce_ex;
                     if (user_data.user_data.pet[this.pet_index].have == 1) {
-                        this.game_rules_js.add_ex(produce_ex);
+                        for (var i = 0; i < produce_ex; i++) {
+                            this.game_scene_js.create_ex_effect(this.node, i);
+                        };
                         // console.log("pet " + this.pet_index + " produce_ex: " + produce_ex);
                     };
                 };

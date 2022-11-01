@@ -151,6 +151,10 @@ cc.Class({
                 this.label.string = "Out of video view";
                 this.icon_frame.spriteFrame = this.icon_frame_arr[1];
                 break;
+            case "no_money":
+                this.label.string = "Not engought gold and diamond!!!";
+                this.icon_frame.spriteFrame = this.icon_frame_arr[1];
+                break;
         };
         this.end_anim();
     },
