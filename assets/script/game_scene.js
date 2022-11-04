@@ -26,6 +26,7 @@ cc.Class({
         shop_ui_prefab: cc.Prefab,
         shop_buy_ui_prefab: cc.Prefab,
         videotape_ui_prefab: cc.Prefab,
+        iap_ui_prefab: cc.Prefab,
     },
 
     //创建按钮组的节点池
@@ -109,6 +110,11 @@ cc.Class({
         this.new_shop_ui_pool = new cc.NodePool();
         var node = cc.instantiate(this.shop_ui_prefab);
         this.new_shop_ui_pool.put(node);
+    },
+    new_iap_ui_pool() {     // done
+        this.new_iap_ui_pool = new cc.NodePool();
+        var node = cc.instantiate(this.iap_ui_prefab);
+        this.new_iap_ui_pool.put(node);
     },
     new_shop_buy_ui_pool() {
         this.new_shop_buy_ui_pool = new cc.NodePool();
@@ -254,6 +260,13 @@ cc.Class({
             node.getComponent("shop_ui").ini_node();
         };
     },
+    create_iap_ui() {
+        if (this.new_iap_ui_pool.size() > 0) {
+            var node = this.new_iap_ui_pool.get();
+            node.parent = this.node;
+            node.getComponent("iap_ui").ini_node();// lỗi gọi hàm
+        };
+    },
     create_videotape_ui() {
         if (this.new_videotape_ui_pool.size() > 0) {
             var node = this.new_videotape_ui_pool.get();
@@ -315,21 +328,21 @@ cc.Class({
                 .call(() => {
                     this.sound_control.play_sound_effect("add_ex");
                     var all_capacity = user_data.user_data.wareHouse_level * config.wareHouse["all_capacity"];
-                        for (var i = 0; i < 15; i++) {
-                            if (user_data.user_data.wareHouse[i].have == 0) break;      // nếu chưa mở ô thì dừng, k cộng thêm nữa, đã tràn kho
-                            else if (user_data.user_data.wareHouse[i].count == 0) {          // nếu là ô trống thì thêm vào
-                                user_data.user_data.wareHouse[i].count = 1;
-                                user_data.user_data.wareHouse[i].id_product = plant_index;  // gán id cây 
-                                break;
-                            }
-                            else if(user_data.user_data.wareHouse[i].count <30 && user_data.user_data.wareHouse[i].id_product== plant_index) // kiểm tra kho cùng loại
-                            {
-                                user_data.user_data.wareHouse[i].count++;
-                                break;
-                            }
-
+                    for (var i = 0; i < 15; i++) {
+                        if (user_data.user_data.wareHouse[i].have == 0) break;      // nếu chưa mở ô thì dừng, k cộng thêm nữa, đã tràn kho
+                        else if (user_data.user_data.wareHouse[i].count == 0) {          // nếu là ô trống thì thêm vào
+                            user_data.user_data.wareHouse[i].count = 1;
+                            user_data.user_data.wareHouse[i].id_product = plant_index;  // gán id cây 
+                            break;
                         }
-                        // user_data.user_data.wareHouse[plant_index].count++; // thêm vật phẩm vào kho
+                        else if (user_data.user_data.wareHouse[i].count < 30 && user_data.user_data.wareHouse[i].id_product == plant_index) // kiểm tra kho cùng loại
+                        {
+                            user_data.user_data.wareHouse[i].count++;
+                            break;
+                        }
+
+                    }
+                    // user_data.user_data.wareHouse[plant_index].count++; // thêm vật phẩm vào kho
 
 
                     // this.game_rules_js.jgg(1);
@@ -411,6 +424,8 @@ cc.Class({
             case "shop_buy_ui":
                 this.new_shop_buy_ui_pool.put(node);
                 break;
+            case "iap_ui":
+                this.new_iap_ui_pool.put(node);
             case "shop_ui":
                 this.new_shop_ui_pool.put(node);
                 break;
@@ -439,7 +454,7 @@ cc.Class({
         this.new_shop_buy_ui_pool();
         this.new_shop_ui_pool();
         this.new_videotape_ui_pool();
-
+        this.new_iap_ui_pool();
     },
     onLoad() {
         this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");

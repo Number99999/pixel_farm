@@ -19,7 +19,6 @@ cc.Class({
     this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
     this.ad_control = cc.find("ad_control").getComponent("ad_control");
     this.sound_control = cc.find("sound_control").getComponent("sound_control");
-    this.ad_control.show_bannerAd();
     this.grandPa_node.scaleY = 0;
     this.progress_bar.node.active = false;
     this.click_count = 0;
@@ -92,7 +91,6 @@ cc.Class({
   //点击退出
   touch_exit: function touch_exit() {
     this.sound_control.play_sound_effect("button_exit");
-    this.ad_control.hide_bannerAd();
     this.game_scene_js.on_node_kill(this.node);
   },
   // onLoad () {},

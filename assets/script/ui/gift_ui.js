@@ -15,7 +15,7 @@ cc.Class({
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
+
         this.center_node.scale = 0;
         this.exit_button_node.active = false;
         if (user_data.user_data.level < 15) {
@@ -46,7 +46,7 @@ cc.Class({
                 this.game_rules_js.set_ex_progress();
                 this.game_scene_js.create_tips_ui(this.game_scene_js.node, "gift_ad_level");
             };
-            this.ad_control.hide_bannerAd();
+
             this.unschedule(callback);
             this.node.destroy();
         });
@@ -54,7 +54,7 @@ cc.Class({
     //exit button
     on_exit_button_click() {
         this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
+
         this.node.destroy();
     },
     //检测视频是否播放成功
@@ -74,7 +74,6 @@ cc.Class({
                         this.game_rules_js.set_ex_progress();
                         this.game_scene_js.create_tips_ui(this.game_scene_js.node, "gift_ad_level");
                     };
-                    this.ad_control.hide_bannerAd();
                     this.unschedule(callback);
                     this.node.destroy();
                 } else {

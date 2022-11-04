@@ -57,6 +57,70 @@ module.exports = {
       cost: 24000
     }
   },
+  iap_gold: {
+    0: {
+      amount: 5000,
+      bonus: 0,
+      cost: 0.99
+    },
+    1: {
+      amount: 10000,
+      bonus: 500,
+      cost: 1.99
+    },
+    2: {
+      amount: 25000,
+      bonus: 2000,
+      cost: 4.99
+    },
+    3: {
+      amount: 50000,
+      bonus: 6000,
+      cost: 9.99
+    },
+    4: {
+      amount: 100000,
+      bonus: 18000,
+      cost: 19.99
+    },
+    5: {
+      amount: 200000,
+      bonus: 50000,
+      cost: 39.99
+    }
+  },
+  iap_diamond: {
+    0: {
+      amount: 50,
+      bonus: 0,
+      cost: 0.99
+    },
+    1: {
+      amount: 100,
+      bonus: 5,
+      cost: 1.99
+    },
+    2: {
+      amount: 250,
+      bonus: 25,
+      cost: 4.99
+    },
+    3: {
+      amount: 500,
+      bonus: 100,
+      cost: 9.99
+    },
+    4: {
+      amount: 1000,
+      bonus: 300,
+      cost: 19.99
+    },
+    5: {
+      amount: 2000,
+      bonus: 800,
+      cost: 39.99
+    }
+  },
   plant: {
     0: {
       name: "Potato",

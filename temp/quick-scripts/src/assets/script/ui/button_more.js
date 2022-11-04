@@ -21,7 +21,6 @@ cc.Class({
     this.sound_control = cc.find("sound_control").getComponent("sound_control");
     this.land_group = cc.find("UI_ROOT/center/land_group");
     this.ad_control = cc.find("ad_control").getComponent("ad_control");
-    this.ad_control.show_bannerAd();
     this.button_type = type;
     this.set_button_frame();
     this.set_button_position();
@@ -82,13 +81,11 @@ cc.Class({
   //touch exit
   on_touch_exit_button_click: function on_touch_exit_button_click() {
     this.sound_control.play_sound_effect("button_exit");
-    this.ad_control.hide_bannerAd();
     this.game_scene_js.on_node_kill(this.node);
   },
   //当按钮被点击
   on_button_click: function on_button_click(e, land_index) {
     this.sound_control.play_sound_effect("button_click");
-    this.ad_control.hide_bannerAd();
 
     switch (this.button_type) {
       case "watering":

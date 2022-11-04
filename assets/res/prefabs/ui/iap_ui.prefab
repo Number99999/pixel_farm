@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "shop_ui",
+    "_name": "iap_ui",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -260,7 +260,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "fd3b91g9GpKVppYjN72hjJb",
+    "_componentId": "e0d694wxe9EV73Jn93cHOPK",
     "handler": "touch_exit",
     "customEventData": ""
   },
@@ -727,7 +727,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "fd3b91g9GpKVppYjN72hjJb",
+    "_componentId": "e0d694wxe9EV73Jn93cHOPK",
     "handler": "tab_select",
     "customEventData": "0"
   },
@@ -1038,7 +1038,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "fd3b91g9GpKVppYjN72hjJb",
+    "_componentId": "e0d694wxe9EV73Jn93cHOPK",
     "handler": "tab_select",
     "customEventData": "1"
   },
@@ -1066,7 +1066,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "land_scrollView",
+    "_name": "diamond_scrollView",
     "_objFlags": 0,
     "_parent": {
       "__id__": 7
@@ -1228,7 +1228,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 500,
-      "height": 683.7
+      "height": 683
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1274,8 +1274,8 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 300,
-      "height": 200
+      "width": 500,
+      "height": 683
     },
     "_resize": 1,
     "_N$layoutType": 2,
@@ -1377,7 +1377,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "plant_scrollView",
+    "_name": "gold_scrollView",
     "_objFlags": 0,
     "_parent": {
       "__id__": 7
@@ -1539,7 +1539,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 500,
-      "height": 679
+      "height": 683
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1551,7 +1551,7 @@
       "ctor": "Float64Array",
       "array": [
         1,
-        338.7,
+        341.17,
         0,
         0,
         0,
@@ -1757,7 +1757,7 @@
     "_id": ""
   },
   {
-    "__type__": "fd3b91g9GpKVppYjN72hjJb",
+    "__type__": "e0d694wxe9EV73Jn93cHOPK",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1765,15 +1765,23 @@
     },
     "_enabled": true,
     "scrollView_array": [
-      null,
-      null
+      {
+        "__id__": 27
+      },
+      {
+        "__id__": 36
+      }
     ],
-    "shop_content_prefab": {
-      "__uuid__": "4eb8c554-df3f-462f-ac41-a88efa9a5595"
+    "iap_content_prefab": {
+      "__uuid__": "43fad02b-3d9f-4a75-90d5-9b8f46eb6365"
     },
     "content_array": [
-      null,
-      null
+      {
+        "__id__": 29
+      },
+      {
+        "__id__": 38
+      }
     ],
     "_id": ""
   },

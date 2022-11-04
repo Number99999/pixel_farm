@@ -17,7 +17,6 @@ cc.Class({
         // this.skill_content_js = cc.find("skill_content").getComponent("skill_content");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
         this.create_content();
     },
     //
@@ -39,11 +38,10 @@ cc.Class({
         var callback = function () {
             this.skill_point_label.string = user_data.user_data.skill_point;
         };
-        this.schedule(callback, 0.5, cc.macro.REPEAT_FOREVER);
+        this.schedule(callback, 0.1, cc.macro.REPEAT_FOREVER);
     },
 
     on_touch_exit: function () {
-        this.ad_control.hide_bannerAd();
         this.sound_control.play_sound_effect("button_exit");
         this.game_scene_js.on_node_kill(this.node);
     },
@@ -84,16 +82,13 @@ cc.Class({
                     var arr = Object.keys(user_data.user_data.skill);
                     user_data.user_data.skill_point = level;
                     var skill_arr = Object.keys(user_data.user_data.skill);
-                    //重置skill 为 0
                     for (var j = 0; j < arr.length; j++) {
-                        //离线收益保证至少1级
                         if (arr[j] == "offline_profit") {
                             user_data.user_data.skill["offline_profit"] = 1;
                         } else {
                             user_data.user_data.skill[arr[j]] = 0;
                         };
                     };
-                    //刷新skill_content
                     for (var i = 0; i < skill_arr.length; i++) {
                         this.skill_group_node.children[i].getComponent("skill_content").ini_node(i);
                     };

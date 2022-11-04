@@ -13,8 +13,6 @@ cc.Class({
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
-        this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
         //初始小人的形象
         this.staff_index = staff_index;
         this.role_sprite.spriteFrame = this.role_arr[staff_index];
@@ -66,7 +64,6 @@ cc.Class({
                     user_data.user_data.staff[this.staff_index].over_time = 0;
                     this.game_scene_js.create_tips_ui(this.game_scene_js.node, "staff_rest_over");
                     this.unschedule(callback);
-                    this.ad_control.hide_bannerAd();
                     this.node.destroy();
                 } else {
                     if (this.ad_control.video_tag == null && this.ad_control.video_state == 2) {

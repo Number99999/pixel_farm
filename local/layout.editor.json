@@ -5,21 +5,21 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 0,
-      "y": 0,
-      "width": 1920,
-      "height": 1040,
+      "x": -8,
+      "y": -8,
+      "width": 1936,
+      "height": 1056,
       "layout": {
         "type": "dock-h",
         "children": [
           {
-            "width": 465,
+            "width": 309,
             "height": 924,
             "type": "dock-v",
             "children": [
               {
-                "width": 465,
-                "height": 497,
+                "width": 309,
+                "height": 403,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -27,8 +27,8 @@
                 ]
               },
               {
-                "width": 465,
-                "height": 424,
+                "width": 309,
+                "height": 517.984375,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -38,13 +38,13 @@
             ]
           },
           {
-            "width": 970,
+            "width": 1126,
             "height": 924,
             "type": "dock-v",
             "children": [
               {
-                "width": 970,
-                "height": 625,
+                "width": 1126,
+                "height": 655,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -52,8 +52,8 @@
                 ]
               },
               {
-                "width": 970,
-                "height": 296,
+                "width": 1126,
+                "height": 266,
                 "type": "panel",
                 "active": 1,
                 "children": [
@@ -80,9 +80,9 @@
         "assets",
         "scene",
         "timeline",
-        "console",
         "inspector",
-        "cocos-services"
+        "cocos-services",
+        "console"
       ]
     },
     " common-asset-worker-worker": {}
@@ -101,10 +101,10 @@
       "height": 565
     },
     "console": {
-      "x": 730,
-      "y": 167,
-      "width": 1110,
-      "height": 1056
+      "x": 524,
+      "y": 0,
+      "width": 1206,
+      "height": 1038
     },
     "timeline": {
       "x": 816,

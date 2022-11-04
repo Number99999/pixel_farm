@@ -37,7 +37,6 @@ cc.Class({
     this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
     this.ad_control = cc.find("ad_control").getComponent("ad_control");
     this.sound_control = cc.find("sound_control").getComponent("sound_control");
-    this.ad_control.show_bannerAd();
   },
   create_shop_content: function create_shop_content() {
     var node = null;
@@ -74,7 +73,6 @@ cc.Class({
   },
   touch_exit: function touch_exit() {
     this.sound_control.play_sound_effect("button_exit");
-    this.ad_control.hide_bannerAd();
     this.game_scene_js.on_node_kill(this.node);
   },
   // onLoad () {},

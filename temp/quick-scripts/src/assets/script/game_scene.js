@@ -34,7 +34,8 @@ cc.Class({
     hotel_ui_prefab: cc.Prefab,
     shop_ui_prefab: cc.Prefab,
     shop_buy_ui_prefab: cc.Prefab,
-    videotape_ui_prefab: cc.Prefab
+    videotape_ui_prefab: cc.Prefab,
+    iap_ui_prefab: cc.Prefab
   },
   //创建按钮组的节点池
   new_button_group_node_pool: function new_button_group_node_pool() {
@@ -129,6 +130,12 @@ cc.Class({
     this.new_shop_ui_pool = new cc.NodePool();
     var node = cc.instantiate(this.shop_ui_prefab);
     this.new_shop_ui_pool.put(node);
+  },
+  new_iap_ui_pool: function new_iap_ui_pool() {
+    // done
+    this.new_iap_ui_pool = new cc.NodePool();
+    var node = cc.instantiate(this.iap_ui_prefab);
+    this.new_iap_ui_pool.put(node);
   },
   new_shop_buy_ui_pool: function new_shop_buy_ui_pool() {
     this.new_shop_buy_ui_pool = new cc.NodePool();
@@ -299,6 +306,15 @@ cc.Class({
       var node = this.new_shop_ui_pool.get();
       node.parent = this.node;
       node.getComponent("shop_ui").ini_node();
+    }
+
+    ;
+  },
+  create_iap_ui: function create_iap_ui() {
+    if (this.new_iap_ui_pool.size() > 0) {
+      var node = this.new_iap_ui_pool.get();
+      node.parent = this.node;
+      node.getComponent("iap_ui").ini_node(); // lỗi gọi hàm
     }
 
     ;
@@ -487,6 +503,9 @@ cc.Class({
         this.new_shop_buy_ui_pool.put(node);
         break;
 
+      case "iap_ui":
+        this.new_iap_ui_pool.put(node);
+
       case "shop_ui":
         this.new_shop_ui_pool.put(node);
         break;
@@ -518,6 +537,7 @@ cc.Class({
     this.new_shop_buy_ui_pool();
     this.new_shop_ui_pool();
     this.new_videotape_ui_pool();
+    this.new_iap_ui_pool();
   },
   onLoad: function onLoad() {
     this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");

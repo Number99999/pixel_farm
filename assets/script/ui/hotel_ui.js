@@ -34,7 +34,7 @@ cc.Class({
                 this.label_group_node.children[i].getComponent(cc.Label).string = config.hotel[i].need_level;
             };
         };
-        this.ad_control.show_bannerAd();
+
     },
     //初始化弹出界面
     ini_hotel_eject(index) {
@@ -62,7 +62,7 @@ cc.Class({
     },
     //touch exit
     on_touch_exit_click(e) {
-        this.ad_control.hide_bannerAd();
+
         this.sound_control.play_sound_effect("button_exit");
         this.game_scene_js.on_node_kill(this.node);
     },
@@ -100,7 +100,7 @@ cc.Class({
             var price_difference = cost - gold;
             //大于4/5,且能够拥有，且金币不足
             if (gold >= cost * (4 / 5) && all_capacity >= cost && gold < cost) {
-                this.ad_control.hide_bannerAd();
+
                 this.ad_car = this.game_scene_js.create_ad_car(this.node, price_difference);
             };
         } else {

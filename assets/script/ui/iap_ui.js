@@ -5,7 +5,7 @@ cc.Class({
 
     properties: {
         scrollView_array: [cc.Node],
-        shop_content_prefab: cc.Prefab,
+        iap_content_prefab: cc.Prefab,
         content_array: [cc.Node],
     },
     //选项卡切换
@@ -26,26 +26,27 @@ cc.Class({
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
     },
-    create_shop_content() {
+    create_iap_content() {  // lỗi
         var node = null;
         for (var i = 0; i < this.scrollView_array.length; i++) {
+
             switch (i) {
                 case 0:
-                    //创建land
-                    var arr = Object.keys(config.land);
+                    //diamond
+                    var arr = Object.keys(config.iap_diamond);
                     for (var j = 0; j < arr.length; j++) {
-                        node = cc.instantiate(this.shop_content_prefab)
+                        node = cc.instantiate(this.iap_content_prefab)
                         node.parent = this.content_array[i];
-                        node.getComponent("shop_content").ini_node("land", j);
+                        node.getComponent("iap_content_ui").ini_node("diamond", j);
                     }
                     break;
                 case 1:
-                    //创建plant
-                    var arr = Object.keys(config.plant);
+                    //     //gold
+                    var arr = Object.keys(config.iap_gold);
                     for (var j = 0; j < arr.length; j++) {
-                        node = cc.instantiate(this.shop_content_prefab)
+                        node = cc.instantiate(this.iap_content_prefab)
                         node.parent = this.content_array[i];
-                        node.getComponent("shop_content").ini_node("plant", j);
+                        node.getComponent("iap_content_ui").ini_node("gold", j);
                     }
                     break;
             };
@@ -58,7 +59,7 @@ cc.Class({
     // onLoad () {},
 
     start() {
-        this.create_shop_content();
+        this.create_iap_content();
     },
 
     // update (dt) {},

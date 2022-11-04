@@ -5977,6 +5977,9 @@
     "videotape_ui_prefab": {
       "__uuid__": "f19966c8-d0a2-484a-bcd3-80804772ba4e"
     },
+    "iap_ui_prefab": {
+      "__uuid__": "8ca22bfc-1542-459e-9b0e-f9e2f156e464"
+    },
     "_id": "28jhUNw99ApbsuDzZjZyqD"
   },
   {
@@ -7266,7 +7269,7 @@
         "__id__": 154
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 159
@@ -7466,8 +7469,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "have pet",
-    "_N$string": "have pet",
+    "_string": "test iap ",
+    "_N$string": "test iap ",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -7636,8 +7639,8 @@
     },
     "component": "",
     "_componentId": "08dfeTU1M9Ca7/bd1L8hzMt",
-    "handler": "on_test_button_click",
-    "customEventData": "1"
+    "handler": "on_iap_button_click",
+    "customEventData": ""
   },
   {
     "__type__": "cc.Node",

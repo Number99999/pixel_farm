@@ -1900,6 +1900,129 @@ window.__require = function e(t, n, r) {
     config: "config",
     user_data: "user_data"
   } ],
+  iap_content_ui: [ function(require, module, exports) {
+    "use strict";
+    cc._RF.push(module, "4baf6PpmFdNn4r1JymNjvhR", "iap_content_ui");
+    "use strict";
+    var _user_data = _interopRequireDefault(require("user_data"));
+    var _config = _interopRequireDefault(require("config"));
+    function _interopRequireDefault(obj) {
+      return obj && obj.__esModule ? obj : {
+        default: obj
+      };
+    }
+    cc.Class({
+      extends: cc.Component,
+      properties: {
+        icon_sprite_arr: [ cc.SpriteFrame ],
+        get_label: cc.Label,
+        get_bonus_label: cc.Label,
+        cost_label: cc.Label,
+        icon: cc.Node
+      },
+      ini_node: function ini_node(type, index) {
+        this.index = index;
+        this.type = type;
+        this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
+        this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
+        this.sound_control = cc.find("sound_control").getComponent("sound_control");
+        this.update_content();
+      },
+      update_content: function update_content() {
+        var callback = function callback() {
+          var gold = _user_data["default"].user_data.gold;
+          var level = _user_data["default"].user_data.level;
+          switch (this.type) {
+           case "diamond":
+            switch (this.index) {
+             case 0:
+              this.get_label.string = "+50";
+              this.get_bonus_label.string = "Don't get bonus diamond";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              break;
+
+             case 1:
+              this.get_label.string = "+100";
+              this.get_bonus_label.string = "Get 5 bonus diamond";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              break;
+
+             case 2:
+              this.get_label.string = "+250";
+              this.get_bonus_label.string = "Get 25 bonus diamond";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              break;
+
+             case 3:
+              this.get_label.string = "+500";
+              this.get_bonus_label.string = "Get 100 bonus diamond";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              break;
+
+             case 4:
+              this.get_label.string = "+1000";
+              this.get_bonus_label.string = "Get 300 bonus diamond";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              break;
+
+             case 5:
+              this.get_label.string = "+2000";
+              this.get_bonus_label.string = "Get 800 bonus diamond";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+            }
+
+           case "gold":
+            switch (this.index) {
+             case 0:
+              this.get_label.string = "+5000";
+              this.get_bonus_label.string = "Don't get bonus gold";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              break;
+
+             case 1:
+              this.get_label.string = "+10000";
+              this.get_bonus_label.string = "Get 500 bonus gold";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              break;
+
+             case 2:
+              this.get_label.string = "+25000";
+              this.get_bonus_label.string = "Get 2000 bonus gold";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              break;
+
+             case 3:
+              this.get_label.string = "+50000";
+              this.get_bonus_label.string = "Get 6000 bonus gold";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              break;
+
+             case 4:
+              this.get_label.string = "+100000";
+              this.get_bonus_label.string = "Get 18000 bonus gold";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              break;
+
+             case 5:
+              this.get_label.string = "+200000";
+              this.get_bonus_label.string = "Get 50000 bonus gold";
+              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+            }
+          }
+        };
+        this.schedule(callback, .1);
+      },
+      on_button_click: function on_button_click() {
+        this.sound_control.play_sound_effect("button_click");
+        this.game_scene_js.create_shop_buy_ui(this.type, this.index, this.icon_sprite.spriteFrame);
+      },
+      start: function start() {}
+    });
+    cc._RF.pop();
+  }, {
+    config: "config",
+    user_data: "user_data"
+  } ],
   land: [ function(require, module, exports) {
     "use strict";
     cc._RF.push(module, "f29fcMddw9Of6PkBASIcaaR", "land");
@@ -5131,4 +5254,4 @@ window.__require = function e(t, n, r) {
     });
     cc._RF.pop();
   }, {} ]
-}, {}, [ "use_reversed_rotateBy", "use_v2.1-2.2.1_cc.Toggle_event", "AdsManager", "pet_ai", "player_role", "staff_ai", "config", "push", "videotape", "ad_control", "sound_control", "ad_car", "light", "fx", "game_rules", "game_scene", "loading_scene", "button_more", "gift_ui", "hotel_ui", "land", "novice_ui", "offline_profit", "option_ui", "pet_content", "pet_ui", "plant_ui", "rest_ui", "sell_ui", "shop_buy_ui", "shop_content", "shop_ui", "skill_content", "staff_content", "staff_ui", "study_ui", "tips_ui", "videotape_ui", "user_data" ]);
+}, {}, [ "use_reversed_rotateBy", "use_v2.1-2.2.1_cc.Toggle_event", "AdsManager", "pet_ai", "player_role", "staff_ai", "config", "push", "videotape", "ad_control", "sound_control", "ad_car", "light", "fx", "game_rules", "game_scene", "loading_scene", "button_more", "gift_ui", "hotel_ui", "iap_content_ui", "land", "novice_ui", "offline_profit", "option_ui", "pet_content", "pet_ui", "plant_ui", "rest_ui", "sell_ui", "shop_buy_ui", "shop_content", "shop_ui", "skill_content", "staff_content", "staff_ui", "study_ui", "tips_ui", "videotape_ui", "user_data" ]);
