@@ -354,22 +354,6 @@ window.__require = function e(t, n, r) {
           });
         }
       },
-      show_bannerAd: function show_bannerAd() {
-        cc.log("create_bannerAD");
-        if ("undefined" !== typeof wx) {
-          var info = tt.getSystemInfoSync();
-          if ("DOUYIN" === info.appName.toUpperCase() || 0 == _config["default"].ad_state) return;
-          this.bannerAd.show();
-        }
-      },
-      hide_bannerAd: function hide_bannerAd() {
-        cc.log("hide_bannerAD");
-        if ("undefined" !== typeof wx) {
-          var info = tt.getSystemInfoSync();
-          if ("DOUYIN" === info.appName.toUpperCase() || 0 == _config["default"].ad_state) return;
-          this.bannerAd.hide();
-        }
-      },
       onLoad: function onLoad() {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
@@ -407,7 +391,6 @@ window.__require = function e(t, n, r) {
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.land_group = cc.find("UI_ROOT/center/land_group");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
-        this.ad_control.show_bannerAd();
         this.button_type = type;
         this.set_button_frame();
         this.set_button_position();
@@ -440,12 +423,10 @@ window.__require = function e(t, n, r) {
       },
       on_touch_exit_button_click: function on_touch_exit_button_click() {
         this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
       },
       on_button_click: function on_button_click(e, land_index) {
         this.sound_control.play_sound_effect("button_click");
-        this.ad_control.hide_bannerAd();
         switch (this.button_type) {
          case "watering":
           this.land_group.children[land_index].getComponent("land").water_charge();
@@ -523,6 +504,70 @@ window.__require = function e(t, n, r) {
           work_time: 145,
           rest_time: 245,
           cost: 24e3
+        }
+      },
+      iap_gold: {
+        0: {
+          amount: 5e3,
+          bonus: 0,
+          cost: .99
+        },
+        1: {
+          amount: 1e4,
+          bonus: 500,
+          cost: 1.99
+        },
+        2: {
+          amount: 25e3,
+          bonus: 2e3,
+          cost: 4.99
+        },
+        3: {
+          amount: 5e4,
+          bonus: 6e3,
+          cost: 9.99
+        },
+        4: {
+          amount: 1e5,
+          bonus: 18e3,
+          cost: 19.99
+        },
+        5: {
+          amount: 2e5,
+          bonus: 5e4,
+          cost: 39.99
+        }
+      },
+      iap_diamond: {
+        0: {
+          amount: 50,
+          bonus: 0,
+          cost: .99
+        },
+        1: {
+          amount: 100,
+          bonus: 5,
+          cost: 1.99
+        },
+        2: {
+          amount: 250,
+          bonus: 25,
+          cost: 4.99
+        },
+        3: {
+          amount: 500,
+          bonus: 100,
+          cost: 9.99
+        },
+        4: {
+          amount: 1e3,
+          bonus: 300,
+          cost: 19.99
+        },
+        5: {
+          amount: 2e3,
+          bonus: 800,
+          cost: 39.99
         }
       },
       plant: {
@@ -1012,6 +1057,9 @@ window.__require = function e(t, n, r) {
         this.sound_control.play_sound_effect("button_click");
         this.game_scene_js.create_shop_ui();
       },
+      on_iap_button_click: function on_iap_button_click() {
+        this.game_scene_js.create_iap_ui();
+      },
       create_novice: function create_novice() {
         if (0 == user_data.user_data.novice) {
           this.game_scene_js.create_novice_ui();
@@ -1330,7 +1378,8 @@ window.__require = function e(t, n, r) {
         hotel_ui_prefab: cc.Prefab,
         shop_ui_prefab: cc.Prefab,
         shop_buy_ui_prefab: cc.Prefab,
-        videotape_ui_prefab: cc.Prefab
+        videotape_ui_prefab: cc.Prefab,
+        iap_ui_prefab: cc.Prefab
       },
       new_button_group_node_pool: function new_button_group_node_pool() {
         this.button_more_node_pool = new cc.NodePool();
@@ -1411,6 +1460,11 @@ window.__require = function e(t, n, r) {
         this.new_shop_ui_pool = new cc.NodePool();
         var node = cc.instantiate(this.shop_ui_prefab);
         this.new_shop_ui_pool.put(node);
+      },
+      new_iap_ui_pool: function new_iap_ui_pool() {
+        this.new_iap_ui_pool = new cc.NodePool();
+        var node = cc.instantiate(this.iap_ui_prefab);
+        this.new_iap_ui_pool.put(node);
       },
       new_shop_buy_ui_pool: function new_shop_buy_ui_pool() {
         this.new_shop_buy_ui_pool = new cc.NodePool();
@@ -1528,6 +1582,13 @@ window.__require = function e(t, n, r) {
           var node = this.new_shop_ui_pool.get();
           node.parent = this.node;
           node.getComponent("shop_ui").ini_node();
+        }
+      },
+      create_iap_ui: function create_iap_ui() {
+        if (this.new_iap_ui_pool.size() > 0) {
+          var node = this.new_iap_ui_pool.get();
+          node.parent = this.node;
+          node.getComponent("iap_ui").ini_node();
         }
       },
       create_videotape_ui: function create_videotape_ui() {
@@ -1671,6 +1732,9 @@ window.__require = function e(t, n, r) {
           this.new_shop_buy_ui_pool.put(node);
           break;
 
+         case "iap_ui":
+          this.new_iap_ui_pool.put(node);
+
          case "shop_ui":
           this.new_shop_ui_pool.put(node);
           break;
@@ -1699,6 +1763,7 @@ window.__require = function e(t, n, r) {
         this.new_shop_buy_ui_pool();
         this.new_shop_ui_pool();
         this.new_videotape_ui_pool();
+        this.new_iap_ui_pool();
       },
       onLoad: function onLoad() {
         this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
@@ -1731,7 +1796,6 @@ window.__require = function e(t, n, r) {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
         this.center_node.scale = 0;
         this.exit_button_node.active = false;
         user_data.user_data.level < 15 ? this.introduce_label.string = "Watch short commercials, \nlevel+1" : this.introduce_label.string = "Watch short commercials and \ngain half-level experience";
@@ -1759,14 +1823,12 @@ window.__require = function e(t, n, r) {
             _this2.game_rules_js.set_ex_progress();
             _this2.game_scene_js.create_tips_ui(_this2.game_scene_js.node, "gift_ad_level");
           }
-          _this2.ad_control.hide_bannerAd();
           _this2.unschedule(callback);
           _this2.node.destroy();
         });
       },
       on_exit_button_click: function on_exit_button_click() {
         this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
         this.node.destroy();
       },
       video_succes: function video_succes() {
@@ -1785,7 +1847,6 @@ window.__require = function e(t, n, r) {
                 this.game_rules_js.set_ex_progress();
                 this.game_scene_js.create_tips_ui(this.game_scene_js.node, "gift_ad_level");
               }
-              this.ad_control.hide_bannerAd();
               this.unschedule(callback);
               this.node.destroy();
             } else null == this.ad_control.video_tag && 2 == this.ad_control.video_state && this.unschedule(callback);
@@ -1837,7 +1898,6 @@ window.__require = function e(t, n, r) {
           this.lock_group_node.children[i].getComponent(cc.Button).interactable = true;
           this.label_group_node.children[i].getComponent(cc.Label).string = _config["default"].hotel[i].need_level;
         }
-        this.ad_control.show_bannerAd();
       },
       ini_hotel_eject: function ini_hotel_eject(index) {
         1 == _user_data["default"].user_data.hotel[index].have ? this.buy_button_node.active = false : this.buy_button_node.active = true;
@@ -1858,7 +1918,6 @@ window.__require = function e(t, n, r) {
         }
       },
       on_touch_exit_click: function on_touch_exit_click(e) {
-        this.ad_control.hide_bannerAd();
         this.sound_control.play_sound_effect("button_exit");
         this.game_scene_js.on_node_kill(this.node);
       },
@@ -1888,10 +1947,7 @@ window.__require = function e(t, n, r) {
         var all_capacity = 500 * _user_data["default"].user_data.skill["gold_max"] + 500;
         var cost = _config["default"].hotel[this.room_index].cost;
         var price_difference = cost - gold;
-        if (gold >= .8 * cost && all_capacity >= cost && gold < cost) {
-          this.ad_control.hide_bannerAd();
-          this.ad_car = this.game_scene_js.create_ad_car(this.node, price_difference);
-        }
+        gold >= .8 * cost && all_capacity >= cost && gold < cost && (this.ad_car = this.game_scene_js.create_ad_car(this.node, price_difference));
       },
       start: function start() {}
     });
@@ -1930,45 +1986,43 @@ window.__require = function e(t, n, r) {
       },
       update_content: function update_content() {
         var callback = function callback() {
-          var gold = _user_data["default"].user_data.gold;
-          var level = _user_data["default"].user_data.level;
           switch (this.type) {
            case "diamond":
             switch (this.index) {
              case 0:
               this.get_label.string = "+50";
               this.get_bonus_label.string = "Don't get bonus diamond";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              this.icon.spriteFrame = this.icon_sprite_arr[0];
               break;
 
              case 1:
               this.get_label.string = "+100";
               this.get_bonus_label.string = "Get 5 bonus diamond";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              this.icon.spriteFrame = this.icon_sprite_arr[0];
               break;
 
              case 2:
               this.get_label.string = "+250";
               this.get_bonus_label.string = "Get 25 bonus diamond";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              this.icon.spriteFrame = this.icon_sprite_arr[0];
               break;
 
              case 3:
               this.get_label.string = "+500";
               this.get_bonus_label.string = "Get 100 bonus diamond";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              this.icon.spriteFrame = this.icon_sprite_arr[0];
               break;
 
              case 4:
               this.get_label.string = "+1000";
               this.get_bonus_label.string = "Get 300 bonus diamond";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              this.icon.spriteFrame = this.icon_sprite_arr[0];
               break;
 
              case 5:
               this.get_label.string = "+2000";
               this.get_bonus_label.string = "Get 800 bonus diamond";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[0];
+              this.icon.spriteFrame = this.icon_sprite_arr[0];
             }
 
            case "gold":
@@ -1976,47 +2030,103 @@ window.__require = function e(t, n, r) {
              case 0:
               this.get_label.string = "+5000";
               this.get_bonus_label.string = "Don't get bonus gold";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              this.icon.spriteFrame = this.icon_sprite_arr[1];
               break;
 
              case 1:
               this.get_label.string = "+10000";
               this.get_bonus_label.string = "Get 500 bonus gold";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              this.icon.spriteFrame = this.icon_sprite_arr[1];
               break;
 
              case 2:
               this.get_label.string = "+25000";
               this.get_bonus_label.string = "Get 2000 bonus gold";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              this.icon.spriteFrame = this.icon_sprite_arr[1];
               break;
 
              case 3:
               this.get_label.string = "+50000";
               this.get_bonus_label.string = "Get 6000 bonus gold";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              this.icon.spriteFrame = this.icon_sprite_arr[1];
               break;
 
              case 4:
               this.get_label.string = "+100000";
               this.get_bonus_label.string = "Get 18000 bonus gold";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              this.icon.spriteFrame = this.icon_sprite_arr[1];
               break;
 
              case 5:
               this.get_label.string = "+200000";
               this.get_bonus_label.string = "Get 50000 bonus gold";
-              this.icon.getComponent(cc.SpriteFrame).spriteFrame = this.icon_sprite_arr[1];
+              this.icon.spriteFrame = this.icon_sprite_arr[1];
             }
           }
         };
-        this.schedule(callback, .1);
       },
       on_button_click: function on_button_click() {
         this.sound_control.play_sound_effect("button_click");
-        this.game_scene_js.create_shop_buy_ui(this.type, this.index, this.icon_sprite.spriteFrame);
+        this.game_scene_js.create_iap_ui(this.type, this.index, this.icon_sprite.spriteFrame);
       },
       start: function start() {}
+    });
+    cc._RF.pop();
+  }, {
+    config: "config",
+    user_data: "user_data"
+  } ],
+  iap_ui: [ function(require, module, exports) {
+    "use strict";
+    cc._RF.push(module, "e0d694wxe9EV73Jn93cHOPK", "iap_ui");
+    "use strict";
+    var user_data = require("user_data");
+    var config = require("config");
+    cc.Class({
+      extends: cc.Component,
+      properties: {
+        scrollView_array: [ cc.Node ],
+        iap_content_prefab: cc.Prefab,
+        content_array: [ cc.Node ]
+      },
+      tab_select: function tab_select(e, index) {
+        this.sound_control.play_sound_effect("button_click");
+        for (var i = 0; i < this.scrollView_array.length; i++) this.scrollView_array[i].active = i == index;
+      },
+      ini_node: function ini_node() {
+        this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
+        this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
+        this.ad_control = cc.find("ad_control").getComponent("ad_control");
+        this.sound_control = cc.find("sound_control").getComponent("sound_control");
+      },
+      create_iap_content: function create_iap_content() {
+        var node = null;
+        for (var i = 0; i < this.scrollView_array.length; i++) switch (i) {
+         case 0:
+          var arr = Object.keys(config.iap_diamond);
+          for (var j = 0; j < arr.length; j++) {
+            node = cc.instantiate(this.iap_content_prefab);
+            node.parent = this.content_array[i];
+            node.getComponent("iap_content_ui").ini_node("diamond", j);
+          }
+          break;
+
+         case 1:
+          var arr = Object.keys(config.iap_gold);
+          for (var j = 0; j < arr.length; j++) {
+            node = cc.instantiate(this.iap_content_prefab);
+            node.parent = this.content_array[i];
+            node.getComponent("iap_content_ui").ini_node("gold", j);
+          }
+        }
+      },
+      touch_exit: function touch_exit() {
+        this.sound_control.play_sound_effect("button_exit");
+        this.game_scene_js.on_node_kill(this.node);
+      },
+      start: function start() {
+        this.create_iap_content();
+      }
     });
     cc._RF.pop();
   }, {
@@ -2615,7 +2725,6 @@ window.__require = function e(t, n, r) {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
         this.grandPa_node.scaleY = 0;
         this.progress_bar.node.active = false;
         this.click_count = 0;
@@ -2663,7 +2772,6 @@ window.__require = function e(t, n, r) {
       },
       touch_exit: function touch_exit() {
         this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
       },
       start: function start() {}
@@ -2988,7 +3096,6 @@ window.__require = function e(t, n, r) {
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
       },
       create_pet_content: function create_pet_content() {
         var arr = Object.keys(config.pet);
@@ -3000,7 +3107,6 @@ window.__require = function e(t, n, r) {
       },
       touch_exit: function touch_exit() {
         this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
       },
       onLoad: function onLoad() {},
@@ -3027,13 +3133,11 @@ window.__require = function e(t, n, r) {
         this.land_group = cc.find("UI_ROOT/center/land_group");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
         this.set_icon();
         this.land_index = land_index;
       },
       on_touch_exit_click: function on_touch_exit_click() {
         this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
       },
       set_icon: function set_icon() {
@@ -3249,8 +3353,6 @@ window.__require = function e(t, n, r) {
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
-        this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
         this.staff_index = staff_index;
         this.role_sprite.spriteFrame = this.role_arr[staff_index];
         this.center_node.scale = 0;
@@ -3293,7 +3395,6 @@ window.__require = function e(t, n, r) {
               user_data.user_data.staff[this.staff_index].over_time = 0;
               this.game_scene_js.create_tips_ui(this.game_scene_js.node, "staff_rest_over");
               this.unschedule(callback);
-              this.ad_control.hide_bannerAd();
               this.node.destroy();
             } else null == this.ad_control.video_tag && 2 == this.ad_control.video_state && this.unschedule(callback);
           };
@@ -3332,7 +3433,6 @@ window.__require = function e(t, n, r) {
         this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
         this.set_sell();
       },
       button_unlock_click: function button_unlock_click(e, custom) {
@@ -3383,7 +3483,6 @@ window.__require = function e(t, n, r) {
           this.node.children[3].active = false;
         } else {
           this.sound_control.play_sound_effect("button_exit");
-          this.ad_control.hide_bannerAd();
           this.game_scene_js.on_node_kill(this.node);
         }
       },
@@ -3625,7 +3724,6 @@ window.__require = function e(t, n, r) {
           cc.log("ad_car destroy");
           this.ad_car.destroy();
         }
-        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
       },
       create_ad_car: function create_ad_car() {
@@ -3636,10 +3734,7 @@ window.__require = function e(t, n, r) {
           var all_capacity = 500 * _user_data["default"].user_data.skill["gold_max"] + 500;
           var cost = _config["default"].land[this.index].cost;
           var price_difference = cost - gold;
-          if (gold >= .8 * cost && all_capacity >= cost && gold < cost) {
-            this.ad_control.hide_bannerAd();
-            this.ad_car = this.game_scene_js.create_ad_car(this.node, price_difference);
-          }
+          gold >= .8 * cost && all_capacity >= cost && gold < cost && (this.ad_car = this.game_scene_js.create_ad_car(this.node, price_difference));
           break;
 
          case "plant":
@@ -3648,10 +3743,7 @@ window.__require = function e(t, n, r) {
           var all_capacity = 500 * _user_data["default"].user_data.skill["gold_max"] + 500;
           var cost = _config["default"].plant[this.index].cost;
           var price_difference = cost - gold;
-          if (gold >= .8 * cost && all_capacity >= cost && gold < cost) {
-            this.ad_control.hide_bannerAd();
-            this.ad_car = this.game_scene_js.create_ad_car(this.node, price_difference);
-          }
+          gold >= .8 * cost && all_capacity >= cost && gold < cost && (this.ad_car = this.game_scene_js.create_ad_car(this.node, price_difference));
         }
       },
       start: function start() {
@@ -3779,7 +3871,6 @@ window.__require = function e(t, n, r) {
         this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
       },
       create_shop_content: function create_shop_content() {
         var node = null;
@@ -3804,7 +3895,6 @@ window.__require = function e(t, n, r) {
       },
       touch_exit: function touch_exit() {
         this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
       },
       start: function start() {
@@ -4350,7 +4440,7 @@ window.__require = function e(t, n, r) {
         var all_capacity = 500 * user_data.user_data.skill["gold_max"] + 500;
         var cost = config.staff[this.staff_index].cost;
         var price_difference = cost - gold;
-        gold >= .8 * cost && all_capacity >= cost && gold < cost && this.ad_control.hide_bannerAd();
+        gold >= .8 * cost && all_capacity >= cost && gold < cost;
       },
       onLoad: function onLoad() {},
       start: function start() {}
@@ -4383,7 +4473,6 @@ window.__require = function e(t, n, r) {
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
         this.update_buy_tips();
         this.set_icon();
       },
@@ -4417,7 +4506,6 @@ window.__require = function e(t, n, r) {
       },
       touch_exit: function touch_exit() {
         this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
       },
       onLoad: function onLoad() {},
@@ -4449,7 +4537,6 @@ window.__require = function e(t, n, r) {
         this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-        this.ad_control.show_bannerAd();
         this.create_content();
       },
       create_content: function create_content() {
@@ -4466,10 +4553,9 @@ window.__require = function e(t, n, r) {
         var callback = function callback() {
           this.skill_point_label.string = user_data.user_data.skill_point;
         };
-        this.schedule(callback, .5, cc.macro.REPEAT_FOREVER);
+        this.schedule(callback, .1, cc.macro.REPEAT_FOREVER);
       },
       on_touch_exit: function on_touch_exit() {
-        this.ad_control.hide_bannerAd();
         this.sound_control.play_sound_effect("button_exit");
         this.game_scene_js.on_node_kill(this.node);
       },
@@ -5166,7 +5252,6 @@ window.__require = function e(t, n, r) {
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
-        this.ad_control.show_bannerAd();
         this.add_gold = Math.floor((500 * _user_data["default"].user_data.skill["gold_max"] + 500) / 20) + 1;
         this.add_ex = Math.floor(_user_data["default"].user_data.level / 10) + 1;
         if (null == this.game_rules_js.videotape_path) {
@@ -5230,7 +5315,6 @@ window.__require = function e(t, n, r) {
       },
       touch_exit: function touch_exit() {
         this.sound_control.play_sound_effect("button_exit");
-        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
       },
       add_gold_video: function add_gold_video() {
@@ -5254,4 +5338,4 @@ window.__require = function e(t, n, r) {
     });
     cc._RF.pop();
   }, {} ]
-}, {}, [ "use_reversed_rotateBy", "use_v2.1-2.2.1_cc.Toggle_event", "AdsManager", "pet_ai", "player_role", "staff_ai", "config", "push", "videotape", "ad_control", "sound_control", "ad_car", "light", "fx", "game_rules", "game_scene", "loading_scene", "button_more", "gift_ui", "hotel_ui", "iap_content_ui", "land", "novice_ui", "offline_profit", "option_ui", "pet_content", "pet_ui", "plant_ui", "rest_ui", "sell_ui", "shop_buy_ui", "shop_content", "shop_ui", "skill_content", "staff_content", "staff_ui", "study_ui", "tips_ui", "videotape_ui", "user_data" ]);
+}, {}, [ "use_reversed_rotateBy", "use_v2.1-2.2.1_cc.Toggle_event", "AdsManager", "pet_ai", "player_role", "staff_ai", "config", "push", "videotape", "ad_control", "sound_control", "ad_car", "light", "fx", "game_rules", "game_scene", "loading_scene", "button_more", "gift_ui", "hotel_ui", "iap_content_ui", "iap_ui", "land", "novice_ui", "offline_profit", "option_ui", "pet_content", "pet_ui", "plant_ui", "rest_ui", "sell_ui", "shop_buy_ui", "shop_content", "shop_ui", "skill_content", "staff_content", "staff_ui", "study_ui", "tips_ui", "videotape_ui", "user_data" ]);

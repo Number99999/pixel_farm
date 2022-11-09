@@ -7,10 +7,10 @@
     "6eOAsaApBNy7sE4eExBNMT",
     "44yE23ZjBICK633rKhuX/2",
     "4fcgNAMNtBsoirj5sqBlig",
-    "11d22d987",
-    "12590097f",
+    "118b0eaf1",
+    "11b73e452",
     "02delMVqdBD70a/HSD99FK",
-    "1465a256a"
+    "192c6cc69"
   ],
   [
     "node",
@@ -809,8 +809,8 @@
         {
           "name": "exit_button",
           "rect": [
-            249,
-            885,
+            960,
+            506,
             61,
             61
           ],

@@ -339,6 +339,7 @@ cc.Class({
     this.game_scene_js.create_shop_ui();
   },
   on_iap_button_click: function on_iap_button_click() {
+    this.sound_control.play_sound_effect("button_click");
     this.game_scene_js.create_iap_ui();
   },
   //创建新手引导

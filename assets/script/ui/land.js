@@ -390,7 +390,6 @@ cc.Class({
         this.plant_schedule = function () {
             now_time += 0.1;
             if (now_time >= plant_time) {
-                cc.log("plant_over");
                 this.unschedule(this.plant_schedule);
                 this.set_plant();
             } else {

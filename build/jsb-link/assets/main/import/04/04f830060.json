@@ -1,7 +1,7 @@
 [
   1,
   [
-    "1465a256a",
+    "187198048",
     "ecpdLyjvZBwrvm+cedCcQy",
     "b9b0/em/hAA6lJfiAIhI/9",
     "2b0YTv6spIfZSYkqxCSf5M",
@@ -184,8 +184,8 @@
         {
           "name": "z_idle1",
           "rect": [
-            851,
-            775,
+            787,
+            613,
             66,
             81
           ],
@@ -197,7 +197,6 @@
             66,
             81
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -425,8 +424,8 @@
         {
           "name": "shadow",
           "rect": [
-            993,
-            364,
+            358,
+            618,
             58,
             28
           ],
@@ -438,7 +437,6 @@
             58,
             28
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,

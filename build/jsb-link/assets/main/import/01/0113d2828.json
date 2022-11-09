@@ -3,8 +3,8 @@
   [
     "58Oq4boB9ALY2rsZLxUEbL",
     "a4kCFOIcxEtIsbIpFREn46",
-    "12590097f",
-    "1c0c61f52"
+    "11b73e452",
+    "118b0eaf1"
   ],
   [
     "value",
@@ -157,8 +157,8 @@
         {
           "name": "grandPa0",
           "rect": [
-            350,
-            349,
+            263,
+            890,
             116,
             128
           ],
@@ -170,7 +170,6 @@
             116,
             128
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,

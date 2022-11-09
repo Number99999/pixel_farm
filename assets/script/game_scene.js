@@ -262,9 +262,10 @@ cc.Class({
     },
     create_iap_ui() {
         if (this.new_iap_ui_pool.size() > 0) {
+            console.log("256 hello game_scene")
             var node = this.new_iap_ui_pool.get();
             node.parent = this.node;
-            node.getComponent("iap_ui").ini_node();// lỗi gọi hàm
+            node.getComponent("iap_ui").ini_node();
         };
     },
     create_videotape_ui() {

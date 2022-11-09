@@ -2,8 +2,8 @@
   1,
   [
     "ecpdLyjvZBwrvm+cedCcQy",
-    "1c0c61f52",
-    "12590097f",
+    "192c6cc69",
+    "11b73e452",
     "02delMVqdBD70a/HSD99FK",
     "a2MjXRFdtLlYQ5ouAFv/+R",
     "bbEg1taI5KOLA3p3UL8f6q",
@@ -522,8 +522,8 @@
         {
           "name": "plant_button1",
           "rect": [
-            379,
-            564,
+            684,
+            554,
             108,
             45
           ],
@@ -563,8 +563,8 @@
         {
           "name": "land_button1",
           "rect": [
-            430,
-            564,
+            735,
+            554,
             108,
             45
           ],
@@ -644,8 +644,8 @@
         {
           "name": "plant_button2",
           "rect": [
-            481,
-            564,
+            770,
+            432,
             108,
             45
           ],
@@ -685,8 +685,8 @@
         {
           "name": "land_button2",
           "rect": [
-            532,
-            564,
+            720,
+            816,
             108,
             45
           ],

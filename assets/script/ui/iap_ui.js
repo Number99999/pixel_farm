@@ -10,7 +10,6 @@ cc.Class({
     },
     //选项卡切换
     tab_select(e, index) {
-        this.sound_control.play_sound_effect("button_click");
         for (var i = 0; i < this.scrollView_array.length; i++) {
             if (i == index) {
                 this.scrollView_array[i].active = true;
@@ -24,12 +23,12 @@ cc.Class({
         this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");
         this.game_rules_js = cc.find("UI_ROOT").getComponent("game_rules");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
+        this.iap_content_js = cc.find("iap_content").getComponent("iap_content");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
     },
     create_iap_content() {  // lỗi
         var node = null;
         for (var i = 0; i < this.scrollView_array.length; i++) {
-
             switch (i) {
                 case 0:
                     //diamond
@@ -51,6 +50,12 @@ cc.Class({
                     break;
             };
         }
+    },
+    show_gold(){
+        node.getComponent("iap_content_ui").button_show_iap_gold();
+    },
+    show_diamond(){
+        node.getComponent("iap_content_ui").button_show_iap_diamond();
     },
     touch_exit() {
         this.sound_control.play_sound_effect("button_exit");
