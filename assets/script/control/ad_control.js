@@ -216,7 +216,31 @@ cc.Class({
         };//end if
     },
 
- 
+    //展示banner
+    show_bannerAd: function () {
+        cc.log("create_bannerAD");
+        if (typeof (wx) !== "undefined") {
+            //抖音屏蔽banner
+            const info = tt.getSystemInfoSync();
+            if (info.appName.toUpperCase() === 'DOUYIN' || config.ad_state == 0) {
+                return;
+            } else {
+                this.bannerAd.show();
+            }
+        };
+    },
+    hide_bannerAd: function () {
+        cc.log("hide_bannerAD");
+        if (typeof (wx) !== "undefined") {
+            //抖音屏蔽banner
+            const info = tt.getSystemInfoSync();
+            if (info.appName.toUpperCase() === 'DOUYIN' || config.ad_state == 0) {
+                return;
+            } else {
+                this.bannerAd.hide();
+            }
+        };
+    },
 
 
     onLoad() {

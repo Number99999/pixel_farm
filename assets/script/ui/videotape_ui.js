@@ -20,6 +20,7 @@ cc.Class({
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
+        this.ad_control.show_bannerAd();
         this.add_gold = Math.floor(((500 * user_data.user_data.skill["gold_max"] + 500)) / 20) + 1;
         this.add_ex = Math.floor(user_data.user_data.level / 10) + 1;
 
@@ -121,6 +122,7 @@ cc.Class({
     //点击退出
     touch_exit() {
         this.sound_control.play_sound_effect("button_exit");
+        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
     },
     // onLoad () {},

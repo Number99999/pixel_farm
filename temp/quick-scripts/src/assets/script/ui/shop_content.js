@@ -90,7 +90,7 @@ cc.Class({
           } else {
             this.gold_icon_node.active = true;
             this.need_level_label.node.active = true;
-            this.need_level_label.string = "Need " + _config["default"].plant[this.index].need_level + " level unlock"; //等级满足显示金币消耗
+            this.need_level_label.string = "Need " + _config["default"].plant[this.index].need_level + " level unlock";
 
             if (level >= _config["default"].plant[this.index].need_level) {
               this.cost_label.string = _config["default"].plant[this.index].cost;
@@ -99,7 +99,7 @@ cc.Class({
               this.cost_label.string = "???";
             }
 
-            ; //可以购买给与提示
+            ;
 
             if (level >= _config["default"].plant[this.index].need_level && gold >= _config["default"].plant[this.index].cost) {
               this.button_tips_node.active = true;

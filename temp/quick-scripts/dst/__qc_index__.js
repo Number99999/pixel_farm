@@ -30,7 +30,7 @@ require('./assets/script/loading_scene');
 require('./assets/script/ui/button_more');
 require('./assets/script/ui/gift_ui');
 require('./assets/script/ui/hotel_ui');
-require('./assets/script/ui/iap_content_ui');
+require('./assets/script/ui/iap_content');
 require('./assets/script/ui/iap_ui');
 require('./assets/script/ui/land');
 require('./assets/script/ui/novice_ui');

@@ -100,7 +100,8 @@ cc.Class({
 
       var price_difference = cost - gold; //大于4/5,且能够拥有，且金币不足
 
-      if (gold >= cost * (4 / 5) && all_capacity >= cost && gold < cost) {// this.game_scene_js.create_ad_car(this.node, price_difference);
+      if (gold >= cost * (4 / 5) && all_capacity >= cost && gold < cost) {
+        this.ad_control.hide_bannerAd(); // this.game_scene_js.create_ad_car(this.node, price_difference);
       }
 
       ;

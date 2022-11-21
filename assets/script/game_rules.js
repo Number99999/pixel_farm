@@ -642,16 +642,9 @@ cc.Class({
                     user_data.user_data.pet[3].have = 1;
                     this.game_scene_js.create_pet(this.node, 3);
                 }
-                // this.game_scene_js.create_pet(this.node, 0);
-                // this.game_scene_js.create_pet(this.node, 1);
-                // console.log("have pet " + user_data.user_data.pet[0].have);
-                // console.log("have pet " + user_data.user_data.pet[1].have);
                 break;
             case "3":
-                user_data.user_data.pet[2].have = 1;
-                break;
-            case "4":
-                user_data.user_data.pet[2].have = 0;
+                this.on_iap_button_click();
                 break;
         };
     },

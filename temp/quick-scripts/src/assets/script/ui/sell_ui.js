@@ -28,6 +28,7 @@ cc.Class({
     this.adsManager_js = cc.find("UI_ROOT").getComponent("AdsManager");
     this.ad_control = cc.find("ad_control").getComponent("ad_control");
     this.sound_control = cc.find("sound_control").getComponent("sound_control");
+    this.ad_control.show_bannerAd();
     this.set_sell(); // this.set_estimate_label();
   },
   button_unlock_click: function button_unlock_click(e, custom) {
@@ -108,6 +109,7 @@ cc.Class({
       this.node.children[3].active = false;
     } else {
       this.sound_control.play_sound_effect("button_exit");
+      this.ad_control.hide_bannerAd();
       this.game_scene_js.on_node_kill(this.node);
     }
   },

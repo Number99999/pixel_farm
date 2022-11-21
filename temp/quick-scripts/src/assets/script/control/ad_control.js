@@ -257,6 +257,39 @@ cc.Class({
 
     ; //end if
   },
+  //展示banner
+  show_bannerAd: function show_bannerAd() {
+    cc.log("create_bannerAD");
+
+    if (typeof wx !== "undefined") {
+      //抖音屏蔽banner
+      var info = tt.getSystemInfoSync();
+
+      if (info.appName.toUpperCase() === 'DOUYIN' || _config["default"].ad_state == 0) {
+        return;
+      } else {
+        this.bannerAd.show();
+      }
+    }
+
+    ;
+  },
+  hide_bannerAd: function hide_bannerAd() {
+    cc.log("hide_bannerAD");
+
+    if (typeof wx !== "undefined") {
+      //抖音屏蔽banner
+      var info = tt.getSystemInfoSync();
+
+      if (info.appName.toUpperCase() === 'DOUYIN' || _config["default"].ad_state == 0) {
+        return;
+      } else {
+        this.bannerAd.hide();
+      }
+    }
+
+    ;
+  },
   onLoad: function onLoad() {
     // cc.game.addPersistRootNode(this.node);
     this.game_scene_js = cc.find("UI_ROOT").getComponent("game_scene");

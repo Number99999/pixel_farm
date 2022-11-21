@@ -12,13 +12,14 @@ cc.Class({
         this.land_group = cc.find("UI_ROOT/center/land_group");
         this.ad_control = cc.find("ad_control").getComponent("ad_control");
         this.sound_control = cc.find("sound_control").getComponent("sound_control");
-    
+        this.ad_control.show_bannerAd();
         this.set_icon();
         this.land_index = land_index;
     },
     //exit
     on_touch_exit_click: function () {
         this.sound_control.play_sound_effect("button_exit");
+        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
     },
     //plant unlock judge

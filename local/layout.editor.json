@@ -7,44 +7,44 @@
       "windowType": "dockable",
       "x": 0,
       "y": 0,
-      "width": 1920,
-      "height": 1040,
+      "width": 1536,
+      "height": 824,
       "layout": {
-        "type": "dock-h",
+        "type": "dock-v",
         "children": [
           {
-            "width": 309,
-            "height": 924,
-            "type": "dock-v",
+            "width": 1522.4000244140625,
+            "height": 710.2000122070312,
+            "type": "dock-h",
             "children": [
               {
-                "width": 309,
-                "height": 403,
-                "type": "panel",
-                "active": 0,
+                "width": 370.3374938964844,
+                "height": 710.2000122070312,
+                "type": "dock-v",
                 "children": [
-                  "hierarchy"
+                  {
+                    "width": 370.3374938964844,
+                    "height": 381.1125183105469,
+                    "type": "panel",
+                    "active": 0,
+                    "children": [
+                      "hierarchy"
+                    ]
+                  },
+                  {
+                    "width": 370.3374938964844,
+                    "height": 326.0874938964844,
+                    "type": "panel",
+                    "active": 0,
+                    "children": [
+                      "assets"
+                    ]
+                  }
                 ]
               },
               {
-                "width": 309,
-                "height": 517.984375,
-                "type": "panel",
-                "active": 0,
-                "children": [
-                  "assets"
-                ]
-              }
-            ]
-          },
-          {
-            "width": 1126,
-            "height": 924,
-            "type": "dock-v",
-            "children": [
-              {
-                "width": 1126,
-                "height": 655,
+                "width": 775.7125244140625,
+                "height": 710.2000122070312,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -52,25 +52,15 @@
                 ]
               },
               {
-                "width": 1126,
-                "height": 266,
+                "width": 370.3374938964844,
+                "height": 710.2000122070312,
                 "type": "panel",
-                "active": 1,
+                "active": 0,
                 "children": [
-                  "timeline",
-                  "console"
+                  "inspector",
+                  "cocos-services"
                 ]
               }
-            ]
-          },
-          {
-            "width": 463,
-            "height": 924,
-            "type": "panel",
-            "active": 0,
-            "children": [
-              "inspector",
-              "cocos-services"
             ]
           }
         ]
@@ -79,31 +69,56 @@
         "hierarchy",
         "assets",
         "scene",
-        "timeline",
-        "console",
         "inspector",
         "cocos-services"
+      ]
+    },
+    " build-worker-worker": {},
+    "window-1669025079388": {
+      "main": false,
+      "url": "unpack://static/window.html",
+      "windowType": "dockable",
+      "x": -8,
+      "y": -8,
+      "width": 1552,
+      "height": 840,
+      "layout": {
+        "type": "dock-v",
+        "children": [
+          {
+            "width": 1538.4000244140625,
+            "height": 803.2000122070312,
+            "type": "panel",
+            "active": 0,
+            "children": [
+              "console"
+            ]
+          }
+        ]
+      },
+      "panels": [
+        "console"
       ]
     }
   },
   "panels": {
     "builder": {
-      "x": 546,
-      "y": 79,
-      "width": 915,
-      "height": 865
+      "x": 476,
+      "y": 44,
+      "width": 508,
+      "height": 728
     },
     "preferences": {
-      "x": 639,
-      "y": 186,
-      "width": 865,
-      "height": 565
+      "x": 324,
+      "y": 44,
+      "width": 868,
+      "height": 568
     },
     "console": {
-      "x": 524,
-      "y": 0,
-      "width": 1206,
-      "height": 1038
+      "x": -8,
+      "y": -8,
+      "width": 1552,
+      "height": 840
     },
     "timeline": {
       "x": 816,

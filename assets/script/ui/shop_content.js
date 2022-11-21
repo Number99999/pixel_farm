@@ -75,7 +75,6 @@ cc.Class({
                         this.need_level_label.node.active = true;
                         this.need_level_label.string = "Need " + config.plant[this.index].need_level + " level unlock";
 
-                        //等级满足显示金币消耗
                         if (level >= config.plant[this.index].need_level) {
                             this.cost_label.string = config.plant[this.index].cost;
                             this.need_level_label.string = "";
@@ -83,7 +82,6 @@ cc.Class({
                             this.cost_label.string = "???";
                         };
 
-                        //可以购买给与提示
                         if (level >= config.plant[this.index].need_level && gold >= config.plant[this.index].cost) {
                             this.button_tips_node.active = true;
                         } else {

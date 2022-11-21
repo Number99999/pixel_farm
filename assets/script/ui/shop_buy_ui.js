@@ -183,6 +183,7 @@ cc.Class({
             cc.log("ad_car destroy")
             this.ad_car.destroy();
         };
+        this.ad_control.hide_bannerAd();
         this.game_scene_js.on_node_kill(this.node);
     },
     create_ad_car() {
@@ -197,6 +198,7 @@ cc.Class({
                     var price_difference = cost - gold;
                     //大于4/5,且能够拥有，且金币不足
                     if (gold >= cost * (4 / 5) && all_capacity >= cost && gold < cost) {
+                        this.ad_control.hide_bannerAd();
                         this.ad_car = this.game_scene_js.create_ad_car(this.node, price_difference);
                     } else {
 
@@ -217,6 +219,7 @@ cc.Class({
                     var price_difference = cost - gold;
                     //大于4/5,且能够拥有，且金币不足
                     if (gold >= cost * (4 / 5) && all_capacity >= cost && gold < cost) {
+                        this.ad_control.hide_bannerAd();
                         this.ad_car = this.game_scene_js.create_ad_car(this.node, price_difference);
                     } else {
 

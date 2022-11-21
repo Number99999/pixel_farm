@@ -33,9 +33,9 @@ cc.Class({
     novice_ui_prefab: cc.Prefab,
     hotel_ui_prefab: cc.Prefab,
     shop_ui_prefab: cc.Prefab,
+    iap_ui_prefab: cc.Prefab,
     shop_buy_ui_prefab: cc.Prefab,
-    videotape_ui_prefab: cc.Prefab,
-    iap_ui_prefab: cc.Prefab
+    videotape_ui_prefab: cc.Prefab
   },
   //创建按钮组的节点池
   new_button_group_node_pool: function new_button_group_node_pool() {
@@ -132,7 +132,6 @@ cc.Class({
     this.new_shop_ui_pool.put(node);
   },
   new_iap_ui_pool: function new_iap_ui_pool() {
-    // done
     this.new_iap_ui_pool = new cc.NodePool();
     var node = cc.instantiate(this.iap_ui_prefab);
     this.new_iap_ui_pool.put(node);
@@ -312,7 +311,6 @@ cc.Class({
   },
   create_iap_ui: function create_iap_ui() {
     if (this.new_iap_ui_pool.size() > 0) {
-      console.log("256 hello game_scene");
       var node = this.new_iap_ui_pool.get();
       node.parent = this.node;
       node.getComponent("iap_ui").ini_node();
@@ -506,6 +504,7 @@ cc.Class({
 
       case "iap_ui":
         this.new_iap_ui_pool.put(node);
+        break;
 
       case "shop_ui":
         this.new_shop_ui_pool.put(node);
