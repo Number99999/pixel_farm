@@ -1,63 +1,63 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
+ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
 	package
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:70-108
-		INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
-		INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:70-108
+		INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
-		INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
+		INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:2:11-57
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:2:11-57
 	android:versionCode
-		INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
-		INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:1-59:12
+		INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:11-69
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:1:11-69
 application
-ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:29:5-58:19
+ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:29:5-58:19
 	android:networkSecurityConfig
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:30:9-83
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:30:9-83
 	tools:replace
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:31:9-54
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:31:9-54
 uses-library#org.apache.http.legacy
-ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:33:9-87
+ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:33:9-87
 	android:required
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:33:61-85
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:33:61-85
 	android:name
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:33:23-60
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:33:23-60
 meta-data#com.google.android.gms.version
-ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:37:9-39:69
+ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:37:9-39:69
 	android:value
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:39:13-66
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:39:13-66
 	android:name
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:38:13-58
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:38:13-58
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:41:9-43:69
+ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:41:9-43:69
 	android:value
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:43:13-67
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:43:13-67
 	android:name
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:42:13-69
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml:42:13-69
 uses-sdk
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
-INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
-		INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
-		ADDED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
-		INJECTED from C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		ADDED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml
+		INJECTED from C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\cs-plugins\tradplusad\AndroidManifest.xml

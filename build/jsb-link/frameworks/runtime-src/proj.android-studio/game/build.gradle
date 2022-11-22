@@ -3,13 +3,13 @@ apply plugin: 'com.android.feature'
 android {
     baseFeature true
     compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
-    buildToolsVersion '30.0.3'
+    buildToolsVersion PROP_BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
-        versionCode 101
-        versionName "1.0.1"
+        versionCode 105
+        versionName "1.0.5"
 
         externalNativeBuild {
             ndkBuild {

@@ -8,9 +8,9 @@
     "44yE23ZjBICK633rKhuX/2",
     "4fcgNAMNtBsoirj5sqBlig",
     "118b0eaf1",
-    "11b73e452",
+    "1754b6098",
     "02delMVqdBD70a/HSD99FK",
-    "192c6cc69"
+    "19d018c47"
   ],
   [
     "node",
@@ -809,8 +809,8 @@
         {
           "name": "exit_button",
           "rect": [
+            952,
             960,
-            506,
             61,
             61
           ],

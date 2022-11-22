@@ -1,18 +1,18 @@
 Executable : C:\Users\admin\Downloads\android-ndk-r19c\ndk-build.cmd
 arguments : 
 NDK_PROJECT_PATH=null
-APP_BUILD_SCRIPT=C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\jni\Android.mk
-NDK_APPLICATION_MK=C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\jni\Application.mk
+APP_BUILD_SCRIPT=C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\jni\Android.mk
+NDK_APPLICATION_MK=C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\jni\Application.mk
 APP_ABI=arm64-v8a
 NDK_ALL_ABIS=arm64-v8a
 NDK_DEBUG=1
 APP_PLATFORM=android-21
-NDK_OUT=C:/game/pixel_farm/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/debug/obj
-NDK_LIBS_OUT=C:\game\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build\intermediates\ndkBuild\debug\lib
+NDK_OUT=C:/game/pixel/pixel_farm/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/debug/obj
+NDK_LIBS_OUT=C:\game\pixel\pixel_farm\build\jsb-link\frameworks\runtime-src\proj.android-studio\app\build\intermediates\ndkBuild\debug\lib
 NDK_TOOLCHAIN_VERSION=clang
 NDK_MODULE_PATH=C:\CocosDashboard_1.2.0\resources\.editors\Creator\2.4.6\resources\cocos2d-x;C:\CocosDashboard_1.2.0\resources\.editors\Creator\2.4.6\resources\cocos2d-x\cocos;C:\CocosDashboard_1.2.0\resources\.editors\Creator\2.4.6\resources\cocos2d-x\external
 -j8
 NDK_DEBUG=1
-C:/game/pixel_farm/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libcocos2djs.so
+C:/game/pixel/pixel_farm/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libcocos2djs.so
 jvmArgs : 
 

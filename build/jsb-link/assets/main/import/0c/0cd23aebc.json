@@ -1,9 +1,9 @@
 [
   1,
   [
-    "192c6cc69",
+    "13f7c3a10",
     "ecpdLyjvZBwrvm+cedCcQy",
-    "187198048",
+    "19d018c47",
     "2687mTkRFKBYP/aBLsSw9v",
     "a2MjXRFdtLlYQ5ouAFv/+R",
     "e39Qg4y5ZIdrOvGovz1J93",
@@ -439,8 +439,8 @@
         {
           "name": "staff_icon5",
           "rect": [
-            100,
-            889,
+            3,
+            784,
             91,
             105
           ],
@@ -1047,8 +1047,8 @@
         {
           "name": "staff_icon2",
           "rect": [
-            104,
-            558,
+            101,
+            673,
             91,
             105
           ],

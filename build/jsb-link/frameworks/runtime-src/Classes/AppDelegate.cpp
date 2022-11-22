@@ -34,10 +34,6 @@
 #include "cocos/scripting/js-bindings/manual/jsb_classtype.hpp"
 
 USING_NS_CC;
-#ifdef SDKBOX_ENABLED
-#include "PluginIAPJS.hpp"
-#include "PluginIAPJSHelper.h"
-#endif
 
 AppDelegate::AppDelegate(int width, int height) : Application("Cocos Game", width, height)
 {
@@ -65,10 +61,6 @@ bool AppDelegate::applicationDidFinishLaunching()
     });
     
     jsb_register_all_modules();
-#ifdef SDKBOX_ENABLED
-    se->addRegisterCallback(register_all_PluginIAPJS);
-    se->addRegisterCallback(register_all_PluginIAPJS_helper);
-#endif
     
     se->start();
     

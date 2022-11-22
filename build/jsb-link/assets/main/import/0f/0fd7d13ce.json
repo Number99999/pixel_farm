@@ -10,8 +10,8 @@
     "5aKv6EaixPP5xH0mF6qivM",
     "bdj1njLvFBGblD1NxWjeB3",
     "bdrQtnbIRAAI+3sjIvegtf",
-    "192c6cc69",
-    "187198048"
+    "13f7c3a10",
+    "19d018c47"
   ],
   [
     "node",
@@ -426,8 +426,8 @@
         {
           "name": "shadow",
           "rect": [
-            358,
-            618,
+            786,
+            394,
             58,
             28
           ],
@@ -439,6 +439,7 @@
             58,
             28
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,

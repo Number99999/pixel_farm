@@ -1,12 +1,11 @@
 [
   1,
   [
-    "187198048",
+    "19d018c47",
     "ffzD/lModGYoPdcIy9M0cO",
     "93UJeBl/xLjaDYxelzyEdG",
     "3bcZ3wmvZJga2zDOsBIqP+",
-    "df6CYjDnZCRriOiAobl+kU",
-    "192c6cc69"
+    "df6CYjDnZCRriOiAobl+kU"
   ],
   [
     "_textureSetter",
@@ -44,8 +43,8 @@
         {
           "name": "c_run2",
           "rect": [
-            294,
-            508,
+            197,
+            784,
             79,
             104
           ],
@@ -170,8 +169,8 @@
         {
           "name": "c_run1",
           "rect": [
-            308,
-            652,
+            197,
+            894,
             79,
             104
           ],
@@ -210,8 +209,8 @@
         {
           "name": "c_run3",
           "rect": [
-            875,
-            668,
+            288,
+            445,
             79,
             102
           ],
@@ -242,7 +241,7 @@
         0
       ],
       [
-        5
+        0
       ]
     ],
     [
@@ -250,8 +249,8 @@
         {
           "name": "c_run4",
           "rect": [
-            393,
-            652,
+            288,
+            223,
             79,
             104
           ],

@@ -1,446 +1,367 @@
 {
     "android": {
         "UnityAds": {
-            "gameId": "1493045",
+            "gameId": "1493045", 
             "testMode": true
-        },
+        }, 
         "SdkboxAds": {
             "units": [
-                "AdColony",
-                "AdMob",
-                "Chartboost",
-                "Appnext",
+                "AdColony", 
+                "AdMob", 
+                "Chartboost", 
+                "Appnext", 
                 "UnityAds"
-            ],
+            ], 
             "placements": [
                 {
                     "units": [
                         {
-                            "weight": 30,
-                            "name": "video",
+                            "weight": 30, 
+                            "name": "video", 
                             "unit": "AdColony"
-                        },
+                        }, 
                         {
-                            "weight": 20,
-                            "name": "Default",
+                            "weight": 20, 
+                            "name": "Default", 
                             "unit": "Chartboost"
                         }
-                    ],
-                    "id": "placement-1",
+                    ], 
+                    "id": "placement-1", 
                     "strategy": "weight"
-                },
+                }, 
                 {
                     "units": [
                         {
-                            "name": "v4vc",
+                            "name": "v4vc", 
                             "unit": "AdColony"
-                        },
+                        }, 
                         {
-                            "name": "Level Complete",
+                            "name": "Level Complete", 
                             "unit": "Chartboost"
                         }
-                    ],
-                    "id": "placement-2",
+                    ], 
+                    "id": "placement-2", 
                     "strategy": "round-robin"
-                },
+                }, 
                 {
                     "units": [
                         {
-                            "name": "gameover",
+                            "name": "gameover", 
                             "unit": "AdMob"
                         }
-                    ],
-                    "id": "placement-admob",
+                    ], 
+                    "id": "placement-admob", 
                     "strategy": "round-robin"
-                },
+                }, 
                 {
                     "units": [
                         {
-                            "name": "",
+                            "name": "", 
                             "unit": "UnityAds"
                         }
-                    ],
-                    "id": "placement-unity",
+                    ], 
+                    "id": "placement-unity", 
                     "strategy": "round-robin"
                 }
             ]
-        },
+        }, 
         "iap": {
             "items": {
-                "diamond1": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond1"
-                },
-                "diamond2": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond2"
-                },
-                "diamond3": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond3"
-                },
-                "diamond4": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond4"
-                },
-                "diamond5": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond5"
-                },
-                "diamond6": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond6"
-                },
-                "gold1": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold1"
-                },
-                "gold2": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold2"
-                },
-                "gold3": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold3"
-                },
-                "gold4": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold4"
-                },
-                "gold5": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold5"
-                },
-                "gold6": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold6"
-                },
+                "coin_package2": {
+                    "id": "com.cocos2dx.plugintest3"
+                }, 
                 "remove_ads": {
-                    "type": "non_consumable",
+                    "type": "non_consumable", 
                     "id": "com.cocos2dx.non1"
-                },
+                }, 
                 "double_coin": {
-                    "type": "non_consumable",
+                    "type": "non_consumable", 
                     "id": "com.cocos2dx.non2"
-                },
+                }, 
                 "coin_package": {
                     "id": "com.cocos2dx.plugintest2"
-                },
+                }, 
                 "subs": {
-                    "type": "subs",
+                    "type": "subs", 
                     "id": "subscription1"
                 }
-            },
+            }, 
             "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq7eIGu7dRcBRBSC05cYvxjBMd7cqq9w6++1er+cqO2tyWPtWB4vuTkliq4k/Fkylx5UMfptdOYOW8ENgQyVucs/NyuOAGmve4j5JFhLPcLa6LjO2HUSY6zk04DRR9Zw7YPET4WAezZTz8jYMGhPG08HYltVj8cmSpSFWd1nI0pGOJoLQIMkIkXplgnPQRbMpuOu70vnQQBS1RFcoFT7OjaV8U0cfJzMoS1TMkGqaJKks2T+qOBNTtkXzge92EnvYIkhpCfN98dj6aQmETNp5yj5Fa+jcbAVF8dy5xymJwioL89XQKfKkGR+P6ESMoBEPfIZYIlMU8EUwmC+UKGLujQIDAQAB"
-        },
+        }, 
         "Appnext": {
-            "debug": true,
+            "debug": true, 
             "ads": {
                 "default": {
-                    "creative_type": "managed",
-                    "postback": "postback",
-                    "can_close": false,
-                    "mute": false,
-                    "skip_text": "Skip Text",
-                    "cache": true,
-                    "button_text": "Button Text",
-                    "button_color": "#6AB344",
-                    "type": "interstitial",
-                    "id": "2f6850dd-190a-499d-aa50-1f4a3dd1ed5f",
-                    "categories": "Action,Puzzle",
+                    "creative_type": "managed", 
+                    "postback": "postback", 
+                    "can_close": false, 
+                    "mute": false, 
+                    "skip_text": "Skip Text", 
+                    "cache": true, 
+                    "button_text": "Button Text", 
+                    "button_color": "#6AB344", 
+                    "type": "interstitial", 
+                    "id": "2f6850dd-190a-499d-aa50-1f4a3dd1ed5f", 
+                    "categories": "Action,Puzzle", 
                     "autoplay": true
-                },
+                }, 
                 "fullscreen": {
-                    "postback": "postback",
-                    "can_close": false,
-                    "progress_color": "#ffffff",
-                    "show_close_button": true,
-                    "progress_type": "clock",
-                    "cache": true,
-                    "button_text": "Button Text",
-                    "button_color": "#6AB344",
-                    "kVideoLength": "short",
-                    "type": "fullscreen",
-                    "id": "17322152-1ef3-4e72-9677-eaf7c09f1054",
+                    "postback": "postback", 
+                    "can_close": false, 
+                    "progress_color": "#ffffff", 
+                    "show_close_button": true, 
+                    "progress_type": "clock", 
+                    "cache": true, 
+                    "button_text": "Button Text", 
+                    "button_color": "#6AB344", 
+                    "kVideoLength": "short", 
+                    "type": "fullscreen", 
+                    "id": "17322152-1ef3-4e72-9677-eaf7c09f1054", 
                     "categories": "Action,Puzzle"
                 }
             }
-        },
+        }, 
         "AdMob": {
-            "testdevice": "33BE2250B43518CCDA7DE426D04EE231",
-            "test": false,
+            "testdevice": "33BE2250B43518CCDA7DE426D04EE231", 
+            "test": false, 
             "ads": {
                 "interstitial": {
-                    "type": "interstitial",
+                    "type": "interstitial", 
                     "id": "ca-app-pub-3940256099942544/5354046379"
-                },
+                }, 
                 "appopen": {
-                    "type": "appopen",
+                    "type": "appopen", 
                     "id": "ca-app-pub-3940256099942544/3419835294"
-                },
+                }, 
                 "gameover": {
-                    "type": "interstitial",
+                    "type": "interstitial", 
                     "id": "ca-app-pub-1329374026572143/1092476511"
-                },
+                }, 
                 "home": {
-                    "width": 300,
-                    "type": "banner",
-                    "id": "ca-app-pub-1329374026572143/2685130917",
-                    "alignment": "bottom",
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "ca-app-pub-1329374026572143/2685130917", 
+                    "alignment": "bottom", 
                     "height": 100
-                },
+                }, 
                 "rewarded": {
-                    "type": "rewarded_video",
+                    "type": "rewarded_video", 
                     "id": "ca-app-pub-3940256099942544/8691691433"
-                },
+                }, 
                 "reward": {
-                    "type": "rewarded_video",
+                    "type": "rewarded_video", 
                     "id": "ca-app-pub-3940256099942544/8691691433"
-                },
+                }, 
                 "banner": {
-                    "width": 300,
-                    "type": "banner",
-                    "id": "ca-app-pub-3940256099942544/6300978111",
-                    "alignment": "bottom",
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "ca-app-pub-3940256099942544/6300978111", 
+                    "alignment": "bottom", 
                     "height": 50
                 }
-            },
+            }, 
             "tag_for_child_directed_treatment": 1
-        },
+        }, 
         "Appodeal": {
             "app_key": "7acb75c06e543c3c49452f4acb0711377d77b63993cbad49"
-        },
+        }, 
         "Chartboost": {
-            "id": "4f7b433509b6025804000002",
+            "id": "4f7b433509b6025804000002", 
             "ads": {
                 "Default": {
                     "type": "interstitial"
-                },
+                }, 
                 "Level Complete": {
                     "type": "rewarded_video"
-                },
+                }, 
                 "MoreApp": {
                     "type": "more_app"
                 }
-            },
+            }, 
             "signature": "dd2d41b69ac01b80f443f5b6cf06096d457f82bd"
-        },
+        }, 
         "AdColony": {
-            "debug": true,
-            "id": "app185a7e71e1714831a49ec7",
+            "debug": true, 
+            "id": "app185a7e71e1714831a49ec7", 
             "ads": {
                 "v4vc": {
-                    "v4vc": true,
-                    "pre_popup": true,
-                    "zone": "vz1fd5a8b2bf6841a0a4b826",
+                    "v4vc": true, 
+                    "pre_popup": true, 
+                    "zone": "vz1fd5a8b2bf6841a0a4b826", 
                     "post_popup": true
-                },
+                }, 
                 "video": {
-                    "v4vc": false,
+                    "v4vc": false, 
                     "zone": "vz06e8c32a037749699e7050"
                 }
             }
         }
-    },
+    }, 
     "ios": {
         "UnityAds": {
-            "gameId": "1493044",
+            "gameId": "1493044", 
             "testMode": true
-        },
+        }, 
         "SdkboxAds": {
-            "debug": true,
+            "debug": true, 
             "units": [
-                "AdColony",
-                "Fyber",
-                "Chartboost",
-                "AdMob",
-                "Appnext",
+                "AdColony", 
+                "Fyber", 
+                "Chartboost", 
+                "AdMob", 
+                "Appnext", 
                 "UnityAds"
-            ],
+            ], 
             "placements": [
                 {
                     "units": [
                         {
-                            "weight": 30,
-                            "name": "video",
+                            "weight": 30, 
+                            "name": "video", 
                             "unit": "AdColony"
-                        },
+                        }, 
                         {
-                            "weight": 20,
-                            "name": "Default",
+                            "weight": 20, 
+                            "name": "Default", 
                             "unit": "Chartboost"
                         }
-                    ],
-                    "id": "placement-1",
+                    ], 
+                    "id": "placement-1", 
                     "strategy": "weight"
-                },
+                }, 
                 {
                     "units": [
                         {
-                            "name": "v4vc",
+                            "name": "v4vc", 
                             "unit": "AdColony"
-                        },
+                        }, 
                         {
-                            "name": "Level Complete",
+                            "name": "Level Complete", 
                             "unit": "Chartboost"
                         }
-                    ],
-                    "id": "placement-2",
+                    ], 
+                    "id": "placement-2", 
                     "strategy": "round-robin"
-                },
+                }, 
                 {
                     "units": [
                         {
-                            "name": "gameover",
+                            "name": "gameover", 
                             "unit": "AdMob"
                         }
-                    ],
-                    "id": "placement-admob",
+                    ], 
+                    "id": "placement-admob", 
                     "strategy": "round-robin"
-                },
+                }, 
                 {
                     "units": [
                         {
-                            "name": "video",
+                            "name": "video", 
                             "unit": "UnityAds"
                         }
-                    ],
-                    "id": "placement-unity",
+                    ], 
+                    "id": "placement-unity", 
                     "strategy": "round-robin"
                 }
             ]
-        },
+        }, 
         "iap": {
             "items": {
-                "diamond1": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond1"
-                },
-                "diamond2": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond2"
-                },
-                "diamond3": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond3"
-                },
-                "diamond4": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond4"
-                },
-                "diamond5": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond5"
-                },
-                "diamond6": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.diamond6"
-                },
-                "gold1": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold1"
-                },
-                "gold2": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold2"
-                },
-                "gold3": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold3"
-                },
-                "gold4": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold4"
-                },
-                "gold5": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold5"
-                },
-                "gold6": {
-                    "type": "consumable",
-                    "id": "com.sevenkolo.idlefarm.gold6"
+                "remove_ads": {
+                    "type": "non_consumable", 
+                    "id": "com.cocos2dx.non1"
+                }, 
+                "double_coin": {
+                    "type": "non_consumable", 
+                    "id": "com.cocos2dx.non2"
+                }, 
+                "coin_package": {
+                    "id": "com.cocos2dx.plugintest2"
+                }, 
+                "coin_package2": {
+                    "id": "com.cocos2dx.plugintest3"
                 }
             }
-        },
+        }, 
         "Appnext": {
-            "debug": true,
+            "debug": true, 
             "ads": {
                 "default": {
-                    "cache": true,
-                    "type": "interstitial",
+                    "cache": true, 
+                    "type": "interstitial", 
                     "id": "6d596bc5-b4c1-48ca-be95-3758fd29a3a5"
                 }
             }
-        },
+        }, 
         "AdMob": {
-            "test": false,
-            "safearea": true,
+            "test": false, 
+            "safearea": true, 
             "ads": {
                 "interstitial": {
-                    "type": "interstitial",
+                    "type": "interstitial", 
                     "id": "ca-app-pub-3940256099942544/4411468910"
-                },
+                }, 
                 "appopen": {
-                    "type": "appopen",
+                    "type": "appopen", 
                     "id": "ca-app-pub-3940256099942544/5662855259"
-                },
+                }, 
                 "gameover": {
-                    "type": "interstitial",
+                    "type": "interstitial", 
                     "id": "ca-app-pub-1329374026572143/4185543717"
-                },
+                }, 
                 "home": {
-                    "width": 300,
-                    "type": "banner",
-                    "id": "ca-app-pub-3940256099942544/2934735716",
-                    "alignment": "bottom",
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "ca-app-pub-3940256099942544/2934735716", 
+                    "alignment": "bottom", 
                     "height": 50
-                },
+                }, 
                 "rewarded": {
-                    "type": "rewarded_video",
+                    "type": "rewarded_video", 
                     "id": "ca-app-pub-1329374026572143/7991602916"
-                },
+                }, 
                 "reward": {
-                    "type": "rewarded_video",
+                    "type": "rewarded_video", 
                     "id": "ca-app-pub-3940256099942544/1712485313"
-                },
+                }, 
                 "banner": {
-                    "width": 300,
-                    "type": "banner",
-                    "id": "ca-app-pub-3940256099942544/2934735716",
-                    "alignment": "bottom",
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "ca-app-pub-3940256099942544/2934735716", 
+                    "alignment": "bottom", 
                     "height": 50
                 }
             }
-        },
+        }, 
         "Appodeal": {
             "app_key": "2cfc9cc638980eb7f5ff35d6eb63dbe404503151ccc451ed"
-        },
+        }, 
         "Chartboost": {
-            "id": "4f21c409cd1cb2fb7000001b",
+            "id": "4f21c409cd1cb2fb7000001b", 
             "ads": {
                 "Default": {
                     "type": "interstitial"
-                },
+                }, 
                 "Level Complete": {
                     "type": "rewarded_video"
-                },
+                }, 
                 "MoreApp": {
                     "type": "more_app"
                 }
-            },
+            }, 
             "signature": "92e2de2fd7070327bdeb54c15a5295309c6fcd2d"
-        },
+        }, 
         "AdColony": {
-            "id": "appbdee68ae27024084bb334a",
+            "id": "appbdee68ae27024084bb334a", 
             "ads": {
                 "v4vc": {
-                    "v4vc": true,
-                    "pre_popup": true,
-                    "zone": "vzf8e4e97704c4445c87504e",
+                    "v4vc": true, 
+                    "pre_popup": true, 
+                    "zone": "vzf8e4e97704c4445c87504e", 
                     "post_popup": true
-                },
+                }, 
                 "video": {
-                    "v4vc": false,
+                    "v4vc": false, 
                     "zone": "vzf8fb4670a60e4a139d01b5"
                 }
             }

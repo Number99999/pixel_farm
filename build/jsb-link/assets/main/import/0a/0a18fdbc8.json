@@ -4,14 +4,14 @@
     "ecpdLyjvZBwrvm+cedCcQy",
     "3cFagM+RpFWawhyBSlONw0",
     "4fcgNAMNtBsoirj5sqBlig",
-    "187198048",
-    "192c6cc69",
+    "19d018c47",
+    "13f7c3a10",
     "a0YNr0WZ5CgLNIUlXbcTiu",
     "34yTiv1D9B2K2vYkbZMlBb",
     "901GPPy3tFFbDtM+KT89zC",
     "47jIRhEjVG/KsKITC6IC2q",
     "118b0eaf1",
-    "13a3a6490"
+    "1ab38ac2d"
   ],
   [
     "node",
@@ -413,8 +413,8 @@
         {
           "name": "z_idle1",
           "rect": [
-            832,
-            74,
+            615,
+            532,
             65,
             90
           ],
@@ -426,7 +426,6 @@
             65,
             90
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -454,8 +453,8 @@
         {
           "name": "progress_bar",
           "rect": [
-            885,
-            776,
+            872,
+            429,
             26,
             26
           ],
@@ -1050,8 +1049,8 @@
         {
           "name": "loading_bg",
           "rect": [
-            661,
-            3,
+            86,
+            81,
             64,
             64
           ],

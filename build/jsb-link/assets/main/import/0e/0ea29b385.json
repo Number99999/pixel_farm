@@ -1,12 +1,12 @@
 [
   1,
   [
-    "11b73e452",
+    "1754b6098",
     "13fNGmkOlMuIbwULxCqCoo",
     "f2Xac5/JpLWpHaVUo8Me8Q",
     "f4wjDiyCJA+b3TIuFGp/zQ",
     "1eM0X3tM1N87FIo5dNh5Wg",
-    "192c6cc69"
+    "13f7c3a10"
   ],
   [
     "_textureSetter",
@@ -253,8 +253,8 @@
         {
           "name": "c_run2",
           "rect": [
-            856,
-            811,
+            837,
+            545,
             79,
             107
           ],

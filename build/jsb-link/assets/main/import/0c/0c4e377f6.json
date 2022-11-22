@@ -1,8 +1,8 @@
 [
   1,
   [
-    "192c6cc69",
-    "187198048",
+    "13f7c3a10",
+    "19d018c47",
     "36xcs0sgBH8ZYxMW4tVCUA",
     "7cMv7QwTJFMLFiJe4g3zII"
   ],
@@ -85,8 +85,8 @@
         {
           "name": "c_idle1",
           "rect": [
-            752,
-            473,
+            530,
+            764,
             64,
             91
           ],
@@ -98,7 +98,6 @@
             64,
             91
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,

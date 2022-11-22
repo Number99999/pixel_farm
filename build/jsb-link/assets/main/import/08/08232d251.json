@@ -1,10 +1,10 @@
 [
   1,
   [
-    "11b73e452",
+    "1754b6098",
     "bdAD/nIpxBOIn3Z4j3T8EH",
     "8aDc5Yu2xA7oJXt2ssWYTt",
-    "187198048"
+    "19d018c47"
   ],
   [
     "_textureSetter",
@@ -148,8 +148,8 @@
         {
           "name": "c_idle2",
           "rect": [
-            478,
-            650,
+            203,
+            558,
             78,
             104
           ],

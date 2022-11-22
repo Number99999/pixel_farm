@@ -3,11 +3,11 @@
   [
     "ecpdLyjvZBwrvm+cedCcQy",
     "118b0eaf1",
-    "187198048",
+    "19d018c47",
     "4fcgNAMNtBsoirj5sqBlig",
+    "1ab38ac2d",
     "d8HsitJHxOYqo801xBk8ev",
     "02delMVqdBD70a/HSD99FK",
-    "13a3a6490",
     "a2MjXRFdtLlYQ5ouAFv/+R",
     "b4+CzIUS9Ey4bFtalsNm9t",
     "d98CiGf39LjZwCA4kvCVRR",
@@ -532,8 +532,8 @@
         {
           "name": "exit_button",
           "rect": [
-            486,
-            586,
+            84,
+            254,
             58,
             75
           ],
@@ -565,7 +565,7 @@
         1
       ],
       [
-        2
+        4
       ]
     ],
     [
@@ -645,7 +645,7 @@
         1
       ],
       [
-        4
+        5
       ]
     ],
     [
@@ -685,7 +685,7 @@
         1
       ],
       [
-        5
+        6
       ]
     ],
     [
@@ -693,8 +693,8 @@
         {
           "name": "study_floor",
           "rect": [
-            655,
-            318,
+            841,
+            609,
             78,
             78
           ],
@@ -733,8 +733,8 @@
         {
           "name": "study_prop_floor",
           "rect": [
-            174,
-            3,
+            928,
+            836,
             64,
             54
           ],
@@ -765,7 +765,7 @@
         1
       ],
       [
-        6
+        2
       ]
     ],
     [

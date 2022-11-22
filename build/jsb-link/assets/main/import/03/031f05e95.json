@@ -4,9 +4,9 @@
     "ecpdLyjvZBwrvm+cedCcQy",
     "17jhe2B9JDPqrm6S4VGcyu",
     "4fWA2Qu/dMXLO65qdwmntH",
-    "13a3a6490",
-    "192c6cc69",
-    "187198048",
+    "1ab38ac2d",
+    "13f7c3a10",
+    "19d018c47",
     "118b0eaf1",
     "25Xgrp7IRN3IBeI1htS+xi",
     "70D/gc0WVOg65joDhPWBjO",
@@ -255,8 +255,8 @@
         {
           "name": "gift0",
           "rect": [
-            589,
-            3,
+            164,
+            65,
             66,
             62
           ],
@@ -296,7 +296,7 @@
           "name": "shadow",
           "rect": [
             984,
-            921,
+            913,
             58,
             28
           ],
@@ -336,8 +336,8 @@
         {
           "name": "z_idle1",
           "rect": [
-            832,
-            74,
+            615,
+            532,
             65,
             90
           ],
@@ -349,7 +349,6 @@
             65,
             90
           ],
-          "rotated": 1,
           "capInsets": [
             0,
             0,

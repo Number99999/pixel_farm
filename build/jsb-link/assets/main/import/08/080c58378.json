@@ -2,12 +2,12 @@
   1,
   [
     "ecpdLyjvZBwrvm+cedCcQy",
-    "192c6cc69",
+    "13f7c3a10",
     "4fcgNAMNtBsoirj5sqBlig",
     "00PbPxcsFM8IjJxIRHiOsc",
     "63nqVY1lBGzrp8mMGOUrvr",
     "a2MjXRFdtLlYQ5ouAFv/+R",
-    "187198048",
+    "1ab38ac2d",
     "b1xQdVTuRBHpHlAmYylhSf",
     "2e2cHIK39JAY4aHzKDiBXQ",
     "ce1OY29x1E35+OHY41w4Gh",
@@ -17,8 +17,8 @@
     "fa+NgURwVPiqLTdRUCI5n5",
     "402xmOoG5BepO9BiNfF2/G",
     "30DlLYAhZMSqxiE2gABoHL",
-    "11b73e452",
-    "13a3a6490",
+    "1754b6098",
+    "19d018c47",
     "02delMVqdBD70a/HSD99FK"
   ],
   [
@@ -423,8 +423,8 @@
         {
           "name": "lock_icon",
           "rect": [
-            842,
-            607,
+            875,
+            658,
             41,
             55
           ],
@@ -2110,7 +2110,7 @@
           "name": "hotel_get_icon",
           "rect": [
             952,
-            946,
+            767,
             67,
             63
           ],
@@ -2141,7 +2141,7 @@
         2
       ],
       [
-        6
+        17
       ]
     ],
     [
@@ -2190,8 +2190,8 @@
         {
           "name": "common_ui_center",
           "rect": [
-            519,
-            3,
+            156,
+            133,
             64,
             60
           ],
@@ -2222,7 +2222,7 @@
         2
       ],
       [
-        17
+        6
       ]
     ],
     [
@@ -2352,8 +2352,8 @@
         {
           "name": "hotel_eject_floor",
           "rect": [
-            943,
-            700,
+            86,
+            3,
             72,
             72
           ],

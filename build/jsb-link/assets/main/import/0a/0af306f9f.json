@@ -3,13 +3,13 @@
   [
     "ecpdLyjvZBwrvm+cedCcQy",
     "b2m2l1VmJA1IpdBJpq548P",
-    "192c6cc69",
+    "13f7c3a10",
     "63nqVY1lBGzrp8mMGOUrvr",
     "5fhGxDVdpLBojRc/vBHw21",
     "51rcWsGYRIDpHDBsDOdTXp",
-    "187198048",
-    "11b73e452",
-    "13a3a6490",
+    "19d018c47",
+    "1754b6098",
+    "1ab38ac2d",
     "a2MjXRFdtLlYQ5ouAFv/+R",
     "23gvA6+E9HhLKU33qp1HJg",
     "2687mTkRFKBYP/aBLsSw9v",
@@ -624,8 +624,8 @@
         {
           "name": "staff_icon5",
           "rect": [
-            100,
-            889,
+            3,
+            784,
             91,
             105
           ],
@@ -704,8 +704,8 @@
         {
           "name": "common_ui_center",
           "rect": [
-            519,
-            3,
+            156,
+            133,
             64,
             60
           ],
@@ -2918,8 +2918,8 @@
         {
           "name": "staff_icon2",
           "rect": [
-            104,
-            558,
+            101,
+            673,
             91,
             105
           ],

@@ -1,14 +1,14 @@
 [
   1,
   [
-    "192c6cc69",
+    "13f7c3a10",
     "ecpdLyjvZBwrvm+cedCcQy",
     "118b0eaf1",
     "68kBgdw/xGFpY7AOYltuC9",
     "d8kw5M3tBIiJMj7l4gP9gh",
     "f7M9Buh4dKhpEqOuKN4bTz",
-    "13a3a6490",
-    "187198048",
+    "1ab38ac2d",
+    "19d018c47",
     "d2Iqrq191PY6STmKDo06Xb",
     "21FFTcmsdOA42eP1eNvvkU",
     "62fObfn9dCY4LCNxLQJd3r",
@@ -215,8 +215,8 @@
         {
           "name": "fruit4",
           "rect": [
-            960,
-            728,
+            875,
+            719,
             43,
             41
           ],
@@ -228,6 +228,7 @@
             43,
             41
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -376,7 +377,7 @@
         {
           "name": "light1-a",
           "rect": [
-            114,
+            240,
             3,
             50,
             54
@@ -417,8 +418,8 @@
         {
           "name": "fruit7",
           "rect": [
-            637,
-            975,
+            896,
+            90,
             49,
             43
           ],
@@ -430,6 +431,7 @@
             49,
             43
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -792,8 +794,8 @@
         {
           "name": "fruit1",
           "rect": [
-            786,
-            546,
+            872,
+            480,
             44,
             55
           ],

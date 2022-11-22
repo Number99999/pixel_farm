@@ -4,12 +4,13 @@
     "0bKiddO4dEpYfilSJTSr/L",
     "ecpdLyjvZBwrvm+cedCcQy",
     "32ntN1W45LLbiX8haTaEa6",
-    "187198048",
+    "19d018c47",
     "a2MjXRFdtLlYQ5ouAFv/+R",
     "45IIViE3lJqZm0eckUFtCX",
     "28p6tlwvRPmKAVS9M4Qomr",
     "ddL49InXxBObBklZUe6u3e",
-    "02delMVqdBD70a/HSD99FK"
+    "02delMVqdBD70a/HSD99FK",
+    "1ab38ac2d"
   ],
   [
     "node",
@@ -269,8 +270,8 @@
         {
           "name": "watering_icon",
           "rect": [
-            880,
-            853,
+            945,
+            3,
             66,
             75
           ],
@@ -282,6 +283,7 @@
             66,
             75
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -309,8 +311,8 @@
         {
           "name": "cut_icon",
           "rect": [
-            808,
-            930,
+            945,
+            75,
             66,
             75
           ],
@@ -322,6 +324,7 @@
             66,
             75
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -349,8 +352,8 @@
         {
           "name": "plant_icon",
           "rect": [
-            952,
-            865,
+            945,
+            147,
             66,
             75
           ],
@@ -362,6 +365,7 @@
             66,
             75
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -1305,8 +1309,8 @@
         {
           "name": "till_icon",
           "rect": [
-            880,
-            934,
+            3,
+            254,
             66,
             75
           ],
@@ -1318,6 +1322,7 @@
             66,
             75
           ],
+          "rotated": 1,
           "capInsets": [
             0,
             0,
@@ -1337,7 +1342,7 @@
         4
       ],
       [
-        3
+        9
       ]
     ]
   ]

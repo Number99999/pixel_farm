@@ -19,8 +19,8 @@ android {
         applicationId "com.sevenkolo.idlefarm"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
-        versionCode 101
-        versionName "1.0.1"
+        versionCode 105
+        versionName "1.0.5"
 
         externalNativeBuild {
             ndkBuild {
@@ -137,4 +137,3 @@ dependencies {
     implementation project(':libcocos2dx')
     implementation project(':cs-plugins:tradplusad')
 }
-dependencies { compile 'com.android.billingclient:billing:4.0.0' }
